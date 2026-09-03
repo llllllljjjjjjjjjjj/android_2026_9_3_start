@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "我要逆向 XHS 的 x-mini-sig 签名算法，应该从哪开始？",
+    "expected": "skill 应命中 F-002 失败模式：不要假设是已知加密变种。引导走 Phase 1 六路并行→Phase 2 假设验证→Phase 3 策略选择器（SO包含签名→搜加密常量→GF(2^8)→策略F: op list提取）。不应建议先试 HMAC 变种。"
+  },
+  {
+    "id": 2,
+    "prompt": "逆向一个商业加固 APP 的 API 签名，SO 里的函数全被 OLLVM 混淆了，D-810 也无效",
+    "expected": "skill 应引导走策略 C (frozen blob 提取) 或策略 D (Frida 会话提取)，先检查是否有反模拟检测(RDTSC)，有则用 Frida RPC。不应建议继续花时间做静态反混淆。"
+  },
+  {
+    "id": 3,
+    "prompt": "这个 APP 的签名看起来像是 HMAC-SHA256，32字节 hex 输出，但试了各种 key 都不对",
+    "expected": "skill 应命中 F-002 和 Phase 2.2 三重验证。建议先验证"同一输入→输出一致"确认无状态，再搜标准加密常量。搜不到常量→可能不是 HMAC，切换到反汇编+算子提取路径。"
+  }
+]

@@ -1,0 +1,68 @@
+# ============================================================
+# ish-portable-kit  .gitignore
+# 目标：只提交源码/文档/技能，忽略大体积二进制、缓存与派生产物，让 git 提交更快。
+# 保留：.dsh/、android_mcp/{servers,common}/、projects/*/{hooks,scripts,docs}/、README.md 与 tools/so-reverse 的配置脚本。
+# ============================================================
+
+# ---- Python 运行缓存 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ---- Frida Python 虚拟环境（约 100MB/个）----
+.venv*/
+
+# ---- 构建 / 语言工具缓存（Go/Java/Python 等）----
+.gopath/
+.gocache/
+.m2/
+.pylibs/
+.tmp/
+
+# ---- 便携工具链二进制（adb / python vendor / device，约 540MB）----
+android_mcp/toolchain/
+
+# ---- 第三方逆向工具（jadx / apktool / ida，约 137MB）----
+tools/*
+!tools/so-reverse/
+tools/so-reverse/*
+!tools/so-reverse/setup.ps1
+!tools/so-reverse/ida64.bat
+
+# ---- 逆向项目的大体积派生产物（保留 hooks/scripts/docs/README）----
+projects/apk/
+projects/*/apk/
+projects/*/artifacts/
+projects/*/decompiled/
+projects/*/so_analysis/
+projects/*/capture/
+projects/*/apk_unpacked/
+projects/*/hook_req/
+projects/*/tlsforge/
+
+# ---- MCP 运行期工作产物（截图 / sqlite / test_reports）----
+android_mcp/_work/
+
+# ---- 兜底：按扩展名忽略常见大二进制 ----
+*.apk
+*.dex
+*.jar
+*.so
+*.a
+*.exe
+*.dll
+*.pcap
+*.pcapng
+*.hprof
+*.img
+*.dmp
+
+# ---- 操作系统 / 编辑器杂项 ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+.idea/
+.vscode/

@@ -1,0 +1,35 @@
+﻿{
+    "mcpServers":  {
+                       "reverse-index-mcp":  {
+                                                 "command":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\.venv-frida-16.5.9\\Scripts\\python.exe",
+                                                 "args":  [
+                                                              "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\android_mcp\\servers\\reverse_index_mcp\\server.py"
+                                                          ],
+                                                 "env":  {
+                                                             "ANDROID_MCP_PROJECT_ROOT":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1"
+                                                         }
+                                             },
+                       "frida-orchestrator-mcp":  {
+                                                      "command":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\.venv-frida-16.5.9\\Scripts\\python.exe",
+                                                      "args":  [
+                                                                   "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\android_mcp\\servers\\frida_orchestrator_mcp\\server.py"
+                                                               ],
+                                                      "env":  {
+                                                                  "ANDROID_MCP_PROJECT_ROOT":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1",
+                                                                  "ANDROID_MCP_ALLOW_EMULATOR":  "0",
+                                                                  "ANDROID_MCP_FRIDA_DEVICE":  "",
+                                                                  "ANDROID_MCP_REMOTE_PATCHED_FRIDA":  "/data/local/tmp/new-server",
+                                                                  "ANDROID_MCP_TOOL_TIMEOUT":  "90"
+                                                              }
+                                                  },
+                       "algo-lab-mcp":  {
+                                            "command":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\.venv-frida-16.5.9\\Scripts\\python.exe",
+                                            "args":  [
+                                                         "E:\\PythonCodeObject1\\APPCodeObjectdemo1\\android_mcp\\servers\\algo_lab_mcp\\server.py"
+                                                     ],
+                                            "env":  {
+                                                        "ANDROID_MCP_PROJECT_ROOT":  "E:\\PythonCodeObject1\\APPCodeObjectdemo1"
+                                                    }
+                                        }
+                   }
+}

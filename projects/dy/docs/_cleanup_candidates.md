@@ -1,0 +1,264 @@
+﻿# projects\dy 清理候选清单
+生成时间: 2026-09-02 16:59:29
+
+## A. Python 缓存（明确无用）
+- __pycache__ 目录: 1 个
+- .pyc 文件: 3 个（共 32.2 KB）
+  - .\scripts\__pycache__
+  - .\scripts\__pycache__\comment_replay.cpython-314.pyc
+  - .\scripts\__pycache__\comment_replay.cpython-39.pyc
+  - .\scripts\__pycache__\extract_flow_imgs.cpython-314.pyc
+
+## B. 0 字节空文件（明确无用，共 320 个）
+- memdump 内存段空文件: 283 个（capture\memdump\memdump\seg_*.bin，全部 0 字节）
+- 其余空文件: 37 个
+  - .\artifacts\com_ss_android_ugc_aweme_1788274581.frida.err.log
+  - .\artifacts\com_ss_android_ugc_aweme_1788275100.frida.err.log
+  - .\artifacts\com_ss_android_ugc_aweme_1788275216.frida.err.log
+  - .\artifacts\com_ss_android_ugc_aweme_1788276173.frida.err.log
+  - .\artifacts\ida_dump_204cc0.log
+  - .\artifacts\ida_dump_37ed64.log
+  - .\artifacts\ida_dump_37ef64.log
+  - .\artifacts\ida_dump_37f078.log
+  - .\artifacts\ida_dump_493510.log
+  - .\artifacts\ida_dump_full.log
+  - .\artifacts\ida_jni_fast.log
+  - .\artifacts\ida_metasec_refs.log
+  - .\capture\alldump.log
+  - .\capture\comment_dump.log
+  - .\capture\ecom_hook85.log
+  - .\capture\heic3.heic
+  - .\capture\hook20.err
+  - .\capture\hook30_r4.log
+  - .\capture\ida_25c6.log
+  - .\capture\ida_26d248.log
+  - .\capture\ida_37ee6c.log
+  - .\capture\ida_411754.log
+  - .\capture\ida_411e74.log
+  - .\capture\ida_5cdb28.log
+  - .\capture\ida_5d5_code.log
+  - .\capture\ida_api_table.log
+  - .\capture\ida_seg2.log
+  - .\capture\ida_ssstub.log
+  - .\capture\ida_table_ref.log
+  - .\capture\ida_vmp_chain.log
+  - .\capture\ida_xref.log
+  - .\capture\now1.txt
+  - .\capture\now2.txt
+  - .\capture\picurls_utf16.txt
+  - .\capture\search_dump.log
+  - .\capture\ui_dump10.xml
+  - .\capture\ui_dump9.xml
+
+## C. 调试日志 .log/.err/.out（共 122 个，50.43 MB）
+  - .\artifacts\com_ss_android_ugc_aweme_1788274581.frida.err.log [0 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788274581.frida.out.log [1990.4 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788274777.frida.err.log [1.2 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788274777.frida.out.log [1.4 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788274795.frida.err.log [1.2 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788274795.frida.out.log [1.4 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275048.frida.err.log [1.2 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275048.frida.out.log [1.4 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275100.frida.err.log [0 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275100.frida.out.log [120.6 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275216.frida.err.log [0 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788275216.frida.out.log [0.2 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788276173.frida.err.log [0 KB]
+  - .\artifacts\com_ss_android_ugc_aweme_1788276173.frida.out.log [0.2 KB]
+  - .\artifacts\hello_test.log [0.1 KB]
+  - .\artifacts\hook83_enum.log [0.1 KB]
+  - .\artifacts\hook83_florida.log [0.1 KB]
+  - .\artifacts\hook84_main.log [0.1 KB]
+  - .\artifacts\ida_dec2.log [22 KB]
+  - .\artifacts\ida_dec3.log [6.6 KB]
+  - .\artifacts\ida_dump.log [17.5 KB]
+  - .\artifacts\ida_dump_204cc0.log [0 KB]
+  - .\artifacts\ida_dump_37ed64.log [0 KB]
+  - .\artifacts\ida_dump_37ef64.log [0 KB]
+  - .\artifacts\ida_dump_37f078.log [0 KB]
+  - .\artifacts\ida_dump_493510.log [0 KB]
+  - .\artifacts\ida_dump_full.log [0 KB]
+  - .\artifacts\ida_imports2_idb.log [5.3 KB]
+  - .\artifacts\ida_jni_fast.log [0 KB]
+  - .\artifacts\ida_loc10_idb.log [5.3 KB]
+  - .\artifacts\ida_loc9_idb.log [5.3 KB]
+  - .\artifacts\ida_metasec.log [14.5 KB]
+  - .\artifacts\ida_metasec_refs.log [0 KB]
+  - .\artifacts\ida_metasec_v2.log [5.2 KB]
+  - .\artifacts\ida_sscronet.log [897.9 KB]
+  - .\artifacts\ida_zstd_funcs.log [6.5 KB]
+  - .\artifacts\jadx.log [40.8 KB]
+  - .\artifacts\jadx2.log [38.7 KB]
+  - .\capture\alldump.log [0 KB]
+  - .\capture\comment_dump.log [0 KB]
+  - .\capture\dy_hook_attach_out.log [0.1 KB]
+  - .\capture\dy_hook_attach_stdout.log [177.8 KB]
+  - .\capture\dy_hook_out.log [0.1 KB]
+  - .\capture\dy_hook_stdout.log [23.6 KB]
+  - .\capture\dy_hook10_out.log [0.1 KB]
+  - .\capture\dy_hook10_stdout.log [65.1 KB]
+  - .\capture\dy_hook11_attach.log [0.1 KB]
+  - .\capture\dy_hook12_attach.log [0.1 KB]
+  - .\capture\dy_hook12_attach2.log [0.1 KB]
+  - .\capture\dy_hook13_attach.log [0.1 KB]
+  - .\capture\dy_hook14_attach.log [0.1 KB]
+  - .\capture\dy_hook14_attach2.log [0.2 KB]
+  - .\capture\dy_hook14_attach3.log [0.2 KB]
+  - .\capture\dy_hook15_attach.log [0.2 KB]
+  - .\capture\dy_hook15_attach2.log [0.2 KB]
+  - .\capture\dy_hook16.log [0.1 KB]
+  - .\capture\dy_hook17.log [0.1 KB]
+  - .\capture\dy_hook18.log [0.2 KB]
+  - .\capture\dy_hook19.log [0.1 KB]
+  - .\capture\dy_hook2_stdout.log [225.5 KB]
+  - .\capture\dy_hook20.log [51.6 KB]
+  - .\capture\dy_hook3_out.log [0.1 KB]
+  - .\capture\dy_hook3_stdout.log [151.8 KB]
+  - .\capture\dy_hook4_out.log [0.1 KB]
+  - .\capture\dy_hook4_stdout.log [604.1 KB]
+  - .\capture\dy_hook5_out.log [0.1 KB]
+  - .\capture\dy_hook5_stdout.log [0.1 KB]
+  - .\capture\dy_hook5b_out.log [0.1 KB]
+  - .\capture\dy_hook5b_stdout.log [0.1 KB]
+  - .\capture\dy_hook5c_out.log [0.1 KB]
+  - .\capture\dy_hook5c_stdout.log [210.1 KB]
+  - .\capture\dy_hook6_out.log [0.1 KB]
+  - .\capture\dy_hook6_stdout.log [1 KB]
+  - .\capture\dy_hook7_out.log [0.1 KB]
+  - .\capture\dy_hook7_stdout.log [3.8 KB]
+  - .\capture\dy_hook8_out.log [0.1 KB]
+  - .\capture\dy_hook8_stdout.log [121.5 KB]
+  - .\capture\dy_hook9_out.log [0.1 KB]
+  - .\capture\dy_hook9_stdout.log [45.2 KB]
+  - .\capture\ecom_hook85.log [0 KB]
+  - .\capture\ecom_url_watch.log [3.1 KB]
+  - .\capture\hook2_inner.log [0.1 KB]
+  - .\capture\hook20.err [0 KB]
+  - .\capture\hook30_fresh.log [2779.1 KB]
+  - .\capture\hook30_r2.log [16.1 KB]
+  - .\capture\hook30_r3.log [1098.1 KB]
+  - .\capture\hook30_r4.log [0 KB]
+  - .\capture\hook30_restart.log [0.7 KB]
+  - .\capture\hook30_restart2.log [0.2 KB]
+  - .\capture\hook38_run.log [29.8 KB]
+  - .\capture\hook38_run2.log [17.9 KB]
+  - .\capture\hook38_run3.log [59.2 KB]
+  - .\capture\hook38_run4.log [3.1 KB]
+  - .\capture\hook38_run5.log [3 KB]
+  - .\capture\hook39_probe.log [5.8 KB]
+  - .\capture\hook39_run.log [5.3 KB]
+  - .\capture\hook39b_run.log [6.6 KB]
+  - .\capture\hook39c_run.log [2.5 KB]
+  - .\capture\ida_25c6.log [0 KB]
+  - .\capture\ida_26d248.log [0 KB]
+  - .\capture\ida_37ee6c.log [0 KB]
+  - .\capture\ida_411754.log [0 KB]
+  - .\capture\ida_411e74.log [0 KB]
+  - .\capture\ida_5cdb28.log [0 KB]
+  - .\capture\ida_5d5_code.log [0 KB]
+  - .\capture\ida_api_table.log [0 KB]
+  - .\capture\ida_frontier.log [5.4 KB]
+  - .\capture\ida_imports.log [5.2 KB]
+  - .\capture\ida_loc8.log [5.7 KB]
+  - .\capture\ida_seg2.log [0 KB]
+  - .\capture\ida_ssstub.log [0 KB]
+  - .\capture\ida_table_ref.log [0 KB]
+  - .\capture\ida_vmp_chain.log [0 KB]
+  - .\capture\ida_xref.log [0 KB]
+  - .\capture\search_dump.log [0 KB]
+  - .\capture\search_dump_run.log [288.6 KB]
+  - .\capture\search_dump_run2.log [230.8 KB]
+  - .\capture\session_deflate_probe.log [5.9 KB]
+  - .\capture\session_early1.log [40.1 KB]
+  - .\capture\session_early2.log [66.3 KB]
+  - .\capture\session_hook33_main.log [17658.3 KB]
+  - .\capture\session_hook35_combined.log [24434.5 KB]
+
+## D. scripts 下 _ 前缀临时脚本（共 75 个）
+  - _a_instant.py [4.9 KB]
+  - _a_instant2.py [5 KB]
+  - _a_instant3.py [5 KB]
+  - _a_instant4.py [5.9 KB]
+  - _a_verify.py [4.7 KB]
+  - _a_verify2.py [4.7 KB]
+  - _app_search_verify.py [2.3 KB]
+  - _attach_test.py [0.8 KB]
+  - _charles_ssl_replay.py [4.5 KB]
+  - _check_ids.py [0.5 KB]
+  - _check_tmp.py [0.5 KB]
+  - _check_ttzip.py [2.2 KB]
+  - _count_enum.py [5.3 KB]
+  - _curl_tls_test.py [4.2 KB]
+  - _dev.sh [0.2 KB]
+  - _dev10.sh [0.5 KB]
+  - _dev11.sh [0.3 KB]
+  - _dev12.sh [0.4 KB]
+  - _dev13.sh [0.3 KB]
+  - _dev14.sh [0.2 KB]
+  - _dev2.sh [0.2 KB]
+  - _dev3.sh [0.2 KB]
+  - _dev4.sh [0.1 KB]
+  - _dev5.sh [0.1 KB]
+  - _dev6.sh [0.2 KB]
+  - _dev7.sh [0.3 KB]
+  - _dev8.sh [0.4 KB]
+  - _dev9.sh [0.2 KB]
+  - _diag_vpn.py [2 KB]
+  - _dict_capture2.py [4.7 KB]
+  - _dict_capture3.py [1.7 KB]
+  - _diff_test.py [6.4 KB]
+  - _direct_replay.py [4.4 KB]
+  - _enum_zstd_java.py [1.3 KB]
+  - _final_replay.py [4.2 KB]
+  - _fresh_replay.py [4 KB]
+  - _fullhdr_sign.py [3.7 KB]
+  - _general_debug.py [4.4 KB]
+  - _general_debug2.py [5.2 KB]
+  - _general_debug3.py [5.5 KB]
+  - _general_debug4.py [4.4 KB]
+  - _general_test.py [5 KB]
+  - _general_verify.py [5.4 KB]
+  - _grab_dict_url2.py [2.1 KB]
+  - _grab_headers.py [2.4 KB]
+  - _h2_replay.py [3.7 KB]
+  - _hook_search_api.js [2.2 KB]
+  - _ja3_replay.py [3.6 KB]
+  - _ja3_replay2.py [5 KB]
+  - _ki_nodes.py [0.9 KB]
+  - _oracle_test.py [2.6 KB]
+  - _proxy_replay.py [4.4 KB]
+  - _relaunch.sh [0.1 KB]
+  - _replay_entry133.py [4.1 KB]
+  - _run_hook_search.py [1.1 KB]
+  - _run_hook49.py [2.2 KB]
+  - _run_hook50.py [1.4 KB]
+  - _run_hook51.py [1.6 KB]
+  - _run_hook53.py [1.4 KB]
+  - _run_hook58.py [1.1 KB]
+  - _run_hook66.py [1.1 KB]
+  - _run_hook67.py [1.1 KB]
+  - _run_hook68.py [1.1 KB]
+  - _run_hook70.py [1.1 KB]
+  - _spawn_grab_dict.py [1.8 KB]
+  - _spawn_hook48.py [3.9 KB]
+  - _spawn_hook49.py [2.5 KB]
+  - _spawn_hook72.py [1.2 KB]
+  - _spawn_hook75.py [1.2 KB]
+  - _sug_test.py [4.4 KB]
+  - _tlsforge_search.py [4.9 KB]
+  - _ui_texts.py [0.4 KB]
+  - _ui_texts2.py [0.7 KB]
+  - _vpn_hook_verify.py [2.6 KB]
+  - _vpn_verify2.py [2.3 KB]
+
+## E. 超大 dump / 数据产物（需你决定，不在默认删除范围）
+- capture\auto.bin 1539 MB
+- capture\noclick.bin 1771 MB
+- capture\urldump.bin 1648 MB
+- capture\wash_auth_imgs\ 1752 MB
+- capture\memdump\ 非零段 1132 MB（903 个有效内存段）
+- capture\fasturl.bin 25 MB
+- capture\charles_session5.json 40 MB / session7.json 22 MB
+- so_analysis\ 下 IDA 数据库 .i64/.id0/.id1 等约 190 MB
+- decompiled\ 198855 个文件（jadx 反编译产物，321 MB）
+

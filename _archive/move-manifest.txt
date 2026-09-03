@@ -1,0 +1,5 @@
+# move-manifest.txt
+
+归档迁移记录。凡从根目录或 projects/ 移入 _archive/ 的文件，逐行记录：
+
+# 日期  原路径  ->  归档位置  原因

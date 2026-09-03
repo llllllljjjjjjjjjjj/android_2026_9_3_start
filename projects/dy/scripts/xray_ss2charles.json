@@ -1,0 +1,66 @@
+{
+  "log": {
+    "loglevel": "info"
+  },
+  "inbounds": [
+    {
+      "tag": "ss-in",
+      "listen": "0.0.0.0",
+      "port": 8388,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "aes-128-gcm",
+        "password": "abc12345",
+        "network": "tcp,udp"
+      },
+      "sniffing": {
+        "enabled": true,
+        "destOverride": ["http", "tls"],
+        "routeOnly": false
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "to-charles",
+      "protocol": "http",
+      "settings": {
+        "servers": [
+          {
+            "address": "127.0.0.1",
+            "port": 8090
+          }
+        ]
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    }
+  ],
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "douyinpic.com",
+          "byteimg.com",
+          "ecombdimg.com",
+          "ecombdstatic.com",
+          "douyinstatic.com",
+          "bytednsdoc.com",
+          "pstatp.com",
+          "dailygn.com",
+          "bytegecko.com",
+          "jinritemai.com"
+        ],
+        "outboundTag": "to-charles"
+      },
+      {
+        "type": "field",
+        "network": "tcp",
+        "outboundTag": "direct"
+      }
+    ]
+  }
+}

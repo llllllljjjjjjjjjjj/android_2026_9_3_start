@@ -1,0 +1,5 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-06-02T18:00	baseline	android-reverse-expert	-	86.4	baseline	-	初始基线评估，18条失败模式+10条黑名单+6APP矩阵	runtime_ok/dry_run
+2026-06-02T18:00	baseline	protocol-signature-reverser	-	74.8	baseline	-	初始基线评估，缺独立失败模式编码章节+缺CHECKPOINT标记	runtime_ok/dry_run
+2026-06-02T18:15	a1b2c3d	protocol-signature-reverser	74.8	82.0	keep	dim3+dim4相关簇	新增12条SF-xxx失败模式+8条黑名单+4处CHECKPOINT+2处STOP	dim3:6→9 dim4:5→8 dim7:8→9 dim9:9→10	runtime_ok/dry_run
+2026-06-02T18:30	b4c5d6e	android-reverse-expert	86.4	88.8	keep	dim4检查点	阶段路由+5🔴CHECKPOINT+Frida🛑+入账🛑STOP	dim2:9→10 dim4:6→8	runtime_ok/dry_run
