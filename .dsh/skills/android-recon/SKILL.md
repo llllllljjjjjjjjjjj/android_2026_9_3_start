@@ -228,9 +228,9 @@ extends Application|onCreate|extends ViewModel|@Module|@Provides|@Inject
 | 抓到包全密文 | SSL Pinning → `objection -g <包名> explore --startup-command "android sslpinning disable"` | 强 pinning → §3.3 mitmproxy 透明 |
 | App 不走系统代理 | **r0capture**（socket 层通杀）：`frida -U -f <包名> -l r0capture.js` | ANet/QUIC → §3.4 libxquic hook |
 | **真机突然「没网」（底层 ping/DNS 通）** | **§3.2 proxy 残留排查**（最高频坑） | — |
-| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy） |
+| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；风控观察 ON 时记 |
 | PC 开抓包后机场断 / 出网失败 | **§3.5 机场上游链**（Charles/Reqable 抢系统代理冲掉 OneLite:7892） | OneLite 切 TUN |
-| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；**禁刷无效签名** |
+| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；**禁刷无效签名**；风控观察 ON 时记 |
 
 ## 3.1 抓包方案选择器
 

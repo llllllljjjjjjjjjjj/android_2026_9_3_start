@@ -723,7 +723,7 @@ mtgsig = 请求无关设备令牌（非 TEE）：改 body/path 后 a5/a7/a8/a9 �
 Keeta Shepherd s-ca-signature = HMAC-SHA256(appSecret, canonical) 纯算通
   纯算 mtgsig 两墙：MD5 白盒 + unidbg 缺 base.apk 资产曾 errno 512（挂裁剪 apk 后可产真令牌）
   传输: Shark 隧道 / libcronet；裸 HTTPS 边缘 403。混合 e2e（离线 body + 设备隧道）code=0
-  禁刷无效令牌 → 设备 #41SR 软封（原版 App 也 403）
+  禁刷无效令牌 → 设备 #41SR 软封（原版 App 也 403）（风控观察 ON 时记）
 猫眼: key36[i]=source[i]⊕appKey[i]⊕a10_mask ；source 设备稳定
   a2 纯算 + fp_stack H1 → yanchu project/detail HTTP 200 success（止损：单次只读，勿再刷）
   入口: projects/maoyan/scripts/pure_mtgsig.py + fpstack_client.py
@@ -743,7 +743,7 @@ Keeta Shepherd s-ca-signature = HMAC-SHA256(appSecret, canonical) 纯算通
 已解: DG 程序常数 #1/#123/#266 字节级，bytecode=53993
 卡点: #2 sealed env（本地 vs live 213 族每块差字段）；MI613e 仍 gf.uicd
 形态: 部分解析 + #2 止损。权威 projects/play_login_v2/docs/LOCAL_CLIENT.md
-禁止重复无效 POST（同 token 烧号）
+禁止重复无效 POST（同 token 烧号）（风控观察 ON 时记）
 ```
 
 ---

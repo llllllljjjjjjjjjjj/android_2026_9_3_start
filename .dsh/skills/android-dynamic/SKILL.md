@@ -344,7 +344,7 @@ Interceptor.attach(addr, { onEnter: function(args){ console.log("[+] JNI_OnLoad 
 11. Flutter 用 Java 层 Hook（走原生 libflutter.so）
 12. 算法助手 v2.1.2 在 Android 14（"系统服务未启动" 不兼容）
 13. D810-ng 指望搞定 `MOV PC,Rx` 间接跳转 CFF（无效，转快照/RPC）
-14. 高频协议请求不限频 → 风控/封号
+14. 高频协议请求不限频 → 风控/封号（风控观察 ON 时记）
 15. 真机 arm64 new-server 与 MuMu x86_64 交叉推送
 16. 美团/猫眼按包名 spawn；Keeta 连续注入过期/无效 mtgsig（设备软封 #41SR，原版 App 也 403）
 17. 绕过 MCP 手写 `/data/system/junge/<pkg>/`（会留 root:root 污染；MCP 已自动 owner=system:system，直接用工具即可）

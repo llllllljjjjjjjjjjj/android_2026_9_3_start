@@ -47,6 +47,15 @@
 
 > 另含元技能 `reverse-skill-evolver`（进化上述逆向 skill）/`risk-control-adversary`(风控相关)。
 
+## 风控观察开关（默认 OFF）
+
+逆向过程中是否随手记录风控相关观察，由下面的开关控制（全局，一处定义）：
+
+- **开关**：OFF（改 ON 开启；OFF 时不记录，保持逆向流程不被打断）
+- **记录位置**：`projects/<target>/docs/risk-observations.md`（追加式，格式：日期 + 信号 + 上下文 + 证据路径）
+- **触发信号**（遇到即记一条）：403/429、验证码、封禁码、返蜜罐数据、频控阈值实测值、环境检测命中（反 Frida/Root/Hook/代理检测）、无效签名或令牌软封、延迟处罚
+- **用途**：该文件是 risk-control-adversary 生成方案时的 A1 资料源；逆向完成后由用户决定是否跑完整风控方案
+
 ## MCP 服务器（DSH mcp-client 插件）
 项目自带 5 个无 UI 逆向 MCP（位于 [android_mcp/](android_mcp/README.md)），**优先用 MCP 工具直接打真机 / Root / LSPosed / 算法助手 / Frida，避免截图点按式操作**。配置见 `android_mcp/mcp_config.example.json`，统一用 `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（自带，无需 MuMu 路径）。
 自建 MCP 通过 `@deepseek-ai/dsh-mcp-client` 插件接入，配置已合并进
