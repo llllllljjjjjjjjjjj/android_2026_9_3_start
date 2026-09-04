@@ -15,6 +15,8 @@ whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/
 > - 需要 Frida Hook / 反检测 / SSL 强绕过 / SO 分析 → 交给 **android-dynamic**
 > - 需要还原签名算法 / 纯协议 / unidbg → 交给 **protocol-signature-reverser**
 
+> ⏺️ **全程风控记录**：风控记录开关 YES 时（AGENTS.md），本 skill 执行全程遇到的风控素材随手记到 `projects/<target>/docs/risk-observations.md`——频控/403/429/头与参数完整性/指纹上报/埋点链路 + **正常基线（某节奏、某批量无风控）** + 任何不起眼但对风控对抗有用的点（格式见红线 10）。
+
 ```
 拿到 APK
    │
@@ -199,6 +201,8 @@ https?://[^"]*    api[_-]?key|secret|token|bearer    BASE_URL|API_URL|ENDPOINT
 extends Application|onCreate|extends ViewModel|@Module|@Provides|@Inject
 ```
 
+> 📝 **记录前**：风控记录 YES 时，把本次抓包/静态分析得到的**风控对抗素材**记到 `projects/<target>/docs/risk-observations.md`：接口频控表现（请求间隔/批量大小/限流阈值）、403/429 出现时的接口与 IP 上下文、全套请求头与参数完整性、指纹上报接口、埋点链路；**以及清单外任何你认为对抗风控可能用得上的点（哪怕不起眼）**（格式见红线 10）。
+
 ## 2.4 API 文档格式
 
 ```markdown
@@ -228,9 +232,9 @@ extends Application|onCreate|extends ViewModel|@Module|@Provides|@Inject
 | 抓到包全密文 | SSL Pinning → `objection -g <包名> explore --startup-command "android sslpinning disable"` | 强 pinning → §3.3 mitmproxy 透明 |
 | App 不走系统代理 | **r0capture**（socket 层通杀）：`frida -U -f <包名> -l r0capture.js` | ANet/QUIC → §3.4 libxquic hook |
 | **真机突然「没网」（底层 ping/DNS 通）** | **§3.2 proxy 残留排查**（最高频坑） | — |
-| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；风控观察 ON 时记 |
+| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy） |
 | PC 开抓包后机场断 / 出网失败 | **§3.5 机场上游链**（Charles/Reqable 抢系统代理冲掉 OneLite:7892） | OneLite 切 TUN |
-| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；**禁刷无效签名**；风控观察 ON 时记 |
+| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；**禁刷无效签名** |
 
 ## 3.1 抓包方案选择器
 
@@ -346,6 +350,7 @@ PC 常驻一梯云 **OneLite**（`127.0.0.1:7892`）。Charles(8888)/Reqable(900
 7. 开 Charles/Reqable 前必须链机场上游 `127.0.0.1:7892`（§3.5），禁止手机侧再叠机场
 8. A14 装 CA 走 `/apex/com.android.conscrypt/cacerts/`，禁止只写旧 `/system/etc/security/cacerts/`
 9. 传输墙未过时禁止宣称「签名算法错了」（先 fp_stack / 原版 App 同环境对照）
+10. 风控记录 YES（AGENTS.md 两开关）时，把抓包/Hook 遇到的风控点记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行（日期+信号+上下文+证据路径）；均 NO → 不记
 
 ---
 

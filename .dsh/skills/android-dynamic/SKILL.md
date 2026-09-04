@@ -15,6 +15,8 @@ whenToUse: 用户提到 Frida、Hook、动态调试、frida检测、反检测、
 > - 取真实 DEX（脱壳）/ native SO 代码段脱密 → **android-unpack**
 > - 把 SO 算法还原成纯 Python/离线 → **protocol-signature-reverser**（本 skill 只负责动态定位/trace/RPC，不做纯算实现）
 
+> ⏺️ **全程风控记录**：风控记录开关 YES 时（AGENTS.md），本 skill 执行全程遇到的风控素材随手记到 `projects/<target>/docs/risk-observations.md`——反 Frida/Root/Hook 检测命中面/spawn-attach 存活/静默封 API/高频封号 + 任何不起眼但对风控对抗有用的点（格式见黑名单 19）。
+
 ```
 🛑 动 Hook 前先过三关：① APP 在安全等级矩阵第几级？② 检测 Frida 吗？③ 选对注入链与绕过方案
 ```
@@ -344,13 +346,16 @@ Interceptor.attach(addr, { onEnter: function(args){ console.log("[+] JNI_OnLoad 
 11. Flutter 用 Java 层 Hook（走原生 libflutter.so）
 12. 算法助手 v2.1.2 在 Android 14（"系统服务未启动" 不兼容）
 13. D810-ng 指望搞定 `MOV PC,Rx` 间接跳转 CFF（无效，转快照/RPC）
-14. 高频协议请求不限频 → 风控/封号（风控观察 ON 时记）
+14. 高频协议请求不限频 → 风控/封号
 15. 真机 arm64 new-server 与 MuMu x86_64 交叉推送
 16. 美团/猫眼按包名 spawn；Keeta 连续注入过期/无效 mtgsig（设备软封 #41SR，原版 App 也 403）
 17. 绕过 MCP 手写 `/data/system/junge/<pkg>/`（会留 root:root 污染；MCP 已自动 owner=system:system，直接用工具即可）
 18. 平安/360VIP 上再试 ZygiskFrida / 留 new-server（崩 zygote 或持久 SIGSEGV）
+19. 风控记录 YES（AGENTS.md 两开关）时，把反检测命中/封号/环境检测触发记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行；均 NO → 不记
 
 ---
+
+> 📝 **记录前**：风控记录 YES 时，把 Hook/对抗中实测到的**环境检测与封禁信号**记到 `projects/<target>/docs/risk-observations.md`：反 Frida/Root/Hook 检测命中面、spawn/attach 存活差异、hook 装上但静默封 API、高频请求触发封号；**以及清单外任何你认为对抗风控可能用得上的点（哪怕不起眼）**（格式见黑名单 19）。
 
 # 故障排查
 

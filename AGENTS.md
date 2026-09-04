@@ -47,14 +47,52 @@
 
 > 另含元技能 `reverse-skill-evolver`（进化上述逆向 skill）/`risk-control-adversary`(风控相关)。
 
-## 风控观察开关（默认 OFF）
+## 风控记录开关（两个，均默认 NO）
 
-逆向过程中是否随手记录风控相关观察，由下面的开关控制（全局，一处定义）：
+> **两者关系（消除交叉）**：开关二**覆盖**开关一。四核心技能在开关二 YES 时遇到风控点，只按 E-/F- 完整条目记一次，**不重复记开关一的一行**；各处已有的「风控记录 YES 时记」触发点在开关二 YES 时自动升级为完整条目记录。开关一仅用于：开关二 NO 时的轻量观察，或四核心技能之外的环节。
 
-- **开关**：OFF（改 ON 开启；OFF 时不记录，保持逆向流程不被打断）
-- **记录位置**：`projects/<target>/docs/risk-observations.md`（追加式，格式：日期 + 信号 + 上下文 + 证据路径）
-- **触发信号**（遇到即记一条）：403/429、验证码、封禁码、返蜜罐数据、频控阈值实测值、环境检测命中（反 Frida/Root/Hook/代理检测）、无效签名或令牌软封、延迟处罚
-- **用途**：该文件是 risk-control-adversary 生成方案时的 A1 资料源；逆向完成后由用户决定是否跑完整风控方案
+### 开关一：风控观察（轻量一行式）
+
+- **开关**：NO（改 YES 开启；NO 时不记录，保持逆向流程不被打断）
+- **记录位置**：`projects/<target>/docs/risk-observations.md`（追加式）
+- **格式**：日期 + 信号 + 上下文 + 证据路径（一行）
+- **触发信号**（遇到即记）：403/429、验证码、封禁码、返蜜罐数据、频控阈值实测值、环境检测命中（反 Frida/Root/Hook/代理检测）、无效签名或令牌软封、延迟处罚
+- **用途**：risk-control-adversary 生成方案时的 A1 资料源
+
+### 开关二：风控动态条目（细致 E-/F- 格式，四核心技能专用）
+
+- **开关**：YES（改 YES 开启）
+- **适用**：android-recon / android-unpack / android-dynamic / protocol-signature-reverser
+- **原因**：四技能是动态实测（抓包/Hook/运行期观察），证据比静态推测更硬，风控点按 risk-control-adversary 同等粒度沉淀，避免「转接后丢失细节」
+- **记录位置**：`projects/<target>/docs/risk-observations.md`（与开关一同文件，用条目区块）
+- **格式**：按 risk-control-adversary `references/templates.md` §3.3（E-）/§3.4（F-）字段填写；条目标题加 `[动态]` 前缀，编号用 `E-cand`/`F-cand`（候选）。**关键字段（检测原理/对抗思路/证据等级/置信度/来源）必填，管理字段（操作边界/标签/关联/版本等）收割时由 risk-control-adversary 补全**
+- **后续**：risk-control-adversary 生成方案时把这些 `[动态]` 候选条目按 §0.4 准入收割进 L1/L3（动态实测通常直接满足 ≥小样本/已实证门槛）
+
+**动态 E 条目模板**（照着填，完整字段见 templates.md §3.3）：
+
+```markdown
+### [动态] E-cand <角度>
+- 类型: <主维度>（跨维加 +次维度，如「设备指纹+业务规则风控」）
+- 检测原理: <风控方怎么检测；当下只知现象就写「现象: xxx，根因待分析」>
+- 对抗思路: <可迁移的策略一句；具体工具/命令/步骤不写，留交叉引用专项 skill>
+- 落地工具: <本技能用到的；写专项 skill 具体章节>
+- 证据等级: 已实证 / 小样本 / 推测（按 R×N：单次验证 R=1 只能填小样本）
+- 置信度: 高 / 中 / 低
+- 来源: projects/<target> <YYYY-MM-DD> <抓包/Hook 证据路径>
+```
+
+**动态 F 条目模板**（照着填，完整字段见 templates.md §3.4）：
+
+```markdown
+### [动态] F-cand <失败场景>
+- 触发条件: <什么操作触发>
+- 失败特征: <封禁/报错/蜜罐等可观测信号>
+- 根因分析: <为什么会失败；当下只知现象就写「现象: xxx，根因待分析」>
+- 规避方案: <怎么做避免；可迁移策略，不写具体工具命令>
+- 影响等级: 致命 / 严重 / 一般
+- 证据等级: 已实证 / 小样本 / 推测（单次验证 R=1 只能填小样本）
+- 来源: projects/<target> <YYYY-MM-DD> <证据路径>
+```
 
 ## MCP 服务器（DSH mcp-client 插件）
 项目自带 5 个无 UI 逆向 MCP（位于 [android_mcp/](android_mcp/README.md)），**优先用 MCP 工具直接打真机 / Root / LSPosed / 算法助手 / Frida，避免截图点按式操作**。配置见 `android_mcp/mcp_config.example.json`，统一用 `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（自带，无需 MuMu 路径）。

@@ -15,6 +15,8 @@ whenToUse: 用户提到脱壳、加固破解、DEX 提取、SO 脱密、壳识�
 > - 反调试/反 Frida 是为脱壳服务时在本 skill 处理；若是为「运行期 Hook 业务逻辑」服务 → 交 **android-dynamic**
 > - 还原签名算法 → **protocol-signature-reverser**
 
+> ⏺️ **全程风控记录**：风控记录开关 YES 时（AGENTS.md），本 skill 执行全程遇到的风控素材随手记到 `projects/<target>/docs/risk-observations.md`——壳扫的检测面/反调试触发点/spawn-attach 存活差异 + 任何不起眼但对风控对抗有用的点（格式见红线 8）。
+
 ```
 加固分析（壳识别/级别评估）→ 策略选择 → 脱壳执行（Frida动态/Root内存/抽取壳主动调用/SO脱密/快照）→ DEX/SO 验证 → 🔁 android-recon
 ```
@@ -208,6 +210,8 @@ ida_funcs.add_func(start, end)                # 重建入口函数
 
 ---
 
+> 📝 **记录前**：风控记录 YES 时，把脱壳中暴露的**环境检测面**记到 `projects/<target>/docs/risk-observations.md`：壳扫的进程名/maps/挂载/端口/签名比对、反调试触发点、spawn/attach 存活差异；**以及清单外任何你认为对抗风控可能用得上的点（哪怕不起眼）**（格式见红线 8）。
+
 # §5 实战案例（已验证，可复用）
 
 ```
@@ -246,6 +250,7 @@ CASE ct_client 爱加密 (libexec.so/libmsec.so): RASP 级 = raw-svc watchdog + 
 5. ADB 统一 bundled `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（MuMu 仅 fallback）
 6. dump 高 VA 地址段一律 PC 端算十进制 skip（防 shell 32-bit 溢出）
 7. 反 Frida 壳：frida-server 必须改名 + root 运行；爱加密级别优先零注入 Root dump
+8. 风控记录 YES（AGENTS.md 两开关）时，把脱壳遇到的反调试/反 Frida 风控点记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行；均 NO → 不记
 
 ---
 

@@ -22,6 +22,8 @@ whenToUse: 用户提到签名逆向、sign 破解、x-mini、shield、unidbg、�
 > - 运行期 Frida Hook / 反检测 / SSL 绕过 / SO 动态 trace → **android-dynamic**
 > - 本 skill **只做**：把签名/加密算法**还原成离线可复现的纯算实现**（Python/C），并做字节级验证；含 unidbg 补环境（§Phase 6）。
 
+> ⏺️ **全程风控记录**：风控记录开关 YES 时（AGENTS.md），本 skill 执行全程遇到的风控素材随手记到 `projects/<target>/docs/risk-observations.md`——oracle 频率上限/批量签名/令牌软封/传输墙/生命周期绑定/重放可改层 + 任何不起眼但对风控对抗有用的点（格式见黑名单 15）。
+
 > 🧰 **配套自建 MCP（无 UI，权威工作流见 [AGENTS.md](../../../AGENTS.md)）** —— 本 skill 横跨工作流**阶段 2↔3↔4 闭环**：
 > - 阶段 2 静态定位：`reverse_index` —— `list_suspicious_sign_methods` / `find_symbol` / `find_endpoint` / `search_strings` 在 `decompiled/` 找签名入口与调用链。
 > - 阶段 3 算法假设：`algo_lab` —— `analyze_signature_samples`、`detect_encoding`、`test_hash_candidates`/`test_hmac_candidates` 爆破、`generate_python_reproducer`+`verify_reproducer` 字节级校验。
@@ -172,6 +174,7 @@ whenToUse: 用户提到签名逆向、sign 破解、x-mini、shield、unidbg、�
 12. **禁止** frida 枚举失败就当 App 死了 (SF-016：adb pidof → attach(pid) 直连)
 13. **禁止** 修改 oracle 重放请求的 body 字段语义 (SF-018：cid 列表等会话状态绑定 → -99999；要改从 query 改)
 14. **禁止** 未经砍参数实验就认定业务参数必需 (SF-019：7 参数全砍照过，签名引擎与服务端分两层验证)
+15. 风控记录 YES（AGENTS.md 两开关）时，把签名/令牌软封/传输墙风控点记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行；均 NO → 不记
 
 ---
 
@@ -578,6 +581,8 @@ assert response.status_code == 200
 assert response.json()["code"] == 0
 ```
 
+> 📝 **记录前**：风控记录 YES 时，把签名逆向得到的**请求约束**记到 `projects/<target>/docs/risk-observations.md`：oracle 调用频率上限/批量签名、令牌或设备密钥软封、传输墙（JA3/QUIC 被拒）、签名生命周期绑定（重放 vs 重签）、oracle 重放可改层（query 可改 body 不可改）；**以及清单外任何你认为对抗风控可能用得上的点（哪怕不起眼）**（格式见黑名单 15）。
+
 ### 5.3 产出文档模板
 
 ```markdown
@@ -723,7 +728,7 @@ mtgsig = 请求无关设备令牌（非 TEE）：改 body/path 后 a5/a7/a8/a9 �
 Keeta Shepherd s-ca-signature = HMAC-SHA256(appSecret, canonical) 纯算通
   纯算 mtgsig 两墙：MD5 白盒 + unidbg 缺 base.apk 资产曾 errno 512（挂裁剪 apk 后可产真令牌）
   传输: Shark 隧道 / libcronet；裸 HTTPS 边缘 403。混合 e2e（离线 body + 设备隧道）code=0
-  禁刷无效令牌 → 设备 #41SR 软封（原版 App 也 403）（风控观察 ON 时记）
+  禁刷无效令牌 → 设备 #41SR 软封（原版 App 也 403）
 猫眼: key36[i]=source[i]⊕appKey[i]⊕a10_mask ；source 设备稳定
   a2 纯算 + fp_stack H1 → yanchu project/detail HTTP 200 success（止损：单次只读，勿再刷）
   入口: projects/maoyan/scripts/pure_mtgsig.py + fpstack_client.py
@@ -743,7 +748,7 @@ Keeta Shepherd s-ca-signature = HMAC-SHA256(appSecret, canonical) 纯算通
 已解: DG 程序常数 #1/#123/#266 字节级，bytecode=53993
 卡点: #2 sealed env（本地 vs live 213 族每块差字段）；MI613e 仍 gf.uicd
 形态: 部分解析 + #2 止损。权威 projects/play_login_v2/docs/LOCAL_CLIENT.md
-禁止重复无效 POST（同 token 烧号）（风控观察 ON 时记）
+禁止重复无效 POST（同 token 烧号）
 ```
 
 ---
