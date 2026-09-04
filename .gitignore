@@ -66,3 +66,4 @@ Desktop.ini
 *.swp
 .idea/
 .vscode/
+projects/*/decompiled_biz/
