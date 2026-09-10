@@ -1,0 +1,50 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.app.compat"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml
+10
+11    <application
+11-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:4:5-22:19
+12        android:allowBackup="false"
+12-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:5:9-36
+13        android:debuggable="true"
+14        android:label="系统组件"
+14-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:6:9-29
+15        android:supportsRtl="true" >
+15-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:7:9-35
+16
+17        <!-- Xposed 模块声明 -->
+18        <meta-data
+18-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:10:9-12:36
+19            android:name="xposedmodule"
+19-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:11:13-40
+20            android:value="true" />
+20-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:12:13-33
+21        <meta-data
+21-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:13:9-15:62
+22            android:name="xposeddescription"
+22-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:14:13-45
+23            android:value="system compatibility component" />
+23-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:15:13-59
+24        <meta-data
+24-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:16:9-18:34
+25            android:name="xposedminversion"
+25-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:17:13-44
+26            android:value="82" />
+26-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:18:13-31
+27        <meta-data
+27-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:19:9-21:54
+28            android:name="xposedscope"
+28-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:20:13-39
+29            android:resource="@array/xposed_scope" />
+29-->D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\AndroidManifest.xml:21:13-51
+30    </application>
+31
+32</manifest>

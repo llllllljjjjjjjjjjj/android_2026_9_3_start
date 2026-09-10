@@ -34,6 +34,7 @@
 - `hooks/` — Frida 脚本（脱壳/枚举/密钥）
 - `scripts/` — Python 脚本（扫描/dump/分类/RPC）
 - `docs/REVERSE_REPORT.md` — 完整逆向报告
+- `docs/LOGIN_API.md` — 登录接口专项（loginCheck/loginPassword/login_v3/三方 + 传输层 + 会话注入 + 错误码表）
 - `artifacts/` — 日志与中间产物
 
 ## 入口

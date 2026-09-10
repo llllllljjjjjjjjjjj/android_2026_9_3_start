@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.app.compat.app-merged_res-4:/values_values.arsc.flat",
+            "map": [
+                {
+                    "source": "D:\\reserve_agent\\android\\projects\\sdxy\\lsposed-plugin\\app\\src\\main\\res\\values\\arrays.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "19",
+                        "endOffsets": "161"
+                    }
+                }
+            ]
+        }
+    ]
+}

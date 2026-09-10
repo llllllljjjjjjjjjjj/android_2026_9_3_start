@@ -1,0 +1,40 @@
+{
+ "eval_name": "risk-points-scan",
+ "configuration": "with_skill",
+ "pass_rate": 1.0,
+ "passed": 6,
+ "total": 6,
+ "expectations": [
+  {
+   "text": "C1 正确选工作流 D",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "C2 前置埋点专章",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "C3 知识库沉淀清单",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "C4 埋点实证发现",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "C5 配对关系表",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "C6 因果/待验证清单",
+   "passed": true,
+   "evidence": "命中"
+  }
+ ],
+ "chars": 3889
+}

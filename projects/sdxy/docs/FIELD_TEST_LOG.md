@@ -71,12 +71,16 @@ satoken     = 45a885be-f97a-489e-a114-7a0f3e032743
 - **风控真实且封号**，不是只扣 `validDistance`。数据必须一次成型、完全自洽。
 - **解封时间未知**：客户端代码与接口返回均无时长，服务端风控平台决定；无明确"解封"通道，仅申诉接口（针对记录无效，非功能封禁）。
 
-## 五、待办
+## 五、待办（静态分析已补齐上传格式，见 SUNSHINE_RUN_DATA_FORMAT.md）
 
-1. **修复步幅数据格式**（唯一明确报"请合规跑步"的字段），需逆向 `uploadStrideRecord` 的真实 body 结构。
-2. **换账号**（当前学号阳光跑已封禁）。
-3. **轨迹/步数/步幅/时间戳一次合规**：轨迹点格式、步数区间格式、步幅格式、timestamp 与跑步时长对齐。
-4. 复查 `finishSunRun_v2` 的完整必填字段（当前只验证到"开始跑"，结束字段尚未实测通过）。
+1. ~~修复步幅数据格式~~ ✅ 已静态逆清：`strideList` 是 `[{map}]` 外包数组（此前扁平结构 →「请合规跑步」根因）。
+2. ~~复查 finishSunRun_v2 完整字段~~ ✅ 已静态逆清：含 `runImgRecord`（MD5）+ `timestamp`，见 SUNSHINE_RUN_DATA_FORMAT.md §四。
+3. **换账号**（当前学号阳光跑已封禁）+ **换设备**（设备指纹关联）。
+4. 剩余 native 层待补（不做猜测，见 SUNSHINE_RUN_DATA_FORMAT.md §六）：
+   - ✅ ~~sign key 图片派生值~~ 已闭环：`bg_contact_list` 是 XML shape → decodeResource null → fallback `r01.e` = `F44B0282BEA83557`（sign key 与字段 key 值相同是 fallback 机制，非同一 key）。
+   - ❓ `K.b2s`（native，易盾 VMP）→ `runImgRecord` 图片派生值，静态不可还原。
+   - ❓ strideMap 内部 key（native 构造，Java 不可见）。
+   - ❓ DataComponent native 方法（L0/h1/z0 检测逻辑，易盾 VMP）。
 
 ## 六、产物索引
 
@@ -87,6 +91,7 @@ satoken     = 45a885be-f97a-489e-a114-7a0f3e032743
 | `scripts/simulate_sunshine_run.py` | 客户端（加密+签名+公共参数） |
 | `scripts/sdxy_run_simulator.py` | 轨迹/步数/步幅生成 + 上传 |
 | `scripts/sdxy_crypto.py` | AES/SHA256 算法 |
+| `lsposed-plugin/` | **LSPosed 只读采集插件**（真实跑步 hook K.b2s/strideMap/runImgRecord/signKey，见其 README） |
 | `artifacts/session.json` | 已提取登录态（当前账号已封禁） |
 | `docs/CHEAT_DETECTION.md` | 检测机制全景 |
 | `docs/REVERSE_REPORT.md` | 逆向报告 |

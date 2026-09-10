@@ -1,0 +1,7 @@
+com.app.compat.app-pngs-0 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\build\generated\res\pngs\debug
+com.app.compat.app-resValues-1 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\build\generated\res\resValues\debug
+com.app.compat.app-packageDebugResources-2 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.app.compat.app-packageDebugResources-3 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.app.compat.app-merged_res-4 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\build\intermediates\merged_res\debug
+com.app.compat.app-debug-5 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\debug\res
+com.app.compat.app-main-6 D:\reserve_agent\android\projects\sdxy\lsposed-plugin\app\src\main\res

@@ -8,3 +8,4 @@
 | dzdp | projects/dzdp.md | projects/dzdp/docs/risk-control-plan.md | Android | 方案已生成（签名/请求/解密/解析已破，列表接口待住宅IP验证） | 2026-08-30 |
 | dcy | projects/dcy.md | projects/dcy/docs/risk-control-plan.md | Android | 方案已生成（词书/单词接口已破，频控与IP维度待对拍） | 2026-08-31 |
 | sdxy | projects/sdxy.md | projects/sdxy/docs/risk-control-plan.md | Android | 方案已生成（签名已破，数据自洽策略待步幅格式补齐；实测触发账号级封禁+设备指纹关联） | 2026-09-04 |
+| dy | projects/dy.md | projects/dy/docs/risk-control-plan.md | Android | 实验阶段（搜索/视频/评论链路已通；完整签名头已抓取；响应体应用层加密未解） | 2026-09-10 |

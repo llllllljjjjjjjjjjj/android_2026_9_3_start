@@ -1,0 +1,6 @@
+904f8335b70ea42fe00070b1af107b8a6fadfcdc4697d990b64b4740922cde54  ecapture-v2.5.2-android-amd64.tar.gz
+3531f47f60a45c02662188fb151fa8bbf9c40e5c245ff293e5a50477b99df2d1  ecapture-v2.5.2-android-arm64.tar.gz
+96d960536a8bfba3cbd6218fa01358886a9dce744891a00dd0e323cd85f26038  ecapture-v2.5.2-linux-amd64.tar.gz
+fca78b5963be0a7e882181a92e23d9281b4db0ccedca949656b6cf8557709f99  ecapture-v2.5.2-linux-arm64.tar.gz
+90f270961bdbf809a42a1d7f6864ffd188a88ae0b92c524f9864a2feba729f88  ecapture_v2.5.2_linux_amd64.deb
+95e6d6f204987af98cfc567af10266c84136bdfdc89e185fc3cee56c613b0c98  ecapture_v2.5.2_linux_arm64.deb

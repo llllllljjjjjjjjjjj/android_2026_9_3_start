@@ -4,6 +4,18 @@
 
 本项目用于 Android APP 逆向工程分析，包括 APK 反编译、加固脱壳、协议签名逆向、动态调试等。
 
+## 范围与授权
+
+本仓库只做 Android APK/DEX/ART/JNI/SO、Android 网络协议和真机运行期分析。不引入 iOS/IPA/Mach-O/越狱、PE、通用 Web 或 CTF 工作流。
+
+仓库内样本、工具、项目目录、已声明真机（基线见下）及用户指定测试账号默认属于用户已授权的本地 Android 环境。对这些既定对象执行静态分析、低风险真机验证、MCP 回归和恢复操作时，不重复询问授权，也不泛化免责声明阻塞工作。只有以下情况重新确认范围：
+
+- 目标/设备/账号/网络系统扩展到仓库约定之外；
+- 要写真实全局配置、联系第三方、公开/推送或产生明显外部影响；
+- 用户选择会实质改变交付形态或高风险设备动作。
+
+授权默认不取消工程护栏：唯一 serial、写前备份、写后验证、失败恢复、防 PID 复用、超时隔离、无效请求止损和真实判官仍强制执行。
+
 ## 角色
 
 你是 Android 逆向工程专家。**真机优先**，**无 UI 优先**（自建 MCP 直打真机，避免截图点按）。能力按工序分工（对应 4 个 skill）：
@@ -95,7 +107,7 @@
 ```
 
 ## MCP 服务器（DSH mcp-client 插件）
-项目自带 5 个无 UI 逆向 MCP（位于 [android_mcp/](android_mcp/README.md)），**优先用 MCP 工具直接打真机 / Root / LSPosed / 算法助手 / Frida，避免截图点按式操作**。配置见 `android_mcp/mcp_config.example.json`，统一用 `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（自带，无需 MuMu 路径）。
+项目自带 5 个无 UI 逆向 MCP（位于 [android_mcp/](android_mcp/README.md)），**优先用 MCP 工具直接打真机 / Root / LSPosed / 算法助手 / Frida，避免截图点按式操作**。统一用 `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（自带，无需 MuMu 路径）。
 自建 MCP 通过 `@deepseek-ai/dsh-mcp-client` 插件接入，配置已合并进
 `$DSH_HOME/profiles/<name>/cordis.patch.yml`（生成器：`android_mcp/scripts/gen-mcp-config.py`）。
 工具注册名：`mcp__<serverName>__<tool>`。
@@ -132,6 +144,31 @@
 | 静态定位 + 算法假设 | protocol-signature-reverser | reverse-index-mcp + algo-lab-mcp |
 | 动态验证 / Frida 对抗 / SSL / SO | android-dynamic、protocol-signature-reverser | frida-orchestrator-mcp |
 
+> 真机基线：Pixel 4 (flame) `9C181EC3BF7E0D`（Android 10 / SDK 29 / arm64-v8a / Magisk + Zygisk / 魔改 florida-server 16.5.9）。自测：`android_mcp/tests/live_test_frida_orchestrator_mcp.py`（21 用例，需真机，最近未通过）+ 离线回归 `test_mcp_timeout_hardening.py` / `test_algorithm_aide_owner.py` / `test_root_push_owner_fallback.py` / `test_frida_ps_bridge_import.py` / `smoke_test_mcp.py`（无需设备）。
+
+## 逆向验收基准（全局唯一权威，替代历史 `.zcode/memory/reverse_principles.md`）
+
+本仓验收以本文件 + 各专项 skill 交付门为准，不再维护 `.zcode/memory/reverse_principles.md` 指针：
+
+- **开工六项**：目标能力 / 判官 / 交付形态 / 可证伪标准 / 止损线 / 真实样本（轻量问答口头「什么算找到」即可）。
+- **交付三级**：解析型（离线纯算，参数谱系零空洞 + ≥3 组**非样例**字节级一致；成熟确定性实现追加 100+ 增强回归）/ 绕过型（hook/会话/patch，明示与纯算边界）/ 止损型（在线兜底，明示 oracle 依赖与未解字段，**不称纯算**）。RSA/随机填充类验明文 / key 来源 / 结构长度 / 解密验签，不追密文字节。
+- **禁词（不单独充当业务成功）**：HTTP 200、JSON 可解析、索引命中、jadx 能打开、code=0。
+- **验证期纪律**：单设备单账号；同接口同错误**连续 3 次**停止同类请求、保存证据并归因。
+- **交付依赖显式化**：解析型/绕过型/止损型必须分开，真机/RPC/replay/oracle 依赖显式列出（止损型交付明示依赖、未解字段与生命周期，不称纯算）。
+- **脱壳验收**：必须先过 DEX/ELF 结构与 fresh JADX/反汇编；退出码、文件存在、文件名合规均不算成功。
+
+
+## 设备写入与恢复（全局护栏）
+
+设备/网络动作前先确认唯一 serial、包名、PID/ABI、目标路径与新输出目录；保存 proxy/NAT/forward、前台 App、Frida/Zygisk/LSPosed/AlgorithmAide/HMA 状态；Root 文件写入保存旧内容与 owner/mode/SELinux context，并明确恢复命令。写后读取验证；失败立即恢复并复核。
+
+MCP/执行器安全不变量（适用于所有 skill）：
+
+- 配置读取失败不得退化为空配置覆盖（宁可报错停机）；
+- 工具/服务超时不创建第二执行器绕过（如 server quarantine 时重启 MCP，不另起一条执行线抢跑）；
+- localhost HTTP probe 禁继承宿主代理，逐跳拒绝非 loopback 重定向；
+- 停止进程前核对 session/package/PID/start identity，禁止旧 PID 或 `pkill -f` 误杀；
+- 宿主临时 forward 使用 `--no-rebind`，结束按返回端口精确移除。
 
 ## 工具链
 | 工具 | 路径 | 用途 |

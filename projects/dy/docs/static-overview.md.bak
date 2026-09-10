@@ -1,0 +1,39 @@
+# dy 静态全貌（阶段报告 2026-09-06）
+
+## 目标
+抖音 com.ss.android.ugc.aweme 38.0.0 (380001)，APK SHA256 5B9C...42A67
+
+## 反编译产物
+- `decompiled/sources/` 504,699 个 .java（jadx 1.5.3 --no-res，3 组串行 14g 堆）
+- `decompiled/resources/`（空，--no-res）
+- 顶层包: android/androidx/anet(阿里组件)/bytedance/douyin/douyinkmp/okhttp3/retrofit2/tt_cnpa_sdk/X(主混淆桶)/defpackage 等
+- **业务代码主桶 = `X.*`**（R8 混淆，类名 X.xxxxx）+ `com.ss.android.ugc.aweme.*`（795 子包，宿主壳）
+
+## 入口链
+- `com.ss.android.ugc.aweme.app.host.AwemeHostApplication`（Application，777 行）→ 引 `AwemeApplicationImpl`（实际逻辑）
+- 启动初始化组件（manifest providers 已见）: AppInitProvider / TTMultiProvider / AGCInitializeProvider / bdturing InitProvider / AppLog / Npth(崩溃) / JatoNativeLoader(dex 优化) / TTWebSdk / PushImpl / DeviceRegisterManager(设备注册/令牌)
+- **Key: DeviceRegisterManager = 字节设备注册体系（device_id 签发，与后续签名/头强相关）**
+
+## 网络栈（so 层已证）
+- `libttboringssl.so` + `libsscronet.so`/`libsscronet-wrapper.so` → TTNet = Chromium Cronet + BoringSSL 定制
+- Java 侧 okhttp3/retrofit2 存在（部分业务/组件），但核心流量走 TTNet native
+- 含 `libdexvmp.so` → 部分核心类 VMP 化（静态反编译空方法，动态阶段需注意）
+- anet 顶层包（阿里组件，直播/电商模块用）
+
+## API 面
+- 文件名含 `*Api.java` 类 2,413 个（分布全树）——TTNet 服务接口定义（非 Retrofit 注解风格，多数走 TTNet 通道 API）
+- 具体接口/URL 面: 待 reverse_index 全文检索（构建中）或真机 eCapture 抓包
+
+## 签名相关（已知项，待精确定位）
+- 抖音现行签名体系（业界公开知识，版本内位置待证）:
+  - **x-argus / x-ladon**（请求签名,新版本由 libsscronet/ttnet 原生计算,Java 仅装配 header）
+  - x-gorgon（旧体系,38.x 可能已移除）
+  - 设备令牌: install_id/device_id 由 DeviceRegisterManager 签发
+- 已查证: 业务包文件名级无 argus/gorgon/ladon 类 → 签名计算在 **native**(libsscronet/ttboringssl)或混淆 X 桶内,需内容检索/动态定位
+
+## 下一步（按用户方向静态全貌）
+1. [进行中] reverse_index 全行索引（WAL 2.4GB，50 万文件全量入库，剩 ~20-40min）→ 完成后 search_code 定位:
+   - "X-Argus"/"x-argus" header 装配点 → 调用链
+   - TTNet 服务接口 URL/API 锚点 → find_endpoint
+2. 设备令牌链: DeviceRegisterManager → install_id 获取/刷新接口
+3. 若需签名还原 → protocol-signature-reverser（native 侧 libsscronet,策略:动态 Hook + 真机样本）

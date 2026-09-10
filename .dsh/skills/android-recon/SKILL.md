@@ -1,19 +1,20 @@
 ---
 name: android-recon
-description: Android 逆向「侦察与静态分析」总入口。负责拿到 APK 后的第一阶段：设备连接（真机优先 Pixel 4 / MuMu fallback）、证书持久化（含 Android 14 APEX CA）、jadx/apktool 反编译、API/调用链提取（接 reverse_index 索引）、抓包治理（代理端口校准/SSL Pinning 初判/r0capture/proxy 残留/机场上游链/QUIC/eCapture/fp_stack 指纹传输）、APK malformation 修复，并把任务路由到脱壳/动态/签名三个专项 skill。触发词：APK反编译、提取API、调用链追踪、jadx、apktool、连真机、连模拟器、MuMu、证书持久化、抓包、抓不到包、真机没网、代理残留、机场、QUIC、fp_stack、eCapture、malformation、Android逆向入口。
+description: Android 逆向「侦察与静态分析」总入口。负责拿到 APK 后的第一阶段：设备连接（真机优先 Pixel 4 / MuMu fallback）、证书持久化（含 Android 10 APEX CA）、jadx/apktool 反编译、API/调用链提取（接 reverse_index 索引）、抓包治理（代理端口校准/SSL Pinning 初判/r0capture/proxy 残留/机场上游链/QUIC/eCapture/fp_stack 指纹传输）、APK malformation 修复，并把任务路由到脱壳/动态/签名三个专项 skill。
 whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/模拟器、证书持久化、抓包、QUIC、malformation 或任何 Android 逆向入口任务时
 ---
 
 # Android Recon — 侦察与静态分析（逆向总入口）
 
-## 角色与边界
+## 任务与边界
 
-你是 Android 逆向的**第一道工序**。本 skill **只做**：设备/环境就绪、静态反编译与 API 提取、抓包通路打通、任务分诊。
+Android 逆向的**第一道工序**。本 skill **只做**：设备/环境就绪、静态反编译与 API 提取、抓包通路打通、任务分诊。
 
-> 🔴 **边界（不要越界）**：
-> - 遇到「壳」→ 交给 **android-unpack**
-> - 需要 Frida Hook / 反检测 / SSL 强绕过 / SO 分析 → 交给 **android-dynamic**
-> - 需要还原签名算法 / 纯协议 / unidbg → 交给 **protocol-signature-reverser**
+- 空壳 DEX、VDEX、运行期解密 DEX/SO → `android-unpack`
+- Frida、反检测、SSL 强绕过、native 运行期 trace → `android-dynamic`
+- 签名/加密判因、unidbg/Unicorn、纯算或 oracle 交付 → `protocol-signature-reverser`
+- **不引入 iOS/IPA/Mach-O/越狱、PE 或通用 CTF 流程**。
+- 本仓库声明授权的设备/环境（见 AGENTS.md 真机基线）默认不重复询问授权；只有目标/设备/账号/系统扩展到约定之外时才重新确认范围。
 
 > ⏺️ **全程风控记录**：风控记录开关 YES 时（AGENTS.md），本 skill 执行全程遇到的风控素材随手记到 `projects/<target>/docs/risk-observations.md`——频控/403/429/头与参数完整性/指纹上报/埋点链路 + **正常基线（某节奏、某批量无风控）** + 任何不起眼但对风控对抗有用的点（格式见红线 10）。
 
@@ -33,7 +34,7 @@ whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/
 > - 连真机 / 拉 APK / 查组件 / Root 数据：`frida_orchestrator`（`adb_devices`、`adb_connect`、`bootstrap_device_toolchain`、`pull_package_apk`、`package_components`、`root_read_file`、`sqlite_query_root`）。
 > - 反编译到 `projects/<target>/decompiled/` 后 → `reverse_index` `index_project` 建索引 → `find_endpoint`/`find_symbol`/`search_strings`/`list_suspicious_sign_methods`（阶段 2）。
 > - 抓包代理设/清：`android_proxy_set` / `android_proxy_clear`（**抓完务必 clear，否则 App 断网**，见 §3.2）。
-> - 攻坚开工先过 ：`project/<target>/docs/`§1 六项（目标/判官/形态/可证伪/止损/样本）；轻量问答可口头定一句「什么算找到」
+> - 攻坚开工先过 ：`project/<target>/docs/`§1 六项（目标/判官/形态/可证伪/止损/样本）；轻量问答可口头定一句「什么算找到」。
 ---
 
 
@@ -43,16 +44,18 @@ whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/
 |----|-----|------|
 | 设备 | **Pixel 4 (flame)** | 主力真机 |
 | Serial | `9C181EC3BF7E0D` | `adb devices` 确认 |
-| 系统 | Android 10 / SDK 29 / arm64-v8a | kernel 5.10.189 |
+| 系统 | Android 10 / SDK 29 / arm64-v8a | kernel **4.14.170**（实测；<5.5 则 eCapture/eBPF uprobe 不可用） |
 | SELinux | Enforcing | — |
 | Root | **Magisk** | `su`@`/system/bin/su`，toolchain `/data/adb/magisk/` |
 | Zygisk | Zygisk | 配合 ZygiskFrida |
 | ADB | bundled `android_mcp\toolchain\bin\windows\platform-tools\adb.exe` | 统一入口，MuMu 仅 fallback |
-| Frida 主 server | `/data/local/tmp/florida-server` | 16.5.9（Florida 魔改免杀，自报 16.5.10-dev.0） |
-| Frida 官方回退 | `/data/local/tmp/f1657` | 16.5.7（官方，重命名运行） |
-| Frida 备 server | `/data/local/tmp/frida-server` | 16.7.19（官方） |
+| Frida 主 server | `/data/local/tmp/florida-server` | 16.5.9（Florida 魔改免杀，自报 16.5.10-dev.0）检测可以改端口启动 |
+| Frida 备 server | `/data/local/tmp/f1657` | 16.7.19（官方） |
 | 设备自带工具 | tcpdump / iptables / ip / ss / nc / busybox | **有** |
 | 设备缺工具 | strace / curl / wget | **无**；验证网络用 `dumpsys` |
+
+> 🔴 **固定事实 / 环境参数唯一源 = AGENTS.md**：设备 serial / frida-server 与 venv 版本 / ADB 路径属**环境参数，不装进本 skill 硬编码**，唯一权威在 AGENTS.md；本表仅当前环境速查。多设备在线时所有设备命令显式 `-s <serial>`，不猜 serial。输出必进 `projects/<target>/` 的 `apk/ decompiled/ capture/ artifacts/ docs/`，目录一律 ASCII，**已有非空输出不覆盖**（新建时间戳子目录）。
+> 🔴 **写前基线快照（全局护栏见 AGENTS.md「设备写入与恢复」）**：凡将改网络/设备态，先记当前 `http_proxy`、NAT 规则、forward、**前台 App / Frida / Zygisk / LSPosed / AlgorithmAide / HMA 状态**、CA 文件名/hash；Root 文件写入保存旧内容 + owner/mode/SELinux context，明确恢复命令。多设备在线、设备 offline、包名不确定、恢复基线缺失或输出目录将被覆盖时——**停止写操作**。停止进程前核对 session/package/PID，禁用旧 PID 或 `pkill -f` 误杀。逆向验收全局基准见 `AGENTS.md`（不再用 `.zcode/memory/reverse_principles.md`）。
 
 ## 工具速查
 
@@ -61,10 +64,9 @@ whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/
 | jadx | `tools\jadx\bin\jadx.bat` | DEX/APK → Java 源码 |
 | apktool | `tools\apktool\apktool.bat` 或 `java -jar tools\apktool\apktool_3.0.3.jar` | 解包/重打包、Smali |
 | ADB | `android_mcp\toolchain\bin\windows\platform-tools\adb.exe` | 设备通信（MuMu 路径仅 fallback） |
-| Frida | venv `.venv-frida-16.5.7`（配 florida-server）/ PC `frida` 16.7.19（配 frida-server） | r0capture / frida-ps |
 | objection | 系统 PATH | SSL pinning 一键初判 |
 | mitmproxy / Reqable | 系统 PATH；MCP=`reqable` / `charles` | 抓包（弱 pinning；强 pinning 用 mitmproxy 透明） |
-| eCapture | 真机 `/data/local/tmp/ecapture` | 内核 TLS 明文（代理检测/国密/QUIC 降级） |
+| eCapture | 真机 `/data/local/tmp/ecapture` | eBPF 免 CA 抓 TLS/国密明文；绕代理检测；QUIC 明文捕获（需 root） |
 | fp_stack | `projects/fp_stack/` | 真机 CH/JA3/JA4 复刻 + 私有 QUIC 版本拨号（传输墙先过这里） |
 | MoveCertificate | 真机 App 1.5.7 | user→system 证书；A14 真路径见 §1.3 |
 | Malfixer | `apktool d -f` 复现崩溃定位 / 开源 malfixer | 修复 malformed APK |
@@ -76,156 +78,60 @@ whenToUse: 用户提到 APK 反编译、提取 API、jadx、apktool、连真机/
 
 # §1 环境与设备
 
+> 详细连接命令、MuMu VM-index 陷阱、证书持久化全流程、Frida 版本矩阵见 **[references/device-setup.md](references/device-setup.md)**（连设备/装证书/版本对齐时读）。下面只留每次必看的要点。
+
 ## 1.0 反编译前先排除 malformation（2026 新趋势）
 
-jadx 打不开 ≠ 一定加固。3000+ 样本用 malformation（同名目录/文件、损坏 AXML、错误 CRC）使工具崩溃。
-
-```powershell
-# jadx 报错先尝试修复，再判断是否真加固；无 malfixer 时用 apktool -f 复现崩溃定位 malformation
-apktool d -f target.apk -o apk_unpacked   # 报哪个文件错 → 即 malformation 点
-```
+jadx 打不开 ≠ 一定加固——可能是 malformation（同名目录/损坏 AXML/错误 CRC）使工具崩溃。先用 `apktool d -f target.apk` 复现定位，再判断是否真加固。完整命令见 device-setup.md §1.0。
 
 ## 1.1 真机连接（Pixel 4，优先）
 
-```powershell
-$ADB="android_mcp\toolchain\bin\windows\platform-tools\adb.exe"
-& $ADB devices                                   # 确认 9C181EC3BF7E0D device
-& $ADB shell "su -c '/data/local/tmp/florida-server -D &'"   # 起魔改 frida（Florida 16.5.9，当前主力，root）
-# 官方回退（16.5.7）：& $ADB shell "su -c '/data/local/tmp/f1657 -D &'"
-& $ADB forward tcp:27042 tcp:27042
-.\.venv-frida-16.5.7\Scripts\frida-ps.exe -H 127.0.0.1:27042   # 验证（客户端 16.5.x 配 16.5.x server）
-```
-
-> **MCP 一键**：`frida_orchestrator` → `adb_devices` → `bootstrap_device_toolchain`（装算法助手 + 推/起 frida-server）。优先 MCP，避免截图点按。
+先 `adb devices` 确认 serial `9C181EC3BF7E0D`；root 起魔改 florida-server（`-D` 后台）+ `adb forward tcp:27042`；客户端用 `.venv-frida-16.5.7`（16.5.x 对齐）。优先 MCP `bootstrap_device_toolchain`。完整命令见 device-setup.md §1.1。
 
 ## 1.2 MuMu 连接（fallback，VM index 陷阱）
 
-MuMu 的 VM index **不一定是 0**，必须逐个确认。仅在无真机时用。
-
-```powershell
-& "<MuMuManager.exe>" adb -v 4            # 逐个 index 试 0/1/2/3/4 查 ADB 端口
-& "<MuMu>\nx_main\adb.exe" connect 192.168.1.16:5555   # 典型端口
-```
-
-| 触发条件 | 一线修复 | 兜底 |
-|---------|---------|------|
-| `adb connect` 连不上 | `MuMuManager.exe adb -v <0..4>` 逐个查端口 | `info -v <index>` 未启动先 `control -v <index> launch` |
-| `frida-ps` 无输出 | 确认 `-D` 后台启动 + 端口转发 | `-H 127.0.0.1:27042` |
+仅在无真机时用；MuMu VM index 不一定是 0，必须 `MuMuManager adb -v 0..4` 逐个查端口。详见 device-setup.md §1.2。
 
 ## 1.3 证书持久化
 
-Reqable/Charles 大面积 **SSL handshake failure** = CA 没进系统库。A14 真路径是 `/apex/com.android.conscrypt/cacerts/`（旧 `/system/etc/security/cacerts/` 多半 ro 无效）。
-
-
-**真机（Magisk，优先）**：`MoveCertificate` App 一键把 user 证书提到 system，或 systemless cacerts 覆盖（重启保留）。
-1. PC 取 CA：Reqable=`%AppData%/Roaming/Reqable/certificate/reqable-root.crt`；`openssl x509 -inform PEM -subject_hash_old` → 文件名 `<hash>.0`（本机 Reqable 曾为 `cfc5ad71.0`）。
-2. 推系统库（MoveCertificate 已把 APEX cacerts 做成 rw）：MCP `root_push_file` → `/apex/com.android.conscrypt/cacerts/<hash>.0`（644, root:root）。
-3. 再镜像 `/data/misc/user/0/cacerts-added/<hash>.0`（644, system:system）→ 重启后 MoveCertificate 会重新提升，持久化。
-4. `force-stop` 目标 App 再开，让它重读信任库。
-
-> 🔴 **禁止 Git Bash 直 `adb push /data/...`**：MSYS 会把远程 `/data` 转成 `C:/Program Files/Git/data/...`；Magisk `su -c '多行'` 会被拆断。一律用 `frida_orchestrator` 的 `root_push_file` / `adb_root_shell`。
-
-**MuMu（/system 只读，fallback）**：remount 常失败 → tmpfs 覆盖（重启需重做）：
-
-```bash
-HASH=$(openssl x509 -inform PEM -subject_hash_old -in cert.pem | head -1)
-adb push cert.pem /sdcard/$HASH.0
-adb shell "su -c 'cp /sdcard/$HASH.0 /system/etc/security/cacerts/ && chmod 644 /system/etc/security/cacerts/$HASH.0'"
-```
+系统 CA 路径按 Android 代次区分：**A14+** 用 `/apex/com.android.conscrypt/cacerts/`；**本机 A10** 用 `/system/etc/security/cacerts/`（Magisk 只读 tmpfs，直 cp 不持久）。本机正解 = **`movecert` Magisk 模块**（推到 `/data/misc/user/0/cacerts-added/<hash>.0` 后重启自动搬进系统库）。🔴 禁止 Git Bash 直 `adb push /data/...`（MSYS 毁路径，用 MCP `root_push_file`）。完整步骤与 MuMu tmpfs fallback 见 device-setup.md §1.3。
 
 ## 1.4 Frida 版本矩阵（写脚本/抓包前必读）
 
-| server | 版本 | PC 客户端 | 适用 |
-|--------|------|-----------|------|
-| `/data/local/tmp/florida-server` | 16.5.9（Florida 魔改免杀，自报 16.5.10-dev.0） | venv `.venv-frida-16.5.7`（**16.5.x↔16.5.x**） | **主力**，改名裸启动 |
-| `/data/local/tmp/f1657` | 16.5.7（官方） | venv `.venv-frida-16.5.7`（**16.5.x↔16.5.x**） | 官方回退 |
-| `/data/local/tmp/frida-server` | 16.7.19（官方） | PC `frida` 16.7.19 | 普通目标 |
-
-> 🔴 **17.x 在硬目标上全挂**（XHS 所有模式秒退）；16.7.19 / 16.5.x 才是工作线。客户端版本必须与所选 server 对齐。
+**16.5.x 客户端 ↔ 16.5.x server**：主力 florida-server 16.5.9 / 回退 f1657 16.5.7，配 `.venv-frida-16.5.7`；16.7.19 仅普通目标。🔴 **17.x 在硬目标全挂**（XHS 秒退）。完整矩阵见 device-setup.md §1.4。
 
 ---
 
 # §2 静态分析
 
+> 反编译命令、网络栈识别全表、reverse_index 检索、grep 锚点、API 文档格式、静态失败兜底见 **[references/static-analysis.md](references/static-analysis.md)**。
+
 ## 2.1 反编译
 
-```powershell
-tools\jadx\bin\jadx.bat --deobf --show-bad-code -d <out> <target.apk>   # 推荐
-tools\jadx\bin\jadx.bat -Xmx4g --deobf -d <out> <target.apk>            # 大 APK
-tools\jadx\bin\jadx.bat --no-res -d <out> <target.apk>                  # 仅代码更快
-java -jar tools\apktool\apktool_3.0.3.jar d <target.apk> -o apk_unpacked -f           # Smali 兜底
-```
-
-> 🔁 **加壳判断**：jadx 打开后只有几十 KB 空壳 `classes.dex`、类极少 → 转 **android-unpack** 脱壳，脱完回到本节。
+首选 `jadx --deobf --show-bad-code`；大 APK 加 `-Xmx4g`；只要代码加 `--no-res`；Smali 兜底用 apktool。命令见 static-analysis.md §2.1。**只有几十 KB 空壳 dex → 转 android-unpack 脱壳后回本层。**
 
 ## 2.2 识别网络栈（⚠️ 先做这步，决定后续 Hook 方向 / 抓包方案）
 
-```
-okhttp3 / OkHttpClient            → 标准 OkHttp（Java Hook 可行，除非有 ART-hook 检测）
-cronet / CronetEngine / libcronet → Chromium 栈（XHS/Keeta）→ OkHttp Hook 无效
-anet / ANetworkCallImpl / libtnet → 阿里 ANet（Ele.me/淘宝闪购/盒马）→ 不走系统代理/系统 libssl
-Mtop / MtopBusiness               → MTOP 协议（签名强校验，见 protocol skill）
-libxquic.so / xqc_*               → QUIC 传输（阿里系核心流量）→ 系统代理与 libssl 都旁路
-NAL_session_SubmitRequest         → 盒马真实入口（`xqc_h3_send_*` 常 0 触发，别死磕）
-TTNet / libttboringssl            → 抖音；代理即断网 → eCapture 零注入（§3.1）
-NVNetwork / Shark / libcronet     → 美团系（Keeta/猫眼）私有隧道；裸 HTTPS 边缘常 403
-libmtguard.so / mtgsig            → 美团设备令牌（请求无关，见 protocol skill）
-retrofit2 / Retrofit              → 标准（注解判加密层，见 protocol skill）
-dart:io / HttpClient              → Flutter（走原生 libflutter.so）
-```
-
-> ⚠️ **阿里系（ANet+QUIC）警示**：核心 MTOP 走 ANet→`libtnet.so`(内部 BoringSSL)+`libxquic.so`(QUIC)，**完全旁路系统代理与系统 libssl**。表现：Reqable 抓 6 万条请求、0 条 mtop。抓包方案见 §3.4。
+先判定网络栈再动手，核心分流：标准 **OkHttp**（Java Hook 可行）；**Cronet/ANet/TTNet/NV-Shark/QUIC**（OkHttp Hook 无效，系统代理被旁路）；**MTOP**（签名强校验交 protocol）；**Flutter**（走 libflutter.so）。全量识别表与阿里系 ANet+QUIC 警示见 static-analysis.md §2.2。
 
 ## 2.3 结构与调用链（优先用 reverse_index）
 
-```
-反编译产物 → projects/<target>/decompiled/
-   │
-   ├─ reverse_index index_project            # 建索引（首选，秒级全局检索）
-   │     ├─ find_endpoint        找 URL/Retrofit/OkHttp 接口锚点
-   │     ├─ find_symbol          找 类/方法符号
-   │     ├─ search_strings       找字符串字面量
-   │     └─ list_suspicious_sign_methods  找疑似签名/加密/token 逻辑
-   └─ jadx grep（兜底，索引未覆盖时手工）
-```
-
-- Manifest：`package_components`（MCP）或 `Select-String AndroidManifest.xml -Pattern "android:name"`，关注 Launcher Activity / Application / 网络权限。
-- 架构：`*Presenter`→MVP；`*ViewModel`+`LiveData/StateFlow`→MVVM；`domain/data/presentation`→Clean。
-- 混淆导航：ProGuard/R8 **不改** 字符串字面量、Retrofit 注解、框架类名 → 从字符串/注解搜起，反向追调用方。
-
-```
-# API 锚点（index 未覆盖时手工 grep）
-@GET|@POST|@PUT|@DELETE|@PATCH    @Query|@Path|@Body|@Field|@Header
-Request\.Builder|\.url\(|Interceptor|addInterceptor
-https?://[^"]*    api[_-]?key|secret|token|bearer    BASE_URL|API_URL|ENDPOINT
-extends Application|onCreate|extends ViewModel|@Module|@Provides|@Inject
-```
-
-> 📝 **记录前**：风控记录 YES 时，把本次抓包/静态分析得到的**风控对抗素材**记到 `projects/<target>/docs/risk-observations.md`：接口频控表现（请求间隔/批量大小/限流阈值）、403/429 出现时的接口与 IP 上下文、全套请求头与参数完整性、指纹上报接口、埋点链路；**以及清单外任何你认为对抗风控可能用得上的点（哪怕不起眼）**（格式见红线 10）。
+反编译产物落 `projects/<target>/decompiled/` → `reverse_index index_project` 建索引 → `find_endpoint`/`find_symbol`/`search_strings`/`list_suspicious_sign_methods`；索引未覆盖再手工 jadx grep。混淆下从字符串字面量/Retrofit 注解/框架类名搜起（R8 不改这些）。详见 static-analysis.md §2.3。
 
 ## 2.4 API 文档格式
 
-```markdown
-### `METHOD /path`
-- 源文件: com.example.api.ApiService (ApiService.java:42)
-- 完整URL / 参数 / 请求头 / 请求体 / 响应
-- 调用链: LoginActivity → LoginViewModel → UserRepository → ApiService
-```
+每个接口记录 `METHOD /path`、源文件:行号、完整 URL/参数/头/体/响应、调用链。模板见 static-analysis.md §2.4。
 
 ## 2.5 静态失败处理
 
-| 触发条件 | 一线修复 | 兜底 |
-|---------|---------|------|
-| jadx 报错/类残缺 | `--show-bad-code` / `-Xmx4g` | 转 apktool Smali 手工 |
-| 只出空壳 dex | 确认加固 → android-unpack | 脱壳后回 §2 |
-| 搜不到 URL/接口 | URL 被加密/拼接 → 搜 `StringBuilder`/Base64/解密函数 | 转 android-dynamic 运行期 Hook |
-| 关键逻辑在 native | 定位 `System.loadLibrary` 的 so | 转 android-dynamic §SO 分析 |
-| 反射/动态加载断链 | 搜 `Class.forName`/`getMethod`/`DexClassLoader` | 转 android-dynamic Hook 反射点 |
+空壳 dex→android-unpack；URL 搜不到（加密/拼接）或关键逻辑在 native / 反射断链 → android-dynamic 运行期 Hook。完整兜底表见 static-analysis.md §2.5。
 
 ---
 
 # §3 抓包治理
 
+> 各方案完整操作（mitmproxy 透明命令、ANet/QUIC Hook、机场共存、fp_stack 细节）见 **[references/traffic-capture.md](references/traffic-capture.md)**。下表是每次先看的速查决策。
+> 写代理前先确认真实监听端口和 PC 可达地址；Reqable/Charles 使用 OneLite 时，上游链为 `127.0.0.1:7892`。抓包结束必须精确恢复：
 | 触发条件 | 一线修复 | 兜底 |
 |---------|---------|------|
 | 抓不到任何包 | **核对代理真实监听端口**（显示端口常与实际不符，如 Reqable 实际 9000） | `netstat -ano` 确认端口 → `android_proxy_set <IP> <真实端口>` |
@@ -233,93 +139,47 @@ extends Application|onCreate|extends ViewModel|@Module|@Provides|@Inject
 | App 不走系统代理 | **r0capture**（socket 层通杀）：`frida -U -f <包名> -l r0capture.js` | ANet/QUIC → §3.4 libxquic hook |
 | **真机突然「没网」（底层 ping/DNS 通）** | **§3.2 proxy 残留排查**（最高频坑） | — |
 | 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy） |
-| PC 开抓包后机场断 / 出网失败 | **§3.5 机场上游链**（Charles/Reqable 抢系统代理冲掉 OneLite:7892） | OneLite 切 TUN |
-| 高频请求触发风控 | session 限频 + 轮转 + 用非作者小号 | 切工具（Reqable→mitmproxy）；**禁刷无效签名** |
-
 ## 3.1 抓包方案选择器
 
-```
-弱/无 pinning        → Reqable + TrustMeAlready（系统代理+系统证书）
-标准 OkHttp pinning  → objection sslpinning disable / JustTrustMe(LSPosed)
-强 pinning(XHS 类)   → §3.3 mitmproxy 透明 + iptables REDIRECT（系统代理被拒时）
-不走系统代理         → r0capture（socket hook）
-ANet/QUIC(阿里系)    → §3.4 Hook 真实入口（盒马=NAL，不是 xqc_h3_send_*）
-代理检测/配证书没网  → ecapture（eBPF，内核 TLS 抓明文，不走代理不碰证书）
-抖音/代理即断网      → eCapture text --hex 零注入；uid 阻 UDP/443 可逼 QUIC 降 TCP
-美团 NV/Shark        → eCapture + attach 解密桥（猫眼 `IIVTQYOSF`；Keeta `d0.result()`）；裸 HTTPS 边缘常 403
-传输指纹/私有 QUIC   → §3.6 fp_stack（先过传输墙，再谈签名）
-```
+弱 pinning→Reqable+TMA；标准 OkHttp→objection/JustTrustMe；强 pinning(XHS)→§3.3 mitmproxy 透明；不走代理→r0capture；ANet/QUIC→§3.4；代理检测/配证书没网/抖音代理即断→eCapture(eBPF 零注入)；美团 NV/Shark→eCapture+attach 解密桥；传输指纹/私有 QUIC→§3.6 fp_stack。完整选择器见 traffic-capture.md §3.1。
 
 ## 3.2 真机「没网」= proxy/iptables 残留（最高频坑）
 
-抓包工作会改全局网络配置（`android_proxy_set`、mitmproxy 透明 + iptables）；忘了清 → App 流量倒进死端口 = **表现为没网，但 ping/DNS 仍通**，极易误判为「网络问题」。按序排查：
-
-```bash
-adb shell settings get global http_proxy          # ① 最常见元凶；死端口=没网
-adb shell su -c "settings put global http_proxy :0"   # 清（或 MCP android_proxy_clear）
-adb shell su -c "iptables -t nat -L -n"           # ② 查 REDIRECT/DNAT/8080/8888 透明代理残留
-adb shell su -c "ip rule"                          # ③ 策略路由残留
-adb shell settings get global airplane_mode_on     # ④ 飞行/wifi
-adb shell "ip route get 8.8.8.8; ping -c1 8.8.8.8" # ⑤ 链路层
-```
-
-> ✅ **验证用系统判定**（设备无 curl）：`adb shell dumpsys connectivity | grep VALIDATED`。
-> ⚠️ 实验室「域名→192.168.2.1」是假设，真机实际在 192.168.1.x 网段；`ping 192.168.2.1` 失败属正常。
+抓包改了全局代理/iptables，没清就表现为「没网但 ping/DNS 通」。按序查 `settings get global http_proxy`（死端口即元凶，`android_proxy_clear` 清）→ nat iptables 残留 → ip rule → 飞行/wifi → 链路层；用 `dumpsys connectivity | grep VALIDATED` 判定。完整命令见 traffic-capture.md §3.2。
 
 ## 3.3 强 pinning：mitmproxy 透明 + iptables REDIRECT
 
-系统/WiFi 代理 + 系统证书被强 pinning 拒（XHS 类）→ 唯一可行是透明模式 + 设备侧 iptables 把出站重定向到 mitmproxy 端口（ADB 隧道，设备 WiFi 仍可用）。**仅对强 pinning 用**；普通 App 仍先 Reqable+TM。
+系统代理+系统证书被强 pinning 拒时唯一可行：透明模式 + 设备侧 iptables REDIRECT 到 mitmproxy（ADB 隧道，设备 WiFi 仍可用）。仅强 pinning 用。详见 traffic-capture.md §3.3。
 
 ## 3.4 ANet/QUIC（阿里系）：Hook libxquic 拿明文
 
-核心 MTOP 走 ANet→QUIC，旁路系统代理与系统 libssl（Reqable 抓 6 万条 0 mtop）。真传输 = `libxquic.so`(QUIC) + `libtb_ssl.so`(BoringSSL，符号带 `tb_` 前缀)。
+核心 MTOP 走 ANet→`libtnet.so`(内部 BoringSSL)+`libxquic.so`(QUIC)，**旁路系统代理与 libssl**（Reqable 抓 6 万条 0 mtop）。Hook `xqc_h3_request_send_headers/send_body` 拿加密前明文；**盒马真实入口是 NAL_session_SubmitRequest**（`xqc_h3_send_*` 常 0 触发）；libxquic 后加载须 re-arm。纯 native 不触发 quicksparrow。详见 traffic-capture.md §3.4。
 
-```
-Hook libxquic 的 xqc_h3_request_send_headers / xqc_h3_request_send_body  → 加密前明文 header+body
-盒马真实入口 = NAL_session_SubmitRequest（xqc_h3_send_* 常 0 触发，别当没流量）
-
-```
-- 纯 native，**不触发 quicksparrow 的 ART-hook 检测**。
-- ⚠️ libxquic **后加载**（spawn 冷启后才映射）→ 必须 load 后 re-arm，不能只在 spawn 时挂。
-- 协议形状（自由复用）：`POST https://waimai-guide.ele.me/gw/{api}/{ver}/`，body `data=<urlencoded json>&type=originaljson`，appKey `24895413`；server 校验 `md5(raw body)`，body 可自由构造，优先 POST-native 接口（GET-native 会重编码 query 破签名）。
-- 阿里 xquic 私有版本 `0xff00001d` = draft-29（salt 必须取 xquic 源码，网上 16B 残值是假的）；美团 MQUIC `0xd4000400` = 私有版本号 + 标准 v1 salt。解密/拨号见 §3.6。
-
-> 🔑 **F-001 铁律**：HTTP 200 ≠ 业务成功。上报类接口完工必须追问「服务端计数真的增加了吗？」（XHS 实测 code=0 仅 fire-and-forget，真账号校验另算）。
-
----
 ## 3.5 机场与抓包共存（OneLite :7892）
 
-PC 常驻一梯云 **OneLite**（`127.0.0.1:7892`）。Charles(8888)/Reqable(9000) 都抢 **Windows 系统代理**，后起者覆盖 → 抓包工具直连出网 = 机场被「断」。
-
-**正解 A（首选）**：抓包工具设**上游代理链**到 `127.0.0.1:7892`。
-- Charles：`Proxy → External Proxy Settings` → HTTP & Secure 都填 127.0.0.1:7892
-- Reqable：设置 → 网络 → 上游/外部代理 → `127.0.0.1:7892`
-
-**正解 B**：OneLite 切 TUN（不动系统代理）。TUN 与抓包环路则回退 A。
-
-手机抓包：WiFi 代理指 PC 的 Charles/Reqable，**不要**手机侧再叠机场（双重代理会环）。抓完设备侧必须 `android_proxy_clear`（§3.2）。
+Charles(8888)/Reqable(9000) 抢 Windows 系统代理会冲掉机场 OneLite:7892。正解：抓包工具设**上游代理链**到 `127.0.0.1:7892`（首选），或 OneLite 切 TUN；手机侧不要再叠机场。详见 traffic-capture.md §3.5。
 
 ## 3.6 fp_stack：指纹级传输（先过传输墙）
 
-签名过了但裸 `requests`/`curl` 403、QUIC 协商不上、JA3 被拒 → **缺口在传输，不在算法**。入口 `projects/fp_stack/`（`fpstack_client.py` / `replay.signed_fetch`）。
-
-铁律：**指纹一律真机真实 CH/JA3/JA4**，禁止合成生产档案。
-
-已打通（2026-08）：
-- H1 手写保序 / H2 Akamai 全控面 / H3 + QUIC 内 CH 级 spec 注入
-- 淘宝 ANet/xquic `0xff00001d`=draft-29；美团 MQUIC `0xd4000400`（v1 salt）
-- 真网：waimai-guide draft-29 → 网关 `ILEGAL_SIGN`（传输/协议/格式三层已过，剩 SF-013）
-- 盒马搜索 / 猫眼 yanchu：真机 Meituan CH + Kernel H1 打通公网 HTTPS（非 NV/Shark）
-
-`x-pv` 真机是 `6.3`（不是 `m-pv`）。推导失败必须显性化，禁止静默默认 QUIC v1。
+签名过了但裸 requests/curl 403、QUIC 协商不上、JA3 被拒 → 缺口在传输不在算法。入口 `projects/fp_stack/`；铁律**指纹一律真机真实 CH/JA3/JA4，禁止合成生产档案**；推导失败必须显性化，禁止静默默认 QUIC v1。已打通清单与私有版本号见 traffic-capture.md §3.6。
 
 ---
+
+# 失败分支
+| 触发 | 一线处理 | 仍失败 |
+|---|---|---|
+| jadx 类残缺 | `--show-bad-code`、增加堆、核对 split APK | apktool/smali；若是空壳转 unpack |
+| URL/接口搜不到 | 搜字符串拼接、Base64、解密器、request builder | 转 dynamic 捕获运行期参数 |
+| 关键逻辑进入 JNI/SO | 保存 Java→JNI 边界、so hash/ABI | 转 dynamic/protocol，不在 Java 层死磕 |
+| 抓不到核心包 | 复核监听端口、CA、目标网络栈 | native/QUIC 转 dynamic；传输指纹转 fp_stack |
+| 原版 App 与自建请求表现不同 | 先做同环境、同流量形状与传输指纹对照 | 再交 protocol 判定签名/会话缺口 |
+
 
 # §4 工具黑名单（实测不可用，按 App/版本复核，勿一刀切）
 
 | 工具 | 失败场景 | 原因 / 改用 |
 |------|---------|------------|
-| 算法助手 v2.1.2 旧包 | Android 14 「系统服务未启动」 | 用 MCP `bootstrap_device_toolchain` 装 toolchain 自带 1.0.9；配置属主 MCP 已自动 `system:system`（2026-08-18 修，不用再手动 chown；存量 root:root 才需 `chown -R`） |
+| 算法助手 v2.1.2 旧包 | Android 10 「系统服务未启动」 | 用 MCP `bootstrap_device_toolchain` 装 toolchain 自带 1.0.9；配置属主 MCP 已自动 `system:system`（2026-08-18 修，不用再手动 chown；存量 root:root 才需 `chown -R`） |
 | Git Bash 直 adb | 推 `/data`/`/apex` | MSYS 毁路径 → MCP `root_push_file` |
 | PC frida 17.x | 连 new-server 16.5.8-dev | 协议不兼容 → 只用 `.venv-frida-16.5.7` |
 | Reqable + TrustMeAlready | 强 SSL pinning(XHS 类) | 绕不过 → §3.3 mitmproxy 透明 |
@@ -338,6 +198,9 @@ PC 常驻一梯云 **OneLite**（`127.0.0.1:7892`）。Charles(8888)/Reqable(900
 | QUIC 私有版本 / JA3 墙 / 裸请求 403 | **先 §3.6 fp_stack**，再交 signature | 真机 pcap + 档案名 |
 
 ---
+# 交付
+交付 `projects/<target>/README.md` 或 `docs/` 记录：样本与工具版本、组件/API/调用链证据、网络栈、抓包状态、路由决定、恢复状态和未解项。HTTP 200、JSON 可解析、索引命中或 jadx 能打开都不能单独充当业务成功。验收全局基准见 `AGENTS.md`。 
+
 
 # 🚨 红线
 
@@ -348,26 +211,23 @@ PC 常驻一梯云 **OneLite**（`127.0.0.1:7892`）。Charles(8888)/Reqable(900
 5. ADB 一律用 bundled `android_mcp\toolchain\bin\windows\platform-tools\adb.exe`（MuMu 仅 fallback）
 6. **抓包改了全局代理/iptables，收尾必须 clear**（否则 App 断网，见 §3.2）
 7. 开 Charles/Reqable 前必须链机场上游 `127.0.0.1:7892`（§3.5），禁止手机侧再叠机场
-8. A14 装 CA 走 `/apex/com.android.conscrypt/cacerts/`，禁止只写旧 `/system/etc/security/cacerts/`
-9. 传输墙未过时禁止宣称「签名算法错了」（先 fp_stack / 原版 App 同环境对照）
-10. 风控记录 YES（AGENTS.md 两开关）时，把抓包/Hook 遇到的风控点记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行（日期+信号+上下文+证据路径）；均 NO → 不记
+8. 传输墙未过时禁止宣称「签名算法错了」（先 fp_stack / 原版 App 同环境对照）
+9. 风控记录 YES（AGENTS.md 两开关）时，把抓包/Hook 遇到的风控点记到 `projects/<target>/docs/risk-observations.md`：开关二 YES → 按 E-/F- 动态条目模板记完整条目；仅开关一 YES → 记一行（日期+信号+上下文+证据路径）；均 NO → 不记
+10. 设备 serial / frida-server 与 venv 版本 / ADB 路径一律以 AGENTS.md 为唯一源（**环境参数不进 skill**）；多设备在线显式 `-s <serial>`，不猜 serial，**不覆盖已有非空反编译/抓包目录**
+11. 不用 PATH 中不明版本的 adb/frida 替代 bundled 工具链；PC frida 版本必须与所选 server 对齐（17.x 在硬目标全挂，见 device-setup.md §1.4）
+12. 写设备/网络前记**基线快照**（http_proxy / NAT / forward / CA / 前台 App），结束精确恢复；恢复基线缺失即停药（不靠猜）
+13. recon 阶段**禁止执行 libxquic/Frida 业务 Hook 或实现签名算法**（只分诊与取证，实际 Hook 交 `android-dynamic`，签名还原交 `protocol-signature-reverser`）
+14. 逆向验收以 `AGENTS.md` 全局验收基准为准（HTTP 200 / JSON 可解析 / 索引命中 / jadx 能打开均不单独充当业务成功）
 
 ---
 
-# 项目文件规范（强约束，见 AGENTS.md）
+# 参考资料（references/，按需加载）
 
-```
-projects/<target>/
-├── apk/            原始 apk / 拆出 dex
-├── decompiled/     jadx / apktool 反编译产物（→ reverse_index index_project）
-├── hooks/          项目专属 Frida/hook 脚本
-├── scripts/        项目专属 Python
-├── so_analysis/    .so + .i64 + IDA 分析
-├── capture/        抓包 flows / 日志
-├── artifacts/      截图 / 中间产物 / 报告 json
-├── docs/           分析笔记 / 进度 / 交接 md
-└── README.md       目标说明 + 现状 + 入口（必须有）
-```
+| 文件 | 内容 | 何时读 |
+|------|------|--------|
+| [references/device-setup.md](references/device-setup.md) | §1 环境与设备：malformation、真机/MuMu 连接、证书持久化 movecert、Frida 版本矩阵 | 连设备、装证书、对齐 Frida 版本 |
+| [references/static-analysis.md](references/static-analysis.md) | §2 静态分析：反编译命令、网络栈全表、reverse_index、grep 锚点、失败兜底 | 反编译、提 API、追调用链 |
+| [references/traffic-capture.md](references/traffic-capture.md) | §3 抓包治理：方案选择器、proxy 残留、mitmproxy 透明、ANet/QUIC、机场共存、fp_stack | 抓不到包、强 pinning、QUIC、传输指纹 |
 
-> 目录名一律 ASCII；不在根目录散落 .py/.js/.apk/截图。
+---
 

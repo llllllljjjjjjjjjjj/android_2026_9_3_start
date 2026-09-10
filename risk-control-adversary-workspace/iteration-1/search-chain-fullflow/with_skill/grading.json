@@ -1,0 +1,50 @@
+{
+ "eval_name": "search-chain-fullflow",
+ "configuration": "with_skill",
+ "pass_rate": 1.0,
+ "passed": 8,
+ "total": 8,
+ "expectations": [
+  {
+   "text": "A1 七层链路结构",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A2 前置接口表",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A3 紧邻特征上报表",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A4 配对强度标注",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A5 因果验证表",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A6 降级分级判据",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A7 缺证据标注",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "A8 时序≠因果纪律",
+   "passed": true,
+   "evidence": "命中"
+  }
+ ],
+ "chars": 4949
+}

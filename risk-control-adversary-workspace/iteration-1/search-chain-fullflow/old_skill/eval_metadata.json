@@ -1,0 +1,40 @@
+{
+ "eval_id": 0,
+ "eval_name": "search-chain-fullflow",
+ "prompt": "帮我分析抖音搜索接口的整体流程，注意风控点、前置埋点上报等相关链路，并记录",
+ "configuration": "old_skill",
+ "assertions": [
+  {
+   "text": "A1 七层链路结构",
+   "passed": false
+  },
+  {
+   "text": "A2 前置接口表",
+   "passed": true
+  },
+  {
+   "text": "A3 紧邻特征上报表",
+   "passed": true
+  },
+  {
+   "text": "A4 配对强度标注",
+   "passed": false
+  },
+  {
+   "text": "A5 因果验证表",
+   "passed": true
+  },
+  {
+   "text": "A6 降级分级判据",
+   "passed": false
+  },
+  {
+   "text": "A7 缺证据标注",
+   "passed": true
+  },
+  {
+   "text": "A8 时序≠因果纪律",
+   "passed": false
+  }
+ ]
+}

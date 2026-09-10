@@ -1,0 +1,32 @@
+{
+ "eval_id": 2,
+ "eval_name": "risk-points-scan",
+ "prompt": "把这个 dy 项目的风控点整理一下，包括前置埋点上报链路，沉淀到知识库",
+ "configuration": "with_skill",
+ "assertions": [
+  {
+   "text": "C1 正确选工作流 D",
+   "passed": true
+  },
+  {
+   "text": "C2 前置埋点专章",
+   "passed": true
+  },
+  {
+   "text": "C3 知识库沉淀清单",
+   "passed": true
+  },
+  {
+   "text": "C4 埋点实证发现",
+   "passed": true
+  },
+  {
+   "text": "C5 配对关系表",
+   "passed": true
+  },
+  {
+   "text": "C6 因果/待验证清单",
+   "passed": true
+  }
+ ]
+}

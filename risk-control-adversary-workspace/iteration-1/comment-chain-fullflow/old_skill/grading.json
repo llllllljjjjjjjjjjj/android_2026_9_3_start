@@ -1,0 +1,40 @@
+{
+ "eval_name": "comment-chain-fullflow",
+ "configuration": "old_skill",
+ "pass_rate": 0.5,
+ "passed": 3,
+ "total": 6,
+ "expectations": [
+  {
+   "text": "B1 七层链路结构",
+   "passed": false,
+   "evidence": "未命中"
+  },
+  {
+   "text": "B2 前置依赖识别",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "B3 三列联动配对表",
+   "passed": true,
+   "evidence": "命中"
+  },
+  {
+   "text": "B4 因果分级(已实证/推测)",
+   "passed": false,
+   "evidence": "未命中"
+  },
+  {
+   "text": "B5 降级分级判据",
+   "passed": false,
+   "evidence": "未命中"
+  },
+  {
+   "text": "B6 不确定结论标注",
+   "passed": true,
+   "evidence": "命中"
+  }
+ ],
+ "chars": 2403
+}

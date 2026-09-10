@@ -1,0 +1,5 @@
+DEL_SERVICE VMnetDHCP
+DEL_SERVICE VMware NAT Service
+DEL_DIR C:\Program Files (x86)\VMware
+DEL_DIR C:\ProgramData\VMware
+KILL_MSIEXEC 32312

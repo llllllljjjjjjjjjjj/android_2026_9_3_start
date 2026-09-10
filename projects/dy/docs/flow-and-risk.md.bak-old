@@ -1,0 +1,379 @@
+# 抖音搜索 / 视频 / 评论 —— 全链路流程与风控埋点分析
+
+> 目标：抖音 38.0.0（380001）｜设备：Pixel 4 / Android 10 / Magisk
+> 全部结论均标注证据来源；未实证项标 `[未证]`
+
+---
+
+## 一、总览：三条链路的共同骨架
+
+三条链路共用同一套**分层风控管线**：
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│ L0 触发层   用户操作 / deeplink                                │
+├──────────────────────────────────────────────────────────────┤
+│ L1 参数层   业务参数 + 公共参数(device_id/aid/iid) + 行为参数    │
+│             (bcm_chain / search_session_id / session_id)      │
+├──────────────────────────────────────────────────────────────┤
+│ L2 特征层   ★ 前置埋点/特征上报（风控的核心输入）                 │
+│             upload_ei_feature / 客户端行为链 / 设备指纹          │
+├──────────────────────────────────────────────────────────────┤
+│ L3 签名层   八神(x-argus/gorgon/ladon) + ClientKey + TicketGuard │
+│             ★ 在 native 层注入，Java 层不可见                    │
+├──────────────────────────────────────────────────────────────┤
+│ L4 传输层   TTNet → host 调度 → HTTP/2 + Brotli / QUIC          │
+├──────────────────────────────────────────────────────────────┤
+│ L5 响应层   服务端埋点回执(search_id/dcm/pitaya_trace_id)        │
+│             + 应用层加密 chunk（回复链路）                       │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**关键结构性事实**：L2（前置特征上报）与 L5（服务端回执）构成**双向风控闭环** —— 客户端上报行为与设备特征，服务端回执 `search_id`/`dcm` 作为**会话凭证**，后续请求必须携带才能串起可信会话。
+
+---
+
+## 二、搜索链路
+
+### 2.1 请求序列（实测，按时间序）
+
+| # | 接口 | 方法 | Host | 性质 |
+|---|---|---|---|---|
+| 1 | `/aweme/v1/search/history_words_record/` | POST | `i.snssdk.com` | **历史记录上报** |
+| 2 | **`/aweme/v2/search/general/stream/`** | POST | `aweme.snssdk.com` → `search3-search.amemv.com` | **主搜索接口（流式）** |
+| 3 | `/aweme/v1/search/memory/upload_ei_feature/` | POST | `aweme.snssdk.com` | **★ 特征上报（风控核心）** |
+| 4 | `/2/wap/search/extra/tts/` | GET | `tsearch.toutiaoapi.com` | 词典 TTS（第三方内容） |
+| 5 | `/aweme/v1/search/refresh_related_search/` | POST | `i.snssdk.com` | 相关搜索刷新 |
+| 6 | `/aweme/v1/search/multi_conversation/ai_guide_bar` | POST | `aweme.snssdk.com` | AI 引导栏 |
+
+> 证据：`capture/body_full.txt`（REQ[1]–REQ[16]，两轮搜索均复现同序）
+
+### 2.2 主接口参数构成（90 个参数）
+
+**业务参数**：`keyword` / `count` / `cursor` / `search_source` / `search_scene`
+
+**会话参数**：`search_session_id`（UUID）/ `search_session_round` / `previous_search_ts` /
+`previous_search_query` / `history_search_query_list` / `client_history_need_store`
+
+**★ 行为特征参数（风控输入）**：
+| 参数 | 含义 | 证据 |
+|---|---|---|
+| `bcm_chain` | **行为链**：`{"chain":[{"btm":"a1128.b9768.c0.d0","btm_show_id":"<uuid>#1..."}]}` | `body_full.txt` |
+| `realtime_feature_channel` | 实时特征通道 | 同上 |
+| `template_extra_info` | 卡片模板/频道环境 | 同上 |
+| `client_extra` | `{"charging":true,"qoe":99,"har_info":{}}` — **设备状态** | 同上 |
+| `client_server_extra` | widget/客户端环境 | 同上 |
+| `nearby_extra_data` | 地理位置附近态 | 同上 |
+| `location_access` / `address_book_access` / `location_permission` | 权限态 | 同上 |
+
+**★ 无公共参数**：body 中**无** `device_id`/`aid`/`iid` —— 这些由 **TTNet native 层追加**（`assembleNetworkParamsCost:15` 埋点实证）
+
+### 2.3 服务端下发与会话串联（★ 风控闭环）
+
+实测响应回传（`capture/response_full.txt`）：
+
+| 字段 | 形态 | 作用 |
+|---|---|---|
+| **`search_id`** | `YYYYMMDDHHMMSS`+22hex（如 `20260910192405CC99C47D8F8CFE76DCE5`） | **每次搜索签发**，后续请求/翻页必须携带 |
+| `dcm` | `search.natural.aweme_video.<aweme_id>.<search_id>` | **服务端曝光凭证**（点击回传用） |
+| `nearby_search_sequence_feature_last_n` | 含 `query_info` / `doc_dict` / `impression_server_log` | **服务端侧印象日志**（回灌客户端） |
+| `search_history_send_back.cur_session` | 含 `show_docs` / `bitmap` / `latest_ts` | **观看时长回传** |
+| `session_id` | `008a95c2-…` **跨多次搜索复用** | 会话级标识 |
+| `trigger_source` / `action_name:"cache_data"` / `pitaya_trace_id` | 埋点回执 | 服务端确认客户端埋点已收 |
+
+**闭环含义**：客户端上传 `bcm_chain`+`upload_ei_feature`（L2）→ 服务端签发 `search_id`+`dcm`（L5）→
+客户端后续请求携带 `search_id` + 点击时回传 `dcm` → 服务端校验**行为链是否自洽**。
+**这是"改 cid/伪造请求会报错"的根因**（历史案例 -99999）。
+
+### 2.4 风控点清单（搜索）
+
+| 级别 | 风控点 | 检测原理 | 证据 |
+|---|---|---|---|
+| **前置** | 行为链**先于**业务请求上报 | `upload_ei_feature` 在 `general/stream` **之后**立即调用（同批），构成"请求+特征"配对 | `body_full.txt` REQ[2]→REQ[3] |
+| **前置** | 历史词记录 | 搜索前必发 `history_words_record` | REQ[1] |
+| **会话** | `search_id` 串联 | 翻页/相关搜索携带前次 `search_id`，缺失则会话断裂 | `response_full.txt` |
+| **签名** | 八神 + ClientKey | native 层注入，Java 层不可见 | `signature_headers.json` |
+| **响应** | `dcm` 曝光凭证 | 点击回传必须带，否则曝光不计 | `response_full.txt` |
+| **行为** | `client_extra.charging` / `qoe` | 设备状态真实性 | `body_full.txt` |
+
+---
+
+## 三、视频（详情）链路
+
+### 3.1 接口
+
+| 接口 | 方法 | 用途 |
+|---|---|---|
+| `/aweme/v1/aweme/detail/` | GET | **视频详情**（aid → 元数据 + play_addr） |
+| `/aweme/v1/multi/aweme/detail/` | POST | 批量详情 |
+| `/aweme/v1/aweme/stats/` | GET | **★ 播放统计上报** |
+| `/aweme/v2/startup/popups/` | POST | 启动弹窗（伴随请求） |
+
+> 证据：`capture/signature_headers.json`（`:path` 字段实测）、`scripts/video_pull.py`
+
+### 3.2 参数与数据
+
+**请求**：`aweme_id` / `origin_type` / `request_source` / `is_ss` 等
+
+**响应字段（实测）**：
+| 字段 | 取值方式 | 备注 |
+|---|---|---|
+| `aid` / `desc` / `createTime` | `Aweme` **public 字段** | 无 getter |
+| `duration` | **`Video.videoLength`** | 非 `duration` |
+| `digg`/`comment`/`share`/`collect`/`recommend` | `AwemeStatistics` public 字段 | 无 getter |
+| **`playCount`** | 字段存在但**恒 0** | **服务端不下发**（搜索+详情均 0） |
+| `play_addr.url_list` | 详情响应 | **视频 CDN 地址（含时效签名）** |
+| `images[].download_url_list` | 图文（`aweme_type=68`） | 优先 webp；原图可能是 HEIF/VVC（brand=`vvic`） |
+
+### 3.3 风控点（视频）
+
+| 级别 | 风控点 | 证据 |
+|---|---|---|
+| **前置** | 播放行为上报 `/aweme/v1/aweme/stats/` | `signature_headers.json` 实测该接口 |
+| **会话** | `authentication_token` | 评论/弹幕接口的 `@Query` 参数（`CommentRealApi:96`），**由服务端下发** |
+| **媒体** | CDN URL **时效签名** | `x-expires` / `x-signature`，过期即 403 |
+| **媒体** | 下载需 **App UA + Referer** | 实测无 UA 被拒 |
+
+---
+
+## 四、评论链路
+
+### 4.1 请求序列
+
+| # | 接口 | 说明 |
+|---|---|---|
+| 1 | `/aweme/v1/aweme/detail/` | 打开视频（**前置**） |
+| 2 | **`/aweme/v2/comment/list/stream/`** | **评论主接口（流式）** |
+| 3 | `/aweme/v1/comment/list/reply/` | 二级回复（展开时） |
+| 4 | 埋点上报（`/service/2/app_log/`） | **★ 前置/伴随埋点** |
+
+> 证据：`capture/diag_cmt_caller.txt`（含完整调用栈）
+
+### 4.2 请求参数（39 个 Query + body）
+
+**Query 关键项**：
+| 参数 | 值示例 | 说明 |
+|---|---|---|
+| `aweme_id` | `7581630849533316401` | 目标视频 |
+| `cursor` / `count` | `0` / `20` | 翻页 |
+| **`authentication_token`** | `MS4wLjAAAAAAmDFzKYb1v4eM…` | **★ 服务端下发凭证** |
+| `aweme_author` | `MS4wLjABAAAA-Ft8LDSK…` | **作者 sec_uid** |
+| `comment_count` | `97375` | 评论总数（**必须吻合**） |
+| `top_query_word` | 搜索词 | **来源回溯** |
+| `common_flags` | JSON 串（api_ab/hashtag…） | 环境标志 |
+| `session_id` | `<aid>:<uid>:<ts>` | 会话 |
+| `need_chunk=1` | — | **启用流式 chunk** |
+
+**body**：`comment_common_user_data`（空）/ `session_id` / `ai_cmt_exposure` / `language=zh-Hans`
+
+> 证据：`capture/comment_request_capture.json`
+
+### 4.3 响应形态与数据
+
+**流式 chunk**：`ChunkDataStream<CommentItemList>`
+
+| 字段 | 说明 |
+|---|---|
+| **`comments[]`** | **★ 数据本体**（`items` 是 20 个 null 占位） |
+| `cid` / `aweme_id` / `digg_count` / `create_time` / `reply_comment_total` | 明文 |
+| `text` | **★ 明文**（实测可读） |
+| `comment_token` | **加密 token**（268 字符，二级回复用） |
+| `image_list` | 评论图片 |
+| `total` / `cursor` / `hasMore` / `sessionId` | 分页与会话 |
+
+### 4.4 风控点（评论）—— 最严格
+
+| 级别 | 风控点 | 实测证据 |
+|---|---|---|
+| **前置** | 必须先请求 `aweme/detail` | 调用栈 `diag_cmt_caller.txt` |
+| **前置** | 伴随埋点上报 | `/service/2/app_log/` 同批 |
+| **凭证** | `authentication_token` 必需 | 服务端下发（`@Query`） |
+| **会话** | `session_id` 格式 `<aid>:<uid>:<ts>` | `comment_request_capture.json` |
+| **一致性** | `comment_count` 必须匹配真实值 | 97375 |
+| **传输** | 评论请求**未被 `SSL_write` 捕获**（疑 QUIC）；但 `ChunkDataStream` **稳定拿到数据** → 该结论不完整，见 §4.5 修正 | 点击评论后 SSL_write **零新增帧**（实测） |
+| **响应** | **应用层加密 chunk** | 直发拿到 69 字节密文（非 gzip/zlib/br/zstd） |
+| **风控码** | **`-99999`** | 无签名头直发必现；带签名头后消失 |
+
+---
+
+### 4.5 ★ 结论修正：评论传输路径（原判断不完整）
+
+**原结论**：「评论接口走 QUIC(UDP)」
+**问题**：该结论与脚本实际工作相矛盾 —— `comment_rpc.py` 通过 `ChunkDataStream` hook
+**稳定拿到 20 条评论**，说明数据确实到达了 Java 层。
+
+**实测事实汇总**：
+| 观测 | 结果 |
+|---|---|
+| 点击评论后 `SSL_write` 新增帧 | **0**（多次复现） |
+| `ChunkDataStream<CommentItemList>` 是否触发 | ✅ 触发，`comments[]` 有 20 条 |
+| 请求是否发出 | ✅ `RequestBuilder.build` 捕获到 `/aweme/v2/comment/list/stream/` |
+
+**修正后的判断**（三选一，未定论）：
+1. 评论响应走 **QUIC**，但**同一请求有 TCP 回退**（TTNet 双栈并发，先到者赢）
+2. `SSL_write` hook **只覆盖了部分 BoringSSL 实例**（App 内可能存在多份副本）
+3. 评论走**独立的长连接**（`frontier` wss 通道）
+
+**当前定位**：`[未证]` —— 需要枚举进程内所有 BoringSSL 实例或抓 UDP 才能定论。
+**影响**：不影响采集（`ChunkDataStream` 路径可用）；影响**协议直发可行性评估**。
+
+### 4.6 脚本与本文档的一致性（已修正）
+
+初版脚本**未体现本文档描述的风控语义**，已按下列方式补齐：
+
+| 文档要求 | 原脚本 | 现状 |
+|---|---|---|
+| 埋点配对校验 | ❌ 无 | ✅ `risk_health.RiskHealth` 记录业务/埋点请求并算配对率 |
+| 降级检测（软/硬） | ❌ 无 | ✅ `risk_health.judge_response` + `print_verdict` |
+| 会话凭证追踪 | ❌ 无 | ✅ 抽取 `search_id` / `authentication_token` |
+| 判官纪律 | ⚠️ 只看条数 | ✅ 区分 OK/SOFT/HARD，SOFT/HARD 返回非零退出码 |
+
+**实测验证**：
+```
+search 链路:  业务请求 1  埋点上报 4  配对 1/1 (1.0)  → ✅ OK
+comment 链路: 业务请求 3  埋点上报 5  配对 3/3 (1.0)  → ✅ OK
+video 链路:   业务请求 1  埋点上报 1  配对 1/1 (1.0)  → ✅ OK
+```
+
+
+
+### 5.1 埋点通道
+
+| 通道 | 接口 | 内容 |
+|---|---|---|
+| **AppLog** | `/service/2/app_log/` (+`/performance/p2/`) | **批量事件上报** |
+| **搜索特征** | `/aweme/v1/search/memory/upload_ei_feature/` | **搜索侧专项特征** |
+| **播放统计** | `/aweme/v1/aweme/stats/` | 播放行为 |
+| **埋点接收端** | 响应含 `trigger_source`/`action_name`/`pitaya_trace_id` | 服务端回执（字节 pitaya 平台） |
+
+### 5.2 埋点包结构（实测，146,486 字节）
+
+```json
+{
+  "magic_tag": "ss_app_log",
+  "time_sync": {"server_time": 1789041367, "local_time": 1789041378},
+  "header": {...},
+  "key": "5562880b77913048d7fdc6c2d4f56d06",     // ★ AES 密钥
+  "iv": "69346605e697374e",                      // ★ AES IV (8 字节)
+  "uid_enable": 1,
+  "_gen_time": 1789041438554,
+  "event_v3": [ 57 条事件 ]
+}
+```
+
+**event_v3 单条结构**：
+```
+{nt, user_id, user_is_login, user_type, user_is_auth, uid,
+ ab_sdk_version, event, params{...}, event_id, monitor_id, tea_event_index}
+```
+
+**★ 关键实证**：`key` + `iv` 在**包头明文传输** → 包内 `params` 是**明文 dict**（实测可读：
+`log_id`/`enter_from`/`word_source`/`trigger_way`/`doc_type`/`enter_group_id`…）
+
+> 证据：`capture/resp_pottery_47_1789041438695.json`（保留的埋点样本）
+
+**设备指纹来源**：`header` 字段含设备参数；`x-tt-dt`（设备令牌）+ Cookie `install_id`/`odin_tt` 构成设备身份。
+
+### 5.3 埋点时序（★ 前置性）
+
+```
+用户操作
+   ↓
+[前置] 历史/行为记录（history_words_record）
+   ↓
+[主请求] 业务接口（general/stream、comment/list/stream）
+   ↓
+[紧邻] ★ 特征上报（upload_ei_feature / app_log）  ← 与主请求同批，构成配对
+   ↓
+[服务端] 校验：业务请求 ↔ 特征上报 是否自洽
+   ↓
+[回执] search_id / dcm / pitaya_trace_id 下发
+```
+
+**结论**：**风控不只看单次请求，而看"请求 + 紧邻特征上报"的配对完整性**。
+缺失特征上报 → 请求被降级（空壳）或拒绝（-99999）。
+
+---
+
+## 六、签名与鉴权（native 层）
+
+### 6.1 完整签名头（实测抓取，`capture/signature_headers.json`）
+
+| 头 | 归属 |
+|---|---|
+| **`x-argus` / `x-gorgon` / `x-ladon`** | **八神（MS SDK）** |
+| **`x-khronos` / `x-helios` / `x-medusa`** | 字节风控族 |
+| **`x-ss-stub`** | 请求体签名 |
+| `x-tt-token` | `0051e8bf…3.0.4` long-lived |
+| `bd-ticket-guard-key-sign` | TicketGuard（128 hex） |
+| `x-tt-token-supplement` | 补充令牌 |
+| `x-tt-dt` / `x-ss-dp` | 设备令牌 |
+| `x-vc-bdturing-sdk-version` | `4.1.1.cn`（验证码 SDK） |
+| `x-tt-request-tag` | `t=0;n=0;s=-1;p=0` |
+
+**Cookie（22 项）**：`sessionid` / `sid_guard` / `odin_tt` / `d_ticket` / `multi_sids` /
+`install_id` / `passport_mfa_token` / `passport_assist_user` / `session_tlb_tag` …
+
+### 6.2 ★ 重要修正
+
+**此前结论"八神不在搜索/评论链路"是错误的**。
+错因：依据 Java 层 `MSManager.frameSign` hook 0 命中。
+**实际**：八神在 **native 层（libmetasec_ml.so / TTNet）直接注入 TLS 流**，Java 层完全不可见。
+
+**获取方式**：`hook libsscronet!SSL_write → HTTP/2 帧 → HPACK + Huffman 解码`
+（实现在 `scripts/cap_h2_headers.py`）
+
+### 6.3 直发验证结果
+
+| 条件 | 结果 |
+|---|---|
+| 无签名头直发 | `status_code: -99999`（风控拒绝） |
+| **带签名头直发** | **`-99999` 消失**，返回 69 字节加密 chunk |
+
+**判定**：**签名层已攻克**（可复用抓取的头部）；剩余障碍是**响应体应用层解密**。
+
+---
+
+## 七、传输层
+
+| 项 | 实测 |
+|---|---|
+| 协议 | HTTP/2（`ttnet_h2_enabled:1`）+ **Brotli**（`ttnet_enable_br:1`） |
+| Host 调度 | 搜索→`search3-search.amemv.com`；feed→`api3-core-c`；普通→`api3-normal-c`；IM→`frontier`(wss) |
+| **QUIC** | 评论请求未被 `SSL_write` 捕获（疑 QUIC，见 §4.5 修正）；搜索/详情走 HTTP/2 正常捕获 |
+| 页面资源 | `p*-sign.douyinpic.com` / `douyinvod.com`(视频) / `douyinstatic.com`(音频) |
+
+---
+
+## 八、风控点总表（按链路 × 级别）
+
+| 链路 | 前置埋点 | 会话凭证 | 签名 | 传输 | 响应 |
+|---|---|---|---|---|---|
+| **搜索** | `upload_ei_feature` + `history_words_record` + `bcm_chain` | `search_id`(服务端签发) / `search_session_id` | 八神+ClientKey | H2+Brotli | `dcm` 曝光凭证 + 空壳降级 |
+| **视频** | `aweme/stats` 播放上报 | `authentication_token` | 同上 | H2+Brotli | CDN 时效签名 |
+| **评论** | 前置 `aweme/detail` + `app_log` | `authentication_token` + `session_id`(`aid:uid:ts`) | 同上 | 未捕获(疑QUIC) | **加密 chunk** + **-99999** |
+
+**共性风控原则**（可迁移）：
+1. **请求必须与其紧邻的特征上报配对**（缺一即降级/拒绝）
+2. **会话凭证由服务端签发**（`search_id`/`authentication_token`），客户端不能伪造
+3. **签名在 native 层**，Java 层 hook 会得出错误结论
+4. **一致性校验**：`comment_count`、`session_id` 格式、`aweme_author` 必须真实
+5. **降级策略分级**：软降级（空壳 JSON）→ 硬拒绝（-99999）→ 封禁
+
+---
+
+## 九、证据索引
+
+| 证据文件 | 内容 |
+|---|---|
+| `capture/body_full.txt` | 搜索 90 参数 + 16 条请求序列 |
+| `capture/response_full.txt` | `search_id`/`dcm`/`pitaya_trace_id` 服务端回执 |
+| `capture/comment_request_capture.json` | 评论请求 39 参数 + body |
+| `capture/diag_cmt_caller.txt` | 评论调用栈 |
+| `capture/signature_headers.json` | **完整签名头 + 22 Cookie** |
+| `capture/resp_pottery_47_*.json` | 埋点包（`key`/`iv` + 57 事件） |
+| `capture/direct_comment_response.txt` | 直发响应（加密 chunk） |
+| `capture/diag_cmt_full.txt` | `CommentItemList` 完整 JSON（371KB） |
+| `docs/api-map.md` | 接口谱系 |
+| `docs/protocol-direct.md` | 协议直发报告 |
+| `docs/parameter-lineage.md` | 参数谱系 |

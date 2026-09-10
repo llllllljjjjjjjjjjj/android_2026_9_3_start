@@ -1,0 +1,22 @@
+# dy — 抖音 (com.ss.android.ugc.aweme)
+
+## 目标说明
+- APK: `downloads\dy.apk`（2026-09-05 版本，330MB 级，58 个 dex）
+- 原始 APK 归档: `apk/dy.apk`
+- SHA256: `5B9CF596A03A3AAF2B34472964AE6A0F32A84876871E208FF6ED108A90A42A67`
+- 包名: `com.ss.android.ugc.aweme`（抖音主端）
+- 分诊结论: 待补（见 docs/recon.md）
+
+## 现状
+- [x] 目录骨架
+- [ ] 壳检查
+- [ ] jadx 反编译 → decompiled/
+- [ ] reverse_index 索引
+- [ ] 网络栈识别（TTNet/libttboringssl 预期）
+- [ ] API/签名逻辑提取
+
+## 入口
+- 反编译产物: `decompiled/`
+- 抓包: `capture/`
+- Hook: `hooks/`
+- 笔记: `docs/recon.md`、`docs/risk-observations.md`

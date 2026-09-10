@@ -1,0 +1,54 @@
+# dy 静态全貌（最终报告 2026-09-07）
+
+目标: 抖音 com.ss.android.ugc.aweme 38.0.0 (380001)，APK SHA256 5B9C...42A67
+方法: jadx 1.5.3 反编译（504,699 .java）+ reverse_index 全行索引（4.1GB 主库，秒级检索）
+证据等级: 全部结论均有 命中文件+行号 支撑（见各节 source 标注）；无证据项标"推测"
+
+## 1. 入口与启动链
+- `com.ss.android.ugc.aweme.app.host.AwemeHostApplication`（Application 宿主）→ `AwemeApplicationImpl`
+- 关键启动组件: AppInitProvider / TTMultiProvider / bdturing InitProvider(风控) /
+  DeviceRegisterManager(设备注册, install_id/device_id) / TTNetInit(TTNet 初始化, 见 §3)
+- 插桩特征: 字节 Bytex/Lancet 大量改写方法体（`com_ss_android_..._lancet_*` stub），
+  设备注册真实逻辑藏于插桩链（动态阶段 Hook 点）
+
+## 2. 保护
+- 无整包 DEX 加固壳（58 dex 全真实代码）
+- libdexvmp.so: 部分敏感类 VMP 化 → 反编译空方法（数量 ~2300/35 万错误类中的一部分）
+- libfileprotect.so: 资源保护
+- 字符串多处运行时拼接/加密（X. 混淆桶 + 运行时 getString）
+
+## 3. 网络栈与请求签名体系（核心结论）
+### 网络栈: TTNet = Chromium Cronet + BoringSSL 定制
+- so: libttboringssl.so / libsscronet.so / libsscronet-wrapper.so
+- Java 骨架: com.bytedance.frameworks.baselib.network.http.cronet.*（397 文件 ttnet 相关）
+- 独立包 com.bytedance.ttnet.*（clientkey 等上层逻辑）
+
+### 签名/令牌头定位（reverse_index 内容级证据）
+| Header | 状态 | 证据 |
+|---|---|---|
+| **x-tt-token** | ✅ Java 层完整链路 | = TTNet **ClientKey**。`com.bytedance.ttnet.clientkey.ClientKeyManager`（响应提取 line 316）；`TTNetInit` L1065-1089 从 Keva `ttnet_client_key_config` 恢复 session_id/session_time/session_url/client_key/**kms_version**；存取 `com.ss.android.token.TTTokenManager`；补充头 `com.ss.android.account.PassportExtraHeaderManager`（x-tt-token-supplement） |
+| **x-argus** | ⚠️ Java 仅 Web 拦截 | 唯一命中 = ArgusWebDelegate 403 响应头（风控 WebView 拦截），**非请求签名**。请求侧 x-argus 本体 = 推测 native（libsscronet/风控 so） |
+| **x-ladon** | ❌ 0 命中 | 38.0.0 Java 层完全无痕（原生或已废弃） |
+| x-gorgon | ❌ 类名/内容 0 | 已移除 |
+| install_id/device_id | ✅ | `com.ss.android.deviceregister.DeviceRegisterManager`（getDeviceId/getInstallId, Lancet 化） |
+
+### 推论（推测级，待动态验证）
+- 主请求签名在 **TTNet native 层**（clientkey + 风控 argus 一体化），Java 仅装配头
+- kms_version 字段 → client key 体系与字节 KMS 关联
+- 还原签名需 native 侧分析 → protocol-signature-reverser 路线（动态 Hook + 真机样本）
+
+## 4. API 面
+- `*Api.java` 2,413 个；host 面: api-normal.tiktokv.com 类 / aweme.snssdk.com / ecom.snssdk.com / luckycat 前缀
+- 示例（索引命中）: `/aweme/v1/store/product/list/`(EC) / `https://aweme.snssdk.com/luckycat/aweme/v1/`(游戏/直播) / `https://ecom.snssdk.com/aweme/v1/promotion/appoint/`(电商)
+- 核心 feed/用户接口（api-normal host）未见明文 URL（走 TTNet service 通道,动态抓包确认）
+
+## 5. 后续路线建议
+1. 真机 eCapture 抓包（TTNet 代理即断网）→ 拿真实请求头集合（x-tt-token/x-argus 实样）
+2. native 定位: libsscronet/libttboringssl 内 clientkey 生成 + argus 计算（ida/Ghidra）
+3. 签名还原 → protocol-signature-reverser（样本 + native + 动态 oracle）
+4. 需要全文检索: reverse_index 已就绪（target=dy, find_symbol/search_code/find_endpoint/search_strings）
+
+## 6. 索引就绪信息
+- 库: projects/dy/artifacts/reverse_index.sqlite（4.1GB）
+- 清单: projects/dy/artifacts/all_java_files.txt（504,699 条）
+- 反编译: projects/dy/decompiled/sources/

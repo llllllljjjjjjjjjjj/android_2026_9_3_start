@@ -1,0 +1,4588 @@
+﻿[1] $Recycle.Bin
+    [2] S-1-5-18
+    [2] S-1-5-21-870978616-950004701-3882727556-1001
+[1] $SysReset
+    [2] AppxLogs
+    [2] CloudImage
+    [2] Logs
+    [2] MDM
+    [2] Scratch
+[1] .ADSPOWER_GLOBAL
+    [2] .browser
+    [2] cache
+        [3] k1cwgby9_i6tfmn
+            [4] ActorSafetyLists
+            [4] AmountExtractionHeuristicRegexes
+            [4] CaptchaProviders
+            [4] CertificateRevocation
+            [4] component_crx_cache
+            [4] Crashpad
+                [5] attachments
+                [5] reports
+            [4] Crowd Deny
+            [4] Default
+                [5] AutofillAiModelCache
+                [5] AutofillStrikeDatabase
+                [5] blob_storage
+                    [6] 1196afd2-49e9-439a-bfec-1d1cc132e5b8  (...)
+                [5] BudgetDatabase
+                [5] Cache
+                    [6] Cache_Data
+                    [6] No_Vary_Search
+                [5] chrome_cart_db
+                [5] ClientCertificates
+                [5] Code Cache
+                    [6] js
+                    [6] wasm
+                [5] commerce_subscription_db
+                [5] DawnGraphiteCache64
+                [5] DawnWebGPUCache64
+                [5] discount_infos_db
+                [5] discounts_db
+                [5] DNR Extension Rules
+                    [6] mcneehecfcblchakgmobcabgmiddjapg
+                [5] Extension Rules
+                [5] Extension Scripts
+                [5] Extension State
+                [5] Feature Engagement Tracker
+                    [6] AvailabilityDB
+                    [6] EventDB
+                [5] GCM Store
+                    [6] Encryption
+                [5] GPUCache64
+                [5] Local Storage
+                    [6] leveldb
+                [5] Network
+                [5] optimization_guide_hint_cache_store
+                [5] parcel_tracking_db
+                [5] PersistentOriginTrials
+                [5] Safe Browsing Network
+                [5] Segmentation Platform
+                    [6] SegmentInfoDB
+                    [6] SignalDB
+                    [6] SignalStorageConfigDB
+                [5] Service Worker
+                    [6] Database
+                    [6] ScriptCache
+                [5] Session Storage
+                [5] Sessions
+                [5] Shared Dictionary
+                    [6] cache
+                [5] shared_proto_db
+                    [6] metadata
+                [5] Site Characteristics Database
+                [5] Sync Data
+                    [6] LevelDB
+                [5] WebStorage
+            [4] extensions_crx_cache
+            [4] FileTypePolicies
+            [4] FirstPartySetsPreloaded
+            [4] GraphiteDawnCache
+            [4] GrShaderCache64
+            [4] hyphen-data
+            [4] MEIPreload
+            [4] OnDeviceHeadSuggestModel
+            [4] OptGuideOnDeviceModel
+            [4] OptimizationHints
+            [4] OriginTrials
+            [4] PKIMetadata
+            [4] PrivacySandboxAttestationsPreloaded
+            [4] Safe Browsing
+            [4] SafetyTips
+            [4] segmentation_platform
+            [4] ShaderCache64
+            [4] SSLErrorAssistant
+            [4] Subresource Filter
+                [5] Indexed Rules
+                    [6] 37
+                [5] Unindexed Rules
+            [4] TrustTokenKeyCommitments
+            [4] WasmTtsEngine
+            [4] WidevineCdm
+            [4] ZxcvbnData
+    [2] components
+    [2] data
+    [2] extension
+        [3] 11453060  (...)
+        [3] 11453061  (...)
+    [2] RPA
+        [3] data
+        [3] log
+        [3] screenshot
+    [2] rpa_log
+        [3] i6tfmn
+    [2] screenshot
+[1] AppData
+    [2] Flash Player
+[1] common_attachment
+[1] Documents and Settings
+[1] GameDownload
+[1] inetpub
+[1] KuaiwanGames
+    [2] Games
+    [2] Patch
+[1] KuGou
+    [2] Lyric
+    [2] Temp
+        [3] tp2p
+            [4] .tpfs
+                [5] duty
+[1] leidian
+[1] mingw64
+[1] Program Files
+    [2] 7-Zip
+    [2] Application Verifier
+    [2] Common Files
+    [2] dotnet
+    [2] EVPlayer
+    [2] Google
+    [2] Huorong
+    [2] Intel
+    [2] Internet Explorer
+    [2] iTop Screen Recorder
+    [2] Java
+    [2] JetBrains
+    [2] Lenovo
+    [2] Microsoft
+    [2] Microsoft Office
+    [2] Microsoft Office 15
+    [2] Microsoft OfficePLUS
+    [2] Microsoft OneDrive
+    [2] Microsoft Visual Studio
+    [2] ModifiableWindowsApps
+    [2] Npcap
+    [2] NVIDIA Corporation
+    [2] Oray
+    [2] PremiumSoft
+    [2] Rockstar Games
+    [2] TechChangeLife
+    [2] Tencent
+    [2] Uninstall Information
+    [2] Windows Defender
+    [2] Windows Mail
+    [2] Windows Media Player
+    [2] Windows NT
+    [2] Windows Photo Viewer
+    [2] Windows Sidebar
+    [2] WindowsApps
+    [2] WindowsPowerShell
+    [2] WSL
+[1] Program Files (x86)
+    [2] Application Verifier
+    [2] Common Files
+    [2] Deep Uninstaller
+    [2] Google
+    [2] GPU Optimization
+    [2] Internet Explorer
+    [2] Kuaiwan
+    [2] LdsDllRepair
+    [2] LdsSysClean
+    [2] Lenovo
+    [2] LhpMaxProtect
+    [2] LxWallpaper
+    [2] Microsoft
+    [2] Microsoft SDKs
+    [2] Microsoft Visual Studio
+    [2] Microsoft.NET
+    [2] MultiTabExplorer
+    [2] Nuget
+    [2] NVIDIA Corporation
+    [2] PicSnapX
+    [2] PrivacyGuard+
+    [2] Reference Assemblies
+    [2] Tencent
+    [2] Ultra Shredder
+    [2] Uninstall Information
+    [2] VMware
+    [2] WinAuthority
+    [2] Windows Defender
+    [2] Windows Kits
+    [2] Windows Mail
+    [2] Windows Media Player
+    [2] Windows NT
+    [2] Windows Photo Viewer
+    [2] Windows Sidebar
+    [2] WindowsPowerShell
+    [2] WXWork
+    [2] ZxVxTidy
+[1] ProgramData
+    [2] {040968FA-1B35-4ca1-8B2F-ADA177306579}.tmp
+    [2] {3525C0EF-25DF-4bca-9FC3-68CA50BE7661}.tmp
+    [2] {3FF3E013-D2F3-4031-B677-C3C7EC491A9B}.tmp
+    [2] {EAA81A88-FBD6-4bfd-8F13-223DBC8BA449}.tmp
+    [2] {F8FB1937-2539-4b0f-846B-C62B46077AFA}.tmp
+    [2] {FEA82DEB-113B-4220-9654-0540CFDD8DD7}.tmp
+    [2] Alibaba
+    [2] A-Volute
+    [2] AVS4YOU
+    [2] boost_interprocess
+    [2] Claude
+    [2] dbg
+    [2] fastpdf
+    [2] Huorong
+    [2] Intel
+    [2] IObit
+    [2] iTop
+    [2] kdesk
+    [2] Kingsoft
+    [2] KuaiWan
+    [2] KuGou
+    [2] leigod_person_7012
+    [2] Lenovo
+    [2] lxwp
+    [2] lxwpDump
+    [2] Microsoft
+    [2] Microsoft DevDiv
+    [2] Microsoft OfficePLUS
+    [2] Microsoft OneDrive
+    [2] Microsoft Visual Studio
+    [2] Nahimic
+    [2] NVIDIA
+    [2] NVIDIA Corporation
+    [2] obs-studio
+    [2] obs-studio-hook
+    [2] Oracle
+    [2] Oray
+    [2] OrayClient
+    [2] Package Cache
+    [2] Packages
+    [2] ProductData3
+    [2] Realtek
+    [2] regid.1991-06.com.microsoft
+    [2] Rockstar Games
+    [2] SGAIAssistant
+    [2] SoftwareDistribution
+    [2] SogouInput
+    [2] ssh
+    [2] Tencent
+    [2] Thunder Network
+    [2] tianxiang
+    [2] USOPrivate
+    [2] USOShared
+    [2] VMware
+    [2] Whesvc
+    [2] Windows App Certification Kit
+    [2] xfolder
+[1] Recovery
+[1] Solution1
+    [2] .vs
+        [3] Solution1
+            [4] v17
+[1] System Volume Information
+[1] temp
+    [2] chrome-debug-profile
+        [3] ActorSafetyLists
+        [3] AmountExtractionHeuristicRegexes
+        [3] BrowserMetrics
+        [3] CaptchaProviders
+        [3] CertificateRevocation
+        [3] component_crx_cache
+        [3] Crashpad
+            [4] attachments
+            [4] reports
+        [3] Crowd Deny
+        [3] Default
+            [4] AutofillAiModelCache
+            [4] AutofillStrikeDatabase
+            [4] blob_storage
+                [5] 6dadf80e-5c57-417a-8a12-ebea5f835bbd  (...)
+            [4] BudgetDatabase
+            [4] Cache
+                [5] Cache_Data
+                [5] No_Vary_Search
+            [4] chrome_cart_db
+            [4] ClientCertificates
+            [4] Code Cache
+                [5] js
+                    [6] index-dir
+                [5] wasm
+                    [6] index-dir
+            [4] commerce_subscription_db
+            [4] DawnGraphiteCache
+            [4] DawnWebGPUCache
+            [4] discount_infos_db
+            [4] discounts_db
+            [4] Download Service
+                [5] EntryDB
+                [5] Files
+            [4] Extension Rules
+            [4] Extension Scripts
+            [4] Extension State
+            [4] Feature Engagement Tracker
+                [5] AvailabilityDB
+                [5] EventDB
+            [4] File System
+                [5] 000
+                    [6] t
+                [5] Origins
+            [4] GCM Store
+                [5] Encryption
+            [4] GPUCache
+            [4] Local Storage
+                [5] leveldb
+            [4] Network
+            [4] optimization_guide_hint_cache_store
+            [4] parcel_tracking_db
+            [4] PersistentOriginTrials
+            [4] Safe Browsing Network
+            [4] Segmentation Platform
+                [5] SegmentInfoDB
+                [5] SignalDB
+                [5] SignalStorageConfigDB
+            [4] Service Worker
+                [5] Database
+                [5] ScriptCache
+                    [6] index-dir
+            [4] Session Storage
+            [4] Sessions
+            [4] Shared Dictionary
+                [5] cache
+                    [6] index-dir
+            [4] shared_proto_db
+                [5] metadata
+            [4] Site Characteristics Database
+            [4] Sync Data
+                [5] LevelDB
+            [4] Web Applications
+                [5] Manifest Resources
+                    [6] aghbiahbpaijignceidepookljebhfak
+                    [6] agimnkijcaahngcdmfeangaknmldooml
+                    [6] fhihpiojkbmbpdjeoajapmgkhlnakfjf
+                    [6] fmgjjmmmlfnkbppncabfkddbjimcfncm
+                    [6] kefjledonklijopmnomlcbpllchaibag
+                    [6] mpnpojknpmmopombnjdcgaaiekajbnjb
+                    [6] pommaclcbfghclhalboakcipcmmndhcj
+                [5] Temp
+            [4] WebStorage
+        [3] extensions_crx_cache
+        [3] FileTypePolicies
+        [3] FirstPartySetsPreloaded
+        [3] GPUPersistentCache
+            [4] DawnGraphiteCache
+                [5] WRJTYMYAB73RC6HTXXLKRS2FEZVUG6PP
+        [3] GrShaderCache
+        [3] hyphen-data
+        [3] MEIPreload
+        [3] OnDeviceHeadSuggestModel
+        [3] OptimizationHints
+        [3] OriginTrials
+        [3] PKIMetadata
+        [3] PrivacySandboxAttestationsPreloaded
+        [3] RecoveryImproved
+        [3] Safe Browsing
+        [3] SafetyTips
+        [3] segmentation_platform
+        [3] ShaderCache
+        [3] SSLErrorAssistant
+        [3] Subresource Filter
+            [4] Unindexed Rules
+        [3] TrustTokenKeyCommitments
+        [3] WasmTtsEngine
+        [3] WidevineCdm
+        [3] ZxcvbnData
+    [2] xhs-debug
+        [3] ActorSafetyLists
+            [4] 9.5220.3721
+                [5] _metadata
+        [3] AmountExtractionHeuristicRegexes
+            [4] 4
+                [5] _metadata
+        [3] BrowserMetrics
+        [3] CaptchaProviders
+            [4] 8.5419.4434
+                [5] _metadata
+        [3] CertificateRevocation
+            [4] 10688  (...)
+        [3] component_crx_cache
+        [3] Crashpad
+            [4] attachments
+            [4] reports
+        [3] Crowd Deny
+            [4] 2026.7.30.63
+                [5] _metadata
+        [3] Default
+            [4] AutofillAiModelCache
+            [4] AutofillStrikeDatabase
+            [4] blob_storage
+                [5] fa42d163-524a-4083-ac08-4c3b7f688b26  (...)
+            [4] BudgetDatabase
+            [4] Cache
+                [5] Cache_Data
+                [5] No_Vary_Search
+            [4] chrome_cart_db
+            [4] ClientCertificates
+            [4] Code Cache
+                [5] js
+                    [6] index-dir
+                [5] wasm
+                    [6] index-dir
+            [4] commerce_subscription_db
+            [4] DawnGraphiteCache
+            [4] DawnWebGPUCache
+            [4] discount_infos_db
+            [4] discounts_db
+            [4] Download Service
+                [5] EntryDB
+                [5] Files
+            [4] Extension Rules
+            [4] Extension Scripts
+            [4] Extension State
+            [4] Feature Engagement Tracker
+                [5] AvailabilityDB
+                [5] EventDB
+            [4] File System
+                [5] 000
+                    [6] t
+                [5] Origins
+            [4] GCM Store
+                [5] Encryption
+            [4] GPUCache
+            [4] Local Storage
+                [5] leveldb
+            [4] Network
+            [4] optimization_guide_hint_cache_store
+            [4] parcel_tracking_db
+            [4] PersistentOriginTrials
+            [4] Safe Browsing Network
+            [4] Segmentation Platform
+                [5] SegmentInfoDB
+                [5] SignalDB
+                [5] SignalStorageConfigDB
+            [4] Service Worker
+                [5] Database
+                [5] ScriptCache
+                    [6] index-dir
+            [4] Session Storage
+            [4] Sessions
+            [4] Shared Dictionary
+                [5] cache
+                    [6] index-dir
+            [4] shared_proto_db
+                [5] metadata
+            [4] Site Characteristics Database
+            [4] Sync Data
+                [5] LevelDB
+            [4] Web Applications
+                [5] Manifest Resources
+                    [6] aghbiahbpaijignceidepookljebhfak
+                    [6] agimnkijcaahngcdmfeangaknmldooml
+                    [6] fhihpiojkbmbpdjeoajapmgkhlnakfjf
+                    [6] fmgjjmmmlfnkbppncabfkddbjimcfncm
+                    [6] kefjledonklijopmnomlcbpllchaibag
+                    [6] mpnpojknpmmopombnjdcgaaiekajbnjb
+                    [6] pommaclcbfghclhalboakcipcmmndhcj
+                [5] Temp
+            [4] WebStorage
+        [3] extensions_crx_cache
+        [3] FileTypePolicies
+            [4] 145.0.7584.0
+                [5] _metadata
+        [3] FirstPartySetsPreloaded
+        [3] GPUPersistentCache
+            [4] DawnGraphiteCache
+                [5] WRJTYMYAB73RC6HTXXLKRS2FEZVUG6PP
+        [3] GrShaderCache
+        [3] hyphen-data
+            [4] 120.0.6050.0
+                [5] _metadata
+        [3] MEIPreload
+            [4] 1.1.0.3
+                [5] _metadata
+        [3] OnDeviceHeadSuggestModel
+        [3] OptGuideOnDeviceClassifierModel
+        [3] OptGuideOnDeviceModel
+        [3] OptimizationHints
+            [4] 719
+                [5] _metadata
+        [3] OriginTrials
+        [3] PKIMetadata
+            [4] 1733  (...)
+        [3] PrivacySandboxAttestationsPreloaded
+        [3] RecoveryImproved
+        [3] Safe Browsing
+        [3] SafetyTips
+            [4] 3091  (...)
+        [3] segmentation_platform
+        [3] ShaderCache
+        [3] SSLErrorAssistant
+            [4] 7
+                [5] _metadata
+        [3] Subresource Filter
+            [4] Indexed Rules
+                [5] 38
+                    [6] 9.70.0
+            [4] Unindexed Rules
+                [5] 9.70.0
+                    [6] _metadata
+        [3] TrustTokenKeyCommitments
+            [4] 2026.3.23.1
+                [5] _metadata
+        [3] WasmTtsEngine
+            [4] 20260723.1
+                [5] _metadata
+        [3] WidevineCdm
+        [3] ZxcvbnData
+            [4] 3
+                [5] _metadata
+[1] Users
+    [2] Default
+        [3] AppData
+            [4] Local
+                [5] Microsoft
+                    [6] GameDVR
+                    [6] Windows
+                    [6] Windows Sidebar
+                    [6] WindowsApps
+                [5] Temp
+            [4] Roaming
+                [5] Microsoft
+                    [6] Internet Explorer
+                    [6] Network
+                    [6] Spelling
+                    [6] Windows
+        [3] Desktop
+        [3] Documents
+        [3] Downloads
+        [3] Favorites
+        [3] Links
+        [3] Music
+        [3] OneDrive
+        [3] Pictures
+        [3] Saved Games
+        [3] Videos
+    [2] defaultuser0
+        [3] AppData
+            [4] Roaming
+                [5] Lenovo
+                    [6] Ludp
+    [2] lenovo
+        [3] .aigo123
+            [4] installer
+                [5] downloads
+        [3] .anaconda
+        [3] .android
+            [4] avd
+            [4] cache
+            [4] studio
+                [5] installer
+        [3] .cache
+            [4] codex-runtimes
+                [5] codex-primary-runtime
+                    [6] dependencies
+                    [6] plugins
+            [4] douyin-link-video-distiller
+                [5] browser-profile
+                    [6] BrowserMetrics
+                    [6] component_crx_cache
+                    [6] Crashpad
+                    [6] Default
+                    [6] extensions_crx_cache
+                    [6] GPUPersistentCache
+                    [6] GrShaderCache
+                    [6] Safe Browsing
+                    [6] segmentation_platform
+                    [6] ShaderCache
+            [4] huggingface
+                [5] hub
+                    [6] .locks
+                    [6] models--Systran--faster-whisper-small
+                [5] xet
+                    [6] https___cas_serv-tGqkUaZf_CBPHQ6h
+                    [6] logs
+        [3] .cc-switch
+            [4] backups
+            [4] logs
+            [4] skills
+                [5] skill-creator
+                    [6] agents
+                    [6] assets
+                    [6] eval-viewer
+                    [6] references
+                    [6] scripts
+        [3] .claude
+            [4] backups
+            [4] cache
+            [4] file-history
+            [4] ide
+            [4] paste-cache
+            [4] plans
+            [4] plugins
+                [5] marketplaces
+                    [6] claude-plugins-official
+            [4] projects
+                [5] C--Users-lenovo
+                    [6] 851e20c9-f1f3-43ff-9504-2ec82b1552b6  (...)
+                    [6] memory
+                [5] C--Windows-System32
+                [5] d----
+                [5] d--1111
+                [5] d--111111
+                [5] d---------2
+                    [6] 033e6ae4-60b2-4fd9-bf2d-aed400ecb49f  (...)
+                    [6] 7515c7e4-94fd-43d8-94ad-e84aca4d5561  (...)
+                    [6] b2670d0c-f087-45f7-9d66-1b0903b2ce04  (...)
+                    [6] d34b55ce-80c6-40c9-a441-54130ac09c15  (...)
+                    [6] d8387961-c6a8-4de5-98e1-ea26cbac7f39  (...)
+                    [6] memory
+                [5] d--2222
+                [5] d--333
+                    [6] 4d8af14a-4d37-4f99-a7a0-18fdedd2c561  (...)
+                [5] d--444444
+                    [6] 1079ee03-6052-4bde-a65a-b1ad713be622  (...)
+                [5] d----agent
+                    [6] memory
+                [5] d----agent-skills-portable-test
+                    [6] 2ae667c0-f472-4228-81da-a50685436d25  (...)
+                    [6] 54143c46-5f1d-4797-8925-bf55d39b5adf  (...)
+                    [6] 6dc47a31-836e-498d-bb08-e2e1ab63b51e  (...)
+                    [6] e21a7597-6a2d-4b8c-838c-0f0d0112ec42  (...)
+                [5] d--android-reverse-frida
+                    [6] f40efe8d-ec83-4a39-a34e-cf36c0d6b0f4  (...)
+                [5] d--android-reverse-frida-frida-hook
+                [5] D--android-reverse-java
+                [5] D--android-studio-file-8-20
+                    [6] a4cd2571-4f48-472e-a328-91e217f0b985  (...)
+                [5] d----------douyin-link-video-distiller
+                [5] d----reserve
+                [5] d--reserve-agent
+                    [6] memory
+                [5] d--reserve-agent-11111
+                [5] d--reserve-agent-skills-portable-test
+                [5] d--reserve-agent-skills-portable-test--dsh
+                [5] d--reserve-agent-web
+                    [6] 2f30f1d2-006c-4a2b-a6d5-f7daf2ec3cb1  (...)
+                [5] d--reverse-chromium
+                [5] d--script-writing-studio
+                    [6] 0aeab653-002b-479d-a6b9-2a441c586831  (...)
+                [5] D--unidbg-0-9-9-unidbg-0-9-9
+                [5] D--unidbg-boot-server-0-9-9
+                [5] d--web-develop
+                    [6] a1fab16a-bbbb-447f-9d38-f33d8e66c42b  (...)
+                [5] d--web-develop-my-blog
+            [4] session-env
+            [4] sessions
+            [4] shell-snapshots
+            [4] skills
+                [5] skill-creator
+                    [6] agents
+                    [6] assets
+                    [6] eval-viewer
+                    [6] references
+                    [6] scripts
+                [5] term-explainer
+                    [6] evals
+                [5] term-explainer-workspace
+                    [6] iteration-1
+            [4] tasks
+                [5] 2fe9ce35-0f79-4974-9fa9-734c4bd73906  (...)
+                [5] 84b7dcb8-969e-4a7e-a0cc-b5aab0cba2aa  (...)
+                [5] 851e20c9-f1f3-43ff-9504-2ec82b1552b6  (...)
+                [5] a61bfc57-5d50-4c53-8790-b280bb4e51b0  (...)
+            [4] telemetry
+        [3] .claude-code-gui
+            [4] logs
+        [3] .conda
+            [4] tos
+                [5] 3c9d068aa053e2a1c4313fe3391b7a8ee57c4fbd09c4e8aeae49ef333a740150
+                [5] 8c054ac91082b2ed4862701ed278dc96a78db796db69dedc296e13baab307527
+                [5] af083a5740bb2f49d127a362ef07b9491dd648014948bcd835b4bdf0a1ca3b9f
+        [3] .config
+            [4] git
+        [3] .copilot
+            [4] ide
+            [4] logs
+            [4] session-state
+        [3] .dotnet
+            [4] sdk-advertising
+                [5] 8.0.100
+                    [6] microsoft.net.sdk.android
+                    [6] microsoft.net.sdk.aspire
+                    [6] microsoft.net.sdk.ios
+                    [6] microsoft.net.sdk.maccatalyst
+                    [6] microsoft.net.sdk.macos
+                    [6] microsoft.net.sdk.maui
+                    [6] microsoft.net.sdk.tvos
+                    [6] microsoft.net.workload.emscripten.current
+                    [6] microsoft.net.workload.emscripten.net6
+                    [6] microsoft.net.workload.emscripten.net7
+                    [6] microsoft.net.workload.mono.toolchain.current
+                    [6] microsoft.net.workload.mono.toolchain.net6
+                    [6] microsoft.net.workload.mono.toolchain.net7
+            [4] TelemetryStorageService
+        [3] .dsh
+            [4] plugins
+            [4] profiles
+                [5] node_modules
+                    [6] @agentclientprotocol
+                    [6] @anthropic-ai
+                    [6] @aws
+                    [6] @aws-crypto
+                    [6] @aws-sdk
+                    [6] @babel
+                    [6] @deepseek-ai
+                    [6] @earendil-works
+                    [6] @google
+                    [6] @hono
+                    [6] @img
+                    [6] @joplin
+                    [6] @mistralai
+                    [6] @mixmark-io
+                    [6] @modelcontextprotocol
+                    [6] @nodable
+                    [6] @opentelemetry
+                    [6] @protobufjs
+                    [6] @shikijs
+                    [6] @smithy
+                    [6] @standard-schema
+                    [6] @tanstack
+                    [6] @types
+                    [6] @ungap
+                    [6] @vscode
+                [5] web
+                    [6] node_modules
+            [4] sessions
+                [5] --D-lenovo-Documents--
+                    [6] session-82cb8f6b-7dc4-4c24-b9bf-fb320d99f3f8
+                    [6] session-d6d6181c-095e-4a50-8aef-7e2c6efcfa40
+                    [6] session-eb55afb9-d9ea-49cf-8db8-6506d085099a
+                [5] --D-reserve_agent--
+                    [6] session-aead4211-a885-4c29-aa7e-52089256a556
+                [5] --D-reserve_agent-11111--
+                    [6] session-969601ea-54b4-4801-9c18-4f705da49cbe
+                    [6] session-969d713e-a2f0-4695-af52-e70a86d429db
+                [5] --D-reserve_agent-ish-portable-kit--
+                    [6] session-0f526141-becb-4a2c-b34f-ca275292b933
+                    [6] session-19393f07-f254-4969-8742-07c4800db802
+                    [6] session-39ad2032-b07a-4395-844b-327a5e1be422
+                    [6] session-63524c59-8e63-4ad6-9fcd-9c1305b17ef5
+                    [6] session-a6c6634b-912d-44b2-b7d6-634052676ef9
+                    [6] session-a9b4e97f-b340-41c6-93bc-c319a41f1223
+                    [6] session-b2c48db6-eada-4ad2-9ac4-03b2b98e006d
+                    [6] session-b2d74817-91f7-4ec7-9fc8-68c789b4dfda
+                    [6] session-eafe4e5b-ebae-4de7-8548-5146b70c06fe
+                [5] --D-reserve_agent-skills-portable-test--
+                    [6] session-0409650b-416b-45f7-9b2f-50b88bcf9b86
+                    [6] session-30c36ec1-03f1-4671-b679-17e0345619ab
+                    [6] session-50ba677c-aaeb-44ad-963a-059f7eaf956c
+                    [6] session-c98dc95c-b520-4d02-bef0-195171f10b2e
+                    [6] session-cb6773ae-7b14-4b4a-843f-1c44777cb205
+                [5] --D-reserve_agent-web--
+                    [6] session-0638d3fa-ad98-44f0-9dd9-586358684f8b
+                    [6] session-227ba74f-ba57-44e8-a228-5631ca828171
+                    [6] session-bc7bb5bb-2a0d-4e26-90f8-c2587a1fcde1
+            [4] storages
+        [3] .EasyOCR
+            [4] model
+            [4] user_network
+        [3] .gnupg
+            [4] openpgp-revocs.d
+            [4] private-keys-v1.d
+            [4] public-keys.d
+        [3] .gradle
+            [4] .tmp
+            [4] android
+            [4] caches
+                [5] 8.0
+                    [6] executionHistory
+                    [6] file-changes
+                    [6] fileContent
+                    [6] fileHashes
+                    [6] generated-gradle-jars
+                    [6] md-rule
+                    [6] md-supplier
+                    [6] scripts
+                [5] jars-9
+                    [6] 01bd0caef559fe1ead659b771134ea52  (...)
+                    [6] 040c718806452a50edc7ff1fa87b3d64  (...)
+                    [6] 05241a8f69a8dd812138573d6a849cac  (...)
+                    [6] 06f6584eec8f2a4251e180ab5a11f86e  (...)
+                    [6] 09de36c72ccea3a7fe00a5abf416ab91  (...)
+                    [6] 0b99796cd828d5b55853771414a67ef8  (...)
+                    [6] 0c7b40f973f4f0e09c24dfd7ee0b6b9d  (...)
+                    [6] 0d5dc05b7d5deefe95cab7d016e37237  (...)
+                    [6] 0e5fa50af9711bc9188e0df5ad084cbd  (...)
+                    [6] 0fe41392723a0026409f2fbc13f96f0a  (...)
+                    [6] 117bc3411b09cdba9f95dd3d7303a334  (...)
+                    [6] 11b8a42260e9f24257c8a648dc3ca701  (...)
+                    [6] 11f1948ddd1d6489506a4484285e18b5  (...)
+                    [6] 122e643b452b34b55c5549b1451b9e8e  (...)
+                    [6] 134a1f089f435f016519f51da6b26102  (...)
+                    [6] 1380acafaa0d63811b380c067dd71f6e  (...)
+                    [6] 15b8b62753df27e2b6c9853ab81f150c  (...)
+                    [6] 1680e1285526f58910ea5e0a6aca80ec  (...)
+                    [6] 17d8720d5ccbfcca542fba9d146996ec  (...)
+                    [6] 187243a08a56da5c85de218a011ee617  (...)
+                    [6] 18d135e631408635b015d460320c4ea9  (...)
+                    [6] 1976f906e7c6d75f4407af233f13c89b  (...)
+                    [6] 1cf19def8a3075c6a78c6b9cef9b2e0a  (...)
+                    [6] 1d188669d8b1a348e5877992194a3c97  (...)
+                    [6] 1e03c3ad9fb2c881b04e7f2c7176a1e4  (...)
+                    [6] 1f76bcf10ea46724eae62950b70c568a  (...)
+                    [6] 228ec1c93610868ab58fc20d9c96405c  (...)
+                    [6] 24c9c1dea35edef52f54ca5da1502ac3  (...)
+                    [6] 257331b13dce779f3c45792a8a939376  (...)
+                    [6] 2598d2abb0ba5a6f13d65c20615197a7  (...)
+                    [6] 25a48f84d8c067f3332c699a1f094fb9  (...)
+                    [6] 2661c951b70aeb503c3d1de51165b214  (...)
+                    [6] 27043fbf22a091552b3d4e0b192fd486  (...)
+                    [6] 298566cd1c33d4f0e711a9873cebd25c  (...)
+                    [6] 29a0b73ad6d19ca5c3c3d622e0416cfb  (...)
+                    [6] 2b4a98a7faefc5eb9292cfe675a4dea6  (...)
+                    [6] 2d10c46f0b39da63d09327a1e8406c5f  (...)
+                    [6] 2f8b3a12414bb24479ef41cbf5a07478  (...)
+                    [6] 313d79820180b831bc262dd4f2d38cce  (...)
+                    [6] 3371ce6c770fc48e23f4ad40671e0269  (...)
+                    [6] 34ce61303b7e88750a72707be45a63e6  (...)
+                    [6] 34d5ed7ac44939578b184adf1facd488  (...)
+                    [6] 386485a061b4eb4deaab83fc4a65196d  (...)
+                    [6] 38716650af387421e4d5e53f930ea785  (...)
+                    [6] 3ad624d4135c3aa3a31e6ee32ec401ca  (...)
+                    [6] 3b6c7c3150f29ebf24691e29e6054598  (...)
+                    [6] 3bfb4d73bca2862972e6d84a20a19c05  (...)
+                    [6] 3eb7b396c9b9bca216b8341cc3de7c87  (...)
+                    [6] 453782cb324dfa0b1bad54ec09f077f5  (...)
+                    [6] 4577f68295f996c24c58afbc864de34e  (...)
+                    [6] 4651f3d414e2432d23b63f1da17de65e  (...)
+                    [6] 48d99601a0cce16b30a96216d63c2752  (...)
+                    [6] 4b5816df7544d59906b3f4e7dfa13050  (...)
+                    [6] 4cd69813f63ec96ba075e00c9e8c8551  (...)
+                    [6] 4d989381d758f621630222304ef6b055  (...)
+                    [6] 4dc1281b3e99d8105c8337cf3550f342  (...)
+                    [6] 4e103fc14f3fa21678c90229cfdcc3ab  (...)
+                    [6] 4e2c98c5258ec1eba682f31007f5d866  (...)
+                    [6] 4f0a8afae3ac388813460878f4d88d69  (...)
+                    [6] 51756f6964a14a4080815130a392acd1  (...)
+                    [6] 5456fc043674fe13afc1ac979ec04098  (...)
+                    [6] 54ad51a4018ccf1c0463ff1525283220  (...)
+                    [6] 557787b65fb5e01845e75c505e0fa911  (...)
+                    [6] 5aa30915e3ccf84a7d4458a2eceb51d0  (...)
+                    [6] 5c4abda1d92f79b810d44d8afc3efccf  (...)
+                    [6] 5c6f43d6a9f9cf2beddcdbac802893ac  (...)
+                    [6] 5caee0d9d8296be96c67e92daf7213da  (...)
+                    [6] 5f734897829c7339d1f9b3352e3ec16a  (...)
+                    [6] 5f8e11708b4f2434a7af5f7dcc320fd6  (...)
+                    [6] 601d13c630ac0291f3842d2f2124e53d  (...)
+                    [6] 61a69498c044554b5adaff7f3e76afe3  (...)
+                    [6] 6218974f5c24d05eb8ccc9762f26d8b2  (...)
+                    [6] 63c79d53ec1dc8ed96b4a217b7cbd80a  (...)
+                    [6] 6419b9fcab2c5f5687ce7f810339e0fb  (...)
+                    [6] 6438c8aed3b0928cbba163b8004e3456  (...)
+                    [6] 648432c038c094c6c5d2bd4b86a97f05  (...)
+                    [6] 674bbccf88a6ad54476be288d47477fd  (...)
+                    [6] 67d2abf25e0cb033505c4a7658a7be16  (...)
+                    [6] 6954c322dced0cc7829ef3ca77a16ab2  (...)
+                    [6] 69f6098adfbc7ede6a1131bc4bee0118  (...)
+                    [6] 6a2174b873f209fb298f3fbf4a3f5ffb  (...)
+                    [6] 6b12b5d56b4b6a07eb374738a0c82223  (...)
+                    [6] 6c2c330d7cb605dbe3e953a000e27529  (...)
+                    [6] 6cb6af479e61c52c20d7b4901804a9f1  (...)
+                    [6] 6ffee56ba6e69210b6e4950873a4d5b8  (...)
+                    [6] 706e2e9b0eba0c3f49373d2e4dc9e9e4  (...)
+                    [6] 726996844aade4ab02a0742b3bba5fb5  (...)
+                    [6] 72f95ea5e7a43dc54cfc181af5f82196  (...)
+                    [6] 754674ef24651f94551af318a6898c61  (...)
+                    [6] 756e0a21bcf3e4621e432b628e532830  (...)
+                    [6] 78184d17b52b374e4c13c1e0bb1b2ecd  (...)
+                    [6] 7a14afa1a3eb47f922c31aa151654b86  (...)
+                    [6] 7b4dbbebccc6e6c9f3b7b6939dffe94e  (...)
+                    [6] 7cde94f1bb10802cede1095240a4e3c0  (...)
+                    [6] 7ef0d39569f821e816244021747c2445  (...)
+                    [6] 8200c06095732b537befc3483888ac03  (...)
+                    [6] 827b55942ed881158ffbfaf710c78dc1  (...)
+                    [6] 83e685ae4aa6f27246df50d9983ab568  (...)
+                    [6] 8422fe3ccdeffd65eaee97b7c8038685  (...)
+                    [6] 85a6f49a9bc679cc08083274acbac078  (...)
+                    [6] 868a116e3b799db37f011fd1b10fbdfb  (...)
+                    [6] 885cab9f2184bf15b8d431c8154a7a3c  (...)
+                    [6] 88c603d76a5be0fb694ce1ab7798383b  (...)
+                    [6] 894cbf77ea5d76cf3b9bb9899ed38469  (...)
+                    [6] 8961f5d3456de1ec1df5289f4ef221cd  (...)
+                    [6] 8c9f18817876a2d940ed64e54e57371f  (...)
+                    [6] 8e20d051db3825a92ae9dc45bd2295ba  (...)
+                    [6] 91c8620d686e5c02a20746309f540004  (...)
+                    [6] 927f47682684f7c3fec707575e25b1f2  (...)
+                    [6] 92a67c32af7dd7ee893c78725bf9baad  (...)
+                    [6] 94caa647ccf807fd026929782ca81661  (...)
+                    [6] 95d72eea6c2ea6adfa206a2f177a234e  (...)
+                    [6] 961ded6cf249749a02e810d61d78800e  (...)
+                    [6] 9798c45aa2371c032139ce0fc2424bac  (...)
+                    [6] 9936b676c31a54d06b6335e239a06212  (...)
+                    [6] 9cc65fec27544bab5aa800746e13fa33  (...)
+                    [6] 9ce083f9a89e4100b69e1ad792b21fa1  (...)
+                    [6] 9da6f329684b6af2678eab20e21f73de  (...)
+                    [6] a15b65279b8544324a3e86f5278ef55d  (...)
+                    [6] a2e677712edc34f45ec1028d644dd018  (...)
+                    [6] a3988a0957ff802f98e1712638b278b7  (...)
+                    [6] a48408821d2d2de489467184e8953643  (...)
+                    [6] a66da2538bbdc00ee1092204a13786d7  (...)
+                    [6] a6b14a795bc29a158d29d3ad3d8ccbae  (...)
+                    [6] a6f2bc56dceee5a88026d602dca5e1dc  (...)
+                    [6] a7030b5b3bd0ee52c35d77a1a73ee708  (...)
+                    [6] aa689853a4454f5e3fc2d0e6746475d0  (...)
+                    [6] ac8935c870dff098b8d1725f1275215e  (...)
+                    [6] ac9eb61c749616fd8a4ddbb70cfcebff  (...)
+                    [6] acf00903929636649dfcd67074d863ea  (...)
+                    [6] ae1f7029fea79ca5533835b3e8dda0c3  (...)
+                    [6] afcbecff312fa97a1b539a3cded7a0ab  (...)
+                    [6] b0250fd072b9412812e0573ae10bae4a  (...)
+                    [6] b08284065fa5a9398a94458d07763926  (...)
+                    [6] b22d929d26085f7ff6003f60d2d4cf57  (...)
+                    [6] b9165a26a98cb6f50a5070fe0308a646  (...)
+                    [6] bfd93b18b55f62a2766f8690df2f2b43  (...)
+                    [6] bffef4b424c1d5d2e92d75a549287661  (...)
+                    [6] c0f62e798aa22ca97afcfb3a2a0ef4d0  (...)
+                    [6] c36215b892479a859c24c345ecfdd920  (...)
+                    [6] c6341f223af7cefbe9aaea4e41b3fe7a  (...)
+                    [6] c9032d8d70e6074c6c7c4db4655d2722  (...)
+                    [6] cea1c1560eb61d8e011ca7601c423754  (...)
+                    [6] cffef33c4dca389fff6c24cb9fba5547  (...)
+                    [6] d01ee867fc808dc1df6ac1b0c30fbd37  (...)
+                    [6] d14ae0460c3e8beeba9ad1280d0a3585  (...)
+                    [6] d16e332c2a3aeb8745833c212649afe0  (...)
+                    [6] d3774dcace1f236a7a9ff9ee177c0b02  (...)
+                    [6] d443f1281e28a8e1795f9b8adc8d0a5f  (...)
+                    [6] d546ceb76d8989dcc520d9512ed6bce2  (...)
+                    [6] d701b6a7018982737925a6e4e688b3bf  (...)
+                    [6] d98463a3ca4696e7ddf53cfe537cf721  (...)
+                    [6] da155ac5e6001fc421cad8699bb29524  (...)
+                    [6] daa7c7dfb62a3af5d88a99a33f8da779  (...)
+                    [6] dc8714ad53a8b63c6ebfd9483ea43132  (...)
+                    [6] dd193d4917bb49d976a36fab67197632  (...)
+                    [6] e156c1dd7e371fd1c192e8a468db2a71  (...)
+                    [6] e562c31e6d316a1e3c7d19eb35a0a20c  (...)
+                    [6] e678c053f9e2820d3a1eb749b2fa0799  (...)
+                    [6] e68d7463dde5cb55152dd5a93f72a5ea  (...)
+                    [6] e76f60e42b4e5f3dc3efe2ebe8b7fa8f  (...)
+                    [6] e7cbba9ebbee71e9648cb65c73316a0c  (...)
+                    [6] e888e4dbb8b38d6e7b1995d4bea69921  (...)
+                    [6] e9947e5d4771b4a232aac1457f6b9041  (...)
+                    [6] ebc5f4e87408c1579f2fd38f53ac32ef  (...)
+                    [6] ec131cbe57fd33aee5df4f72630467ed  (...)
+                    [6] ee00aa94f03cdc5898d4e62ec14fd411  (...)
+                    [6] f041a2017f2a76b415e56e90609ba18b  (...)
+                    [6] f0d8c78c6498611bba7dfac2786892ff  (...)
+                    [6] f1585e4804b2a7d78ce64fe29ce536e1  (...)
+                    [6] f58faabaa743e5c93cccd843d01ca55e  (...)
+                    [6] f688b032d64aa21e50f8c18348f7dc18  (...)
+                    [6] f8f785e3d078e6f2e4c479ca9ac12fe8  (...)
+                    [6] fa3ce8f4eca213c1190b17514c7f6786  (...)
+                    [6] fed86beea3022befd4cf837839e2e5b5  (...)
+                    [6] o_01a836912ccf274ca9faf0fbdebeab4e
+                    [6] o_08822bea377d8b50d3c7dde05962e68c
+                    [6] o_08ce97745699e3e8d395bbd58737f305
+                    [6] o_1224a7f0c1af6c5e989b55410b9f4f5a
+                    [6] o_215c6604890e74b3cb5f269d7384f667
+                    [6] o_273760b8855746596fe9533a35abae40
+                    [6] o_2988ffbb2029651aeab18574de011191
+                    [6] o_34835aed4abda1c9a68ed5857b330282
+                    [6] o_38be20e681ede185b289d8c4319e869c
+                    [6] o_3cd37791efbda01f8701cd61b4306666
+                    [6] o_3f034bb262a4fcc198b77f22b2897914
+                    [6] o_414f804ab2e57db7ba61889681866a7c
+                    [6] o_456825077e1e4ed86e55d017620eda03
+                    [6] o_4848c1aab45c95d64f8213b5db3d956d
+                    [6] o_493add880d4e55108b2fc68fdaba0cb5
+                    [6] o_497c99dc43ce8fece95d0e589f2459bd
+                    [6] o_4be1e431f55d9cec042cbf2c518c6eb2
+                    [6] o_4c1e0b9a36198dba32a3bc32d4fa19b4
+                    [6] o_4ed620e854ca9cebe58329dfdda115ac
+                    [6] o_5ad9dc2c22ca24ef0d419f6c04946e7a
+                    [6] o_5d9419e37363d669056637b8a1950f3d
+                    [6] o_7334add60695b20bd4cd543be46d88b7
+                    [6] o_75f72a9d053957e7412430584d9606b1
+                    [6] o_8a549fac1050f0cd7e8a153337216964
+                    [6] o_8a87f35be72b839a5a5c62dafeeb5d06
+                    [6] o_8fb7f079610044c1365d93b90651e5ad
+                    [6] o_91573078d41b3ac01571c813d5758796
+                    [6] o_956e67c9efa17aa1a1b512b2229be2dc
+                    [6] o_98c6f03682c3bb26483296511d75fb78
+                    [6] o_9acb583bf0647a9a8c9bc27669a08581
+                    [6] o_adfbe061c276260397a4d1b6334c7ee5
+                    [6] o_b0a7905f35e623216874f73f9819b0c2
+                    [6] o_b167c9944371b2bbc3a83971bb3fcfa1
+                    [6] o_b3ccb3bf5e8ede00f372e786b64581bd
+                    [6] o_b8c59c1a8546052b7bae46663df3c52d
+                    [6] o_bed40a7026e2ddf2fd098d6365c706e9
+                    [6] o_c5ee98ccb4611ca702a16be17bbedff6
+                    [6] o_c884f388ca1dfbe664c2af158b2daa4f
+                    [6] o_d153d99d82610ad884202bbf69a54e08
+                    [6] o_da30290c1e2fa7f9df74a58e8b0d4fe9
+                    [6] o_db03a8847b91b3cd854bc60fdcc924b4
+                    [6] o_df241f99c5e05f18695b7d5448c502ae
+                    [6] o_e828a4ff56760a28e3dfd029f8592524
+                    [6] o_f83b0fa83b1b55b3b71c268a04508407
+                [5] journal-1
+                [5] modules-2
+                    [6] files-2.1
+                    [6] metadata-2.100
+                [5] transforms-3
+            [4] daemon
+                [5] 8.0
+            [4] jdks
+            [4] native
+                [5] 68d5fa5c4cc2d200863cafc0d521ce42e7d3e7ee720ec0a83991735586a16f82
+                    [6] windows-amd64
+                    [6] windows-amd64-min
+                [5] e376f236ea51e6404a007f0833ffe2c6e607c4080706a723a18a27aeea778392
+                    [6] windows-amd64
+                [5] jansi
+                    [6] 1.18
+            [4] notifications
+                [5] 8.0
+            [4] wrapper
+                [5] dists
+                    [6] gradle-8.0-bin
+        [3] .idlerc
+        [3] .Ld9VirtualBox
+        [3] .m2
+            [4] repository
+                [5] antlr
+                    [6] antlr
+                [5] avalon-framework
+                    [6] avalon-framework
+                [5] ch
+                    [6] qos
+                [5] classworlds
+                    [6] classworlds
+                [5] com
+                    [6] alibaba
+                    [6] fasterxml
+                    [6] github
+                    [6] google
+                    [6] googlecode
+                [5] commons-beanutils
+                    [6] commons-beanutils
+                [5] commons-chain
+                    [6] commons-chain
+                [5] commons-cli
+                    [6] commons-cli
+                [5] commons-codec
+                    [6] commons-codec
+                [5] commons-collections
+                    [6] commons-collections
+                [5] commons-digester
+                    [6] commons-digester
+                [5] commons-io
+                    [6] commons-io
+                [5] commons-lang
+                    [6] commons-lang
+                [5] commons-logging
+                    [6] commons-logging
+                [5] commons-validator
+                    [6] commons-validator
+                [5] dom4j
+                    [6] dom4j
+                [5] io
+                    [6] kaitai
+                [5] javax
+                    [6] servlet
+                [5] junit
+                    [6] junit
+                [5] log4j
+                    [6] log4j
+                [5] logkit
+                    [6] logkit
+                [5] net
+                    [6] dongliu
+                    [6] java
+                [5] org
+                    [6] apache
+                    [6] checkerframework
+                    [6] codehaus
+                    [6] eclipse
+                    [6] hamcrest
+                    [6] iq80
+                    [6] jetbrains
+                    [6] junit
+                    [6] mortbay
+                    [6] ow2
+                    [6] parboiled
+                    [6] pegdown
+                    [6] scijava
+                    [6] slf4j
+                    [6] sonatype
+                [5] oro
+                    [6] oro
+                [5] sslext
+                    [6] sslext
+                [5] xerces
+                    [6] xercesImpl
+                [5] xml-apis
+                    [6] xml-apis
+            [4] wrapper
+                [5] dists
+                    [6] apache-maven-3.5.4-bin
+                    [6] apache-maven-3.8.1-bin
+        [3] .matplotlib
+        [3] .mitmproxy
+        [3] .nuget
+            [4] packages
+                [5] microsoft.aspnetcore.app.ref
+                    [6] 6.0.25
+                [5] microsoft.netcore.app.host.win-x64
+                    [6] 6.0.25
+                [5] microsoft.netcore.app.ref
+                    [6] 6.0.25
+                [5] microsoft.windowsdesktop.app.ref
+                    [6] 6.0.25
+                [5] mono.cecil
+                    [6] 0.11.4
+        [3] .objection
+        [3] .playwright-mcp
+        [3] .qoder
+            [4] bin
+                [5] qodercli
+            [4] cache
+                [5] experts
+                [5] projects
+                    [6] 7_12-ad7e5e53
+            [4] external-commands
+            [4] logs
+                [5] runs
+                    [6] 2026-07-12T22-08-42-710+08-00-fz8qx9-p11872
+                    [6] 2026-07-31T10-02-54-045+08-00-s3nbf6-p34500
+                    [6] 2026-07-31T10-02-58-260+08-00-qcinqa-p12636
+            [4] session-env
+            [4] shared_client
+                [5] atlas
+                    [6] work
+                [5] bin
+                    [6] 2026.709.1
+                    [6] 2026.715.1
+                    [6] 2026.806.1
+                    [6] 2026.814.1
+                [5] cache
+                    [6] db
+                    [6] latex
+                [5] extension
+                    [6] local
+                [5] index
+                    [6] .settings
+                    [6] completion
+                    [6] git
+                    [6] graph
+                    [6] memory_network
+                    [6] memory_text
+                    [6] memory_topic_tree
+                    [6] meta
+                    [6] tree
+                    [6] vector
+                [5] logs
+                [5] memories
+                    [6] 019f56cb  (...)
+                [5] model
+                [5] repowiki
+                [5] tmp
+        [3] .roo-cline
+            [4] globalStorage
+                [5] wecode-ai.aigo123
+                    [6] cache
+                    [6] settings
+                    [6] tasks
+            [4] workspaceStorage
+                [5] intellij-workspace
+        [3] .run-vs-agent
+            [4] nodejs
+                [5] node_modules
+                    [6] corepack
+                    [6] npm
+        [3] .ssh
+        [3] .th-client
+        [3] .tmp
+        [3] .vscode
+            [4] cli
+            [4] extensions
+                [5] anthropic.claude-code-2.1.260-win32-x64
+                    [6] resources
+                    [6] webview
+                [5] formulahendry.code-runner-0.12.2
+                    [6] .github
+                    [6] images
+                    [6] node_modules
+                    [6] out
+                    [6] syntaxes
+                [5] github.remotehub-0.64.0
+                    [6] dist
+                    [6] l10n
+                    [6] resources
+                [5] kevinrose.vsc-python-indent-1.21.0
+                    [6] .github
+                    [6] out
+                    [6] static
+                [5] lkrms.inifmt-0.1.7
+                    [6] bin
+                    [6] images
+                    [6] out
+                [5] log-formatter.log-formatter-1.0.8
+                    [6] .github
+                    [6] .vscode
+                    [6] client
+                    [6] server
+                [5] manasxx.background-cover-3.6.1
+                    [6] node_modules
+                    [6] out
+                    [6] resources
+                    [6] webview-dist
+                [5] martian.tesseract-1.6.1
+                    [6] images
+                    [6] themes
+                [5] mechatroner.rainbow-csv-3.24.1
+                    [6] contrib
+                    [6] dist
+                    [6] rbql mock
+                    [6] rbql_core
+                    [6] syntaxes
+                [5] ms-ceintl.vscode-language-pack-zh-hans-1.131.2026090407
+                    [6] translations
+                [5] ms-python.debugpy-2026.6.0-win32-x64
+                    [6] .config
+                    [6] .noConfigDebugAdapterEndpoints
+                    [6] bundled
+                    [6] dist
+                    [6] l10n
+                    [6] resources
+                [5] ms-python.python-2026.4.0-win32-x64
+                    [6] .eslintplugin
+                    [6] dist
+                    [6] images
+                    [6] l10n
+                    [6] languages
+                    [6] out
+                    [6] python_files
+                    [6] python-env-tools
+                    [6] resources
+                    [6] schemas
+                    [6] syntaxes
+                [5] ms-python.vscode-pylance-2026.3.1
+                    [6] dist
+                    [6] grammars
+                    [6] images
+                    [6] skills
+                    [6] typings
+                [5] ms-python.vscode-python-envs-1.36.0-win32-x64
+                    [6] .github
+                    [6] analysis
+                    [6] api
+                    [6] build
+                    [6] dist
+                    [6] docs
+                    [6] files
+                    [6] images
+                    [6] l10n
+                    [6] python-env-tools
+                [5] ms-vscode.azure-repos-0.40.0
+                    [6] dist
+                    [6] l10n
+                    [6] resources
+                [5] ms-vscode.cmake-tools-1.23.52
+                    [6] assets
+                    [6] dist
+                    [6] res
+                    [6] schemas
+                    [6] syntaxes
+                [5] ms-vscode.cpp-devtools-0.6.18
+                    [6] .gdpr
+                    [6] dist
+                    [6] i18n
+                    [6] res
+                [5] ms-vscode.cpptools-1.33.8-win32-x64
+                    [6] .yarn-bootstrap
+                    [6] assets
+                    [6] bin
+                    [6] debugAdapters
+                    [6] dist
+                    [6] LLVM
+                    [6] ui
+                    [6] walkthrough
+                [5] ms-vscode.cpptools-extension-pack-1.5.1
+                [5] ms-vscode.cpptools-themes-2.0.0
+                    [6] assets
+                    [6] themes
+                [5] ms-vscode.js-debug-nightly-2026.8.2409
+                    [6] l10n-extract
+                    [6] resources
+                    [6] src
+                [5] ms-vscode.powershell-2025.4.0
+                    [6] dist
+                    [6] docs
+                    [6] examples
+                    [6] media
+                    [6] modules
+                    [6] snippets
+                    [6] themes
+                [5] ms-vscode.remote-repositories-0.42.0
+                    [6] dist
+                    [6] l10n
+                    [6] resources
+                    [6] schemas
+                [5] ms-vscode.vscode-chat-customizations-evaluations-1.0.8
+                    [6] build
+                    [6] client
+                    [6] docs
+                    [6] out
+                    [6] scripts
+                    [6] skills
+                [5] njpwerner.autodocstring-0.6.1
+                    [6] .github
+                    [6] docs
+                    [6] images
+                    [6] node_modules
+                    [6] out
+                [5] nrevia05hp.plaintext-comment-0.0.2
+                    [6] syntaxes
+                [5] pkief.material-icon-theme-5.38.1
+                    [6] dist
+                    [6] icons
+                [5] rangav.vscode-thunder-client-2.41.1
+                    [6] dist
+                    [6] images
+                [5] ritwickdey.liveserver-5.7.10
+                    [6] images
+                    [6] node_modules
+                    [6] out
+                [5] shinhwagk.mkstring-0.0.3
+                    [6] .devcontainer
+                    [6] .github
+                    [6] out
+                [5] supsugam.react-native-text-watcher-1.0.3
+                    [6] node_modules
+                    [6] out
+                [5] tomoki1207.pdf-1.2.2
+                    [6] lib
+                    [6] node_modules
+                    [6] out
+        [3] .vscode-shared
+            [4] sharedStorage
+        [3] android
+        [3] AppData
+            [4] ACLOS
+                [5] aclos-highlight
+                    [6] wonderfulVideos14425490692327167198
+            [4] Flash Player
+            [4] Local
+                [5] .IdentityService
+                    [6] AadConfigurationsV2
+                [5] .qoder
+                    [6] shared_cache
+                [5] acc_kernel
+                [5] Adobe
+                    [6] 131FF1E7-725A-44BC-8427-A0D02C0E3627  (...)
+                    [6] BB455622-6FAC-49E1-9690-9C52F72AC9B3  (...)
+                [5] adspower_global-updater
+                [5] aha_doctor
+                    [6] Doubao
+                    [6] Feishu
+                [5] apktool
+                    [6] framework
+                [5] Apps
+                    [6] 2.0
+                [5] assembly
+                    [6] dl3
+                    [6] temp
+                    [6] tmp
+                [5] Backup
+                [5] Bluewhale
+                    [6] file
+                [5] Bytedance
+                    [6] JianyingPro
+                [5] cache
+                    [6] qtshadercache-x86_64-little_endian-llp64
+                [5] CEF
+                    [6] User Data
+                [5] Clash Plus
+                    [6] Clash Plus
+                [5] Claude
+                    [6] logs
+                [5] Claude-3p
+                [5] claude-cli-nodejs
+                    [6] Cache
+                [5] Claude-Data
+                [5] CloudDriveDesktopWidget
+                [5] CMakeTools
+                [5] com.ccswitch.desktop
+                    [6] EBWebView
+                [5] Comms
+                    [6] Unistore
+                    [6] UnistoreDB
+                [5] conda
+                    [6] conda
+                [5] conda-anaconda-tos
+                    [6] conda-anaconda-tos
+                [5] ConnectedDevicesPlatform
+                    [6] 20138179132cbb84
+                [5] coze-updater
+                    [6] pending
+                [5] CrashDumps
+                [5] CrashRpt
+                    [6] UnsentCrashReports
+                [5] cxstudy
+                    [6] latest
+                [5] D3DSCache
+                    [6] 14e06600741f2647
+                    [6] 1933c870be838b51
+                    [6] 19f4e3cfcda13cab
+                    [6] 1d2cea7c217af46f
+                    [6] 2a2102d9a3c525c6
+                    [6] 4e24bb1b2e415a84
+                    [6] 4e5cdf788c8cbdfb
+                    [6] 4eec3b620e110283
+                    [6] 5eee556dd9ef0d33
+                    [6] 5fe8478ff1933b4
+                    [6] 79181e76f024f6f2
+                    [6] 8dd752274757dc6f
+                    [6] 9bbb8ec8968c1147
+                    [6] 9d449b844ebcb0fb
+                    [6] a3f6beb3952dfa83
+                    [6] a9e37e87b5456e71
+                    [6] aef46c1e676cc31d
+                    [6] b15f7bd9c26db9b2
+                    [6] b256f02ad894a509
+                    [6] b5a3c58d1e2d9326
+                    [6] b85cdabd6ec7eb12
+                    [6] cbf6781bd530343c
+                    [6] ccd5eeeaebb1d69d
+                    [6] dbacc8c3d622bb6e
+                    [6] de8416eaabcd635
+                    [6] df5d88aed9a92eed
+                    [6] e85f66d67edf0af3
+                    [6] f8b499ca3fa2753b
+                    [6] faed29a94b1d16bf
+                    [6] fbe0b3c787412f9a
+                [5] DBG
+                [5] deepseek-harness-desktop-updater
+                [5] Deployment
+                [5] Doubao
+                    [6] Application
+                    [6] User Data
+                [5] dsh-desktop-updater
+                [5] Everything
+                [5] EVPlayer
+                    [6] conf
+                    [6] log
+                [5] fastpdf_duba
+                [5] fastpdf_sogou
+                    [6] fonts
+                    [6] local_ocr
+                    [6] logs
+                    [6] pagecache
+                    [6] pdfpop
+                    [6] sdk
+                [5] Feishu
+                    [6] app
+                [5] fontconfig
+                    [6] cache
+                [5] frida
+                    [6] State
+                [5] ghidra
+                [5] GitHubDesktop
+                    [6] app-3.6.3
+                [5] Google
+                    [6] AndroidStudio2022.2
+                    [6] AndroidStudio2023.1
+                    [6] Chrome
+                [5] IdentityNexusIntegration
+                [5] INetHistory
+                    [6] BackgroundTransferApi
+                    [6] BackgroundTransferApiGroup
+                [5] JetBrains
+                    [6] Daemon
+                    [6] IntelliJIdea2026.1
+                    [6] PyCharm2020.1
+                [5] JianyingPro
+                    [6] Apps
+                    [6] User Data
+                [5] kdiskmgr_sogou
+                    [6] data
+                    [6] plugins
+                    [6] ressrc
+                    [6] security
+                [5] kfastpic_sogou
+                    [6] cfgdata
+                    [6] data
+                    [6] depdlls
+                    [6] fastpic_data
+                    [6] iconengines
+                    [6] imageformats
+                    [6] log
+                    [6] platforms
+                    [6] ressrc
+                    [6] tddata
+                [5] Kingsoft
+                    [6] kaccclear
+                [5] ksgsdk
+                    [6] log
+                [5] Lark
+                    [6] security
+                    [6] User Data
+                [5] leigod_audio_boost
+                    [6] auditions
+                    [6] dfx_installer
+                    [6] presets
+                [5] Lenovo
+                    [6] CloudMGR
+                    [6] devicecenter
+                    [6] FusionEngine
+                    [6] GamingAI
+                    [6] ImController
+                    [6] LeAppStore
+                    [6] LeAppStore_tempwork
+                    [6] LeFile
+                    [6] Lenovo Speech
+                    [6] LGMicroCore
+                    [6] LZUpdate
+                    [6] SLBAgent
+                    [6] SLBInstall
+                    [6] SLBrowser
+                    [6] SLBStrategy
+                    [6] SLBUpdate
+                    [6] SmartEngine
+                    [6] UDC
+                [5] lenovoAiPic
+                [5] lenovoPdf
+                    [6] backup
+                    [6] data
+                    [6] log
+                    [6] pdfsdkutil
+                    [6] seal
+                    [6] thumbpics
+                    [6] tip_config
+                [5] lenovoPic
+                [5] lib
+                    [6] 160121  (...)
+                [5] LocalAIAssistant
+                    [6] Utils
+                [5] main.kts.compiled.cache
+                [5] Microsoft
+                    [6] AppActions
+                    [6] ApplicationInsights
+                    [6] AugLoop
+                    [6] Azure DevOps
+                    [6] CLR_v4.0
+                    [6] CLR_v4.0_32
+                    [6] Credentials
+                    [6] Crypto
+                    [6] Edge
+                    [6] EDP
+                    [6] Event Viewer
+                    [6] Excel
+                    [6] Feeds
+                    [6] Feeds Cache
+                    [6] FontCache
+                    [6] GameDVR
+                    [6] GraphicsCache
+                    [6] IdentityCache
+                    [6] Internet Explorer
+                    [6] Linux
+                    [6] Media Player
+                    [6] Office
+                    [6] OneAuth
+                    [6] OneDrive
+                    [6] PenWorkspace
+                    [6] PlayReady
+                    [6] TokenBroker
+                    [6] TypeScript
+                    [6] Vault
+                    [6] VisualStudio
+                    [6] VisualStudio Services
+                    [6] VSApplicationInsights
+                    [6] vscode-cpptools
+                    [6] VSCommon
+                    [6] Windows
+                    [6] Windows Media
+                    [6] Windows Sidebar
+                    [6] Windows Terminal
+                    [6] WindowsApps
+                    [6] WinGet
+                    [6] Word
+                [5] Microsoft SDKs
+                [5] mongodb
+                    [6] mongosh
+                [5] ms-playwright
+                    [6] .links
+                    [6] b
+                    [6] chromium_headless_shell-1234
+                    [6] chromium-1234
+                    [6] ffmpeg-1011
+                    [6] mcp-chrome-6aee293
+                    [6] winldd-1007
+                [5] Multi-C20E94D1-27C1-4D4D-9414-12B0D8574E5B
+                    [6] fse
+                [5] Nahimic
+                    [6] ns-sentry-db
+                [5] NEO
+                    [6] neo_compiler_cache
+                [5] NhNotifSys
+                    [6] nahimic
+                [5] node
+                    [6] corepack
+                [5] node-addon-native-custom-loader
+                    [6] native-cache
+                [5] npm-cache
+                    [6] _cacache
+                    [6] _logs
+                    [6] _npx
+                [5] NuGet
+                    [6] Migrations
+                    [6] v3-cache
+                [5] NVIDIA
+                    [6] GLCache
+                [5] NVIDIA Corporation
+                    [6] NvDriverUpdateCheck
+                    [6] NvNode
+                    [6] NvTmRep
+                [5] OfficePLUS
+                    [6] clientMessageSync
+                    [6] fonts
+                    [6] TelemetryCache
+                    [6] Temp
+                    [6] user
+                    [6] webview2
+                [5] OneDrive
+                    [6] cache
+                [5] OpenAI
+                    [6] Codex
+                [5] Package Cache
+                    [6] {34795B45-E434-46E9-8FAD-C1E77BFAEFDC}v3.9.9150.0
+                    [6] {5B4B8687-6FD2-4002-A109-CC428BC53026}v3.9.9150.0
+                    [6] {5F269192-344B-494C-BC1F-CD607317D9F2}v3.9.9150.0
+                    [6] {69012533-AE90-48A1-B7E5-7124E81C4B40}v3.13.5150.0
+                    [6] {69306EC3-EA19-4D92-B235-048E8B56B75E}v3.9.9150.0
+                    [6] {96355609-7AF7-4475-81C0-1CEAB5EDE7F2}v3.9.9150.0
+                    [6] {B6FD15AA-5981-429F-8EDE-D3343710473F}v3.9.9150.0
+                    [6] {D5660FEC-C22E-4FED-AAB5-BCE53DC22257}v3.9.9150.0
+                    [6] {DB100C7C-FE04-4C9F-8047-3DBD3427A6B3}v3.9.9150.0
+                    [6] {e71df380-4294-4a01-b02c-b032205feeeb}
+                    [6] {E750A467-EDAD-4BF6-A92A-20372DFBD416}v3.9.9150.0
+                    [6] {E9C206B7-6416-47E1-B233-79AF33872B59}v3.9.9150.0
+                [5] Packages
+                    [6] 3AD8A913.49937325EFC59_j4r74wbqry4cc
+                    [6] A0BD72526EFC0BCEC30AB86E32F0CBB0_cwqpnjaagb88w
+                    [6] ActiveSync
+                    [6] AppUp.IntelGraphicsExperience_8j3eq9eme6ctt
+                    [6] A-Volute.Nahimic_w2gh52qy24etm
+                    [6] BaiduNetdisk.DesktopSyncClient_r5kxaep58dem0
+                    [6] Clipchamp.Clipchamp_yxz26nhyzhsrt
+                    [6] cr.sb.cdm3E4D1A088C1F6D498C84F3C86DE73CE49F82A104
+                    [6] cr.sb.cdmf5200eafd3ad904629cbb0f87a78a3c7211081fe
+                    [6] cr.sb.odm1B90147F0458EE1790726C1B0830F8E335E5FF59
+                    [6] cr.sb.odm1BE3B7C1FF075E5CCFA1347C9928831ED40A38FE
+                    [6] cr.sb.odm3E4D1A088C1F6D498C84F3C86DE73CE49F82A104
+                    [6] cr.sb.odm48BCFBBF75F781A6A313DC21DBC7B636AF8CF3E9
+                    [6] cr.sb.odm56E7A970CEF05D9FB79A806506724480B60A9454
+                    [6] cr.sb.odmE9DE0AC98DDB56AC9D04054545478E201628077C
+                    [6] cr.sb.odmf5200eafd3ad904629cbb0f87a78a3c7211081fe
+                    [6] DolbyLaboratories.DolbyDigitalPlusDecoderOEM_rz1tebttyb220
+                    [6] E0469640.LenovoUtility_5grkq8ppsgwt4
+                    [6] E3F11D4FF221BBB85DB61DC661A259D3_cwqpnjaagb88w
+                    [6] Microsoft.AAD.BrokerPlugin_cw5n1h2txyewy
+                    [6] Microsoft.AV1VideoExtension_8wekyb3d8bbwe
+                    [6] Microsoft.AVCEncoderVideoExtension_8wekyb3d8bbwe
+                    [6] Microsoft.BingNews_8wekyb3d8bbwe
+                    [6] Microsoft.BingSearch_8wekyb3d8bbwe
+                    [6] Microsoft.BingWeather_8wekyb3d8bbwe
+                    [6] Microsoft.DesktopAppInstaller_8wekyb3d8bbwe
+                    [6] Microsoft.Edge.GameAssist_8wekyb3d8bbwe
+                    [6] Microsoft.GamingApp_8wekyb3d8bbwe
+                    [6] Microsoft.GetHelp_8wekyb3d8bbwe
+                    [6] Microsoft.HEIFImageExtension_8wekyb3d8bbwe
+                    [6] Microsoft.HEVCVideoExtension_8wekyb3d8bbwe
+                    [6] Microsoft.JapaneseIslandsPREMIUM_8wekyb3d8bbwe
+                    [6] Microsoft.LanguageExperiencePackzh-CN_8wekyb3d8bbwe
+                    [6] Microsoft.LockApp_cw5n1h2txyewy
+                    [6] Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe
+                    [6] Microsoft.MicrosoftJournal_8wekyb3d8bbwe
+                    [6] Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe
+                    [6] Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe
+                    [6] Microsoft.MicrosoftStickyNotes_8wekyb3d8bbwe
+                    [6] Microsoft.MPEG2VideoExtension_8wekyb3d8bbwe
+                    [6] Microsoft.NET.Native.Framework.1.7_8wekyb3d8bbwe
+                    [6] Microsoft.NET.Native.Framework.2.2_8wekyb3d8bbwe
+                    [6] Microsoft.NET.Native.Runtime.1.7_8wekyb3d8bbwe
+                    [6] Microsoft.NET.Native.Runtime.2.2_8wekyb3d8bbwe
+                    [6] Microsoft.OneDriveSync_8wekyb3d8bbwe
+                    [6] Microsoft.OutlookForWindows_8wekyb3d8bbwe
+                    [6] Microsoft.Paint_8wekyb3d8bbwe
+                    [6] Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe
+                    [6] Microsoft.RawImageExtension_8wekyb3d8bbwe
+                    [6] Microsoft.ScreenSketch_8wekyb3d8bbwe
+                    [6] Microsoft.SecHealthUI_8wekyb3d8bbwe
+                    [6] Microsoft.Services.Store.Engagement_8wekyb3d8bbwe
+                    [6] Microsoft.StorePurchaseApp_8wekyb3d8bbwe
+                    [6] Microsoft.Todos_8wekyb3d8bbwe
+                    [6] Microsoft.UI.Xaml.2.8_8wekyb3d8bbwe
+                    [6] Microsoft.VCLibs.140.00.UWPDesktop_8wekyb3d8bbwe
+                    [6] Microsoft.VCLibs.140.00_8wekyb3d8bbwe
+                    [6] Microsoft.VisualStudioCode_8wekyb3d8bbwe
+                    [6] Microsoft.VP9VideoExtensions_8wekyb3d8bbwe
+                    [6] Microsoft.WebMediaExtensions_8wekyb3d8bbwe
+                    [6] Microsoft.WebpImageExtension_8wekyb3d8bbwe
+                    [6] Microsoft.Whiteboard_8wekyb3d8bbwe
+                    [6] Microsoft.WidgetsPlatformRuntime_8wekyb3d8bbwe
+                    [6] Microsoft.Win32WebViewHost_cw5n1h2txyewy
+                    [6] Microsoft.WinAppRuntime.DDLM.4000.1049.117.0-x6_8wekyb3d8bbwe
+                    [6] Microsoft.Windows.CloudExperienceHost_cw5n1h2txyewy
+                    [6] Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy
+                    [6] Microsoft.Windows.DevHome_8wekyb3d8bbwe
+                    [6] Microsoft.Windows.NarratorQuickStart_8wekyb3d8bbwe
+                    [6] Microsoft.Windows.Photos_8wekyb3d8bbwe
+                    [6] Microsoft.Windows.ShellExperienceHost_cw5n1h2txyewy
+                    [6] Microsoft.Windows.StartMenuExperienceHost_cw5n1h2txyewy
+                    [6] Microsoft.WindowsAlarms_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.1.0_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.1.1_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.1.4_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.1.7_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.1.8_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsAppRuntime.2_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsCalculator_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsCamera_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsNotepad_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsStore_8wekyb3d8bbwe
+                    [6] Microsoft.WindowsTerminal_8wekyb3d8bbwe
+                    [6] Microsoft.Winget.Source_8wekyb3d8bbwe
+                    [6] Microsoft.Xbox.TCUI_8wekyb3d8bbwe
+                    [6] Microsoft.XboxGamingOverlay_8wekyb3d8bbwe
+                    [6] Microsoft.XboxIdentityProvider_8wekyb3d8bbwe
+                    [6] Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe
+                    [6] Microsoft.YourPhone_8wekyb3d8bbwe
+                    [6] Microsoft.ZuneMusic_8wekyb3d8bbwe
+                    [6] MicrosoftCorporationII.MicrosoftFamily_8wekyb3d8bbwe
+                    [6] MicrosoftCorporationII.QuickAssist_8wekyb3d8bbwe
+                    [6] MicrosoftCorporationII.WinAppRuntime.Main.1.4_8wekyb3d8bbwe
+                    [6] MicrosoftCorporationII.WinAppRuntime.Singleton_8wekyb3d8bbwe
+                    [6] MicrosoftWindows.Client.CBS_cw5n1h2txyewy
+                    [6] MicrosoftWindows.Client.Core_cw5n1h2txyewy
+                    [6] MicrosoftWindows.Client.CoreAI_cw5n1h2txyewy
+                    [6] MicrosoftWindows.Client.OOBE_cw5n1h2txyewy
+                    [6] MicrosoftWindows.Client.WebExperience_cw5n1h2txyewy
+                    [6] MicrosoftWindows.CrossDevice_cw5n1h2txyewy
+                    [6] NVIDIACorp.NVIDIAControlPanel_56jybvy8sckqj
+                    [6] PDFShellExt_8wekyb3d8bbwe
+                    [6] PicEditMenu_w1pgnqk9x64ca
+                    [6] PicPrintMenu_w1pgnqk9x64ca
+                    [6] QQExtension_mgek679tqnc4e
+                    [6] WeixinShare_fv0hcek9q9tbw
+                    [6] windows.immersivecontrolpanel_cw5n1h2txyewy
+                    [6] Windows.PrintDialog_cw5n1h2txyewy
+                    [6] windows_ie_ac_001
+                [5] pc_update_notify
+                [5] Pets-C20E94D1-27C1-4D4D-9414-12B0D8574E5B
+                    [6] bg
+                    [6] btn
+                [5] pip
+                    [6] cache
+                [5] PlaceholderTileLogoFolder
+                    [6] 9P8Z7DT3N2GN
+                    [6] 9PLM9XGG6VKS
+                    [6] 9PLRGHGXR4FM
+                    [6] CloudConfigured
+                [5] pnpm
+                    [6] store
+                [5] pnpm-cache
+                    [6] v11
+                [5] pnpm-state
+                [5] Programs
+                    [6] Common
+                    [6] Python
+                    [6] Quark
+                    [6] UC浏览器
+                [5] Publishers
+                    [6] 8j3eq9eme6ctt
+                    [6] 8wekyb3d8bbwe
+                    [6] w2gh52qy24etm
+                [5] QQKartLiveUpdate
+                    [6] LiveUpdateConfig
+                [5] Quark
+                    [6] User Data
+                [5] QuarkUpdater
+                    [6] QuarkUpdater
+                    [6] Update
+                [5] RawEngine
+                    [6] profiles
+                [5] Sentry
+                    [6] 22E93686203003AC3819A60195B3BB9C547559F2  (...)
+                    [6] FB07A8EAA4C95948CD7AE74D07714F706DEF026F  (...)
+                [5] skylot
+                    [6] jadx
+                [5] sogoupdf
+                    [6] bearer
+                    [6] cfgdata
+                    [6] data
+                    [6] fastocrx
+                    [6] iconengines
+                    [6] imageformats
+                    [6] ktool_update
+                    [6] log
+                    [6] nointerrupt
+                    [6] platforms
+                    [6] ressrc
+                    [6] styles
+                [5] sogousdk
+                    [6] common
+                [5] speech
+                    [6] Microsoft
+                [5] SquirrelTemp
+                [5] SysCleaner-BF43DDA2-C2F2-4319-B8B1-9FFE0136049B
+                    [6] bg
+                    [6] btn
+                [5] tdappdesktop
+                    [6] convert
+                    [6] pdf
+                [5] Temp
+                    [6] {4505C0E0-762B-43E1-A4D2-CCAA32F82189}
+                    [6] {48CCC3B8-F593-43C3-8EC3-9DCC956EE246}
+                    [6] {B97E7068-EEDC-4918-AC8C-CAD724CCB30C}
+                    [6] ~nsu.tmp
+                    [6] ~nsu1.tmp
+                    [6] ~nsu2.tmp
+                    [6] 478795f78e634015a272ca198fcdb513  (...)
+                    [6] 4f2b1789-2d89-4453-99c5-946dcba47b12  (...)
+                    [6] 66f11c36-30e4-4fab-ad9d-c6be0589ad69_unzip
+                    [6] 74445875  (...)
+                    [6] 83192660-e6eb-4e59-a336-af774047f0f6  (...)
+                    [6] 95mPxL
+                    [6] 96cb6cf0-6d95-4d96-a81a-210ba4916d0b  (...)
+                    [6] ai
+                    [6] aiep_sbox_selftest_25216
+                    [6] aiep_sbox_selftest_30768
+                    [6] aiep_sbox_selftest_68804
+                    [6] AndroidEmulator
+                    [6] axpX3e
+                    [6] baidu
+                    [6] be65290c-2ec5-47db-8176-4bd0005a3833_unzip
+                    [6] cd9b9fef-c3dc-41fd-8231-c402ec1ea958  (...)
+                    [6] cdt-recon
+                    [6] charles10368079133299398320.tmp
+                    [6] charles10721880525843398334.tmp
+                    [6] charles12380205852155551476.tmp
+                    [6] charles12545331258211469494.tmp
+                    [6] charles13269071233549325691.tmp
+                    [6] charles13434067290090168496.tmp
+                    [6] charles14074465466206688856.tmp
+                    [6] charles18099494516204790839.tmp
+                    [6] charles18395455681265264150.tmp
+                    [6] charles4260426001570704118.tmp
+                    [6] charles4423819241498644752.tmp
+                    [6] charles5031376161006442618.tmp
+                    [6] charles5784692729993004037.tmp
+                    [6] charles6030754039341330713.tmp
+                    [6] charles6272784579993699789.tmp
+                    [6] charles7240691574093364079.tmp
+                    [6] charles7688936751311353972.tmp
+                    [6] charles8753235071342247926.tmp
+                    [6] charles9060212075354142258.tmp
+                    [6] charles926917999734493571.tmp
+                    [6] chrome_BITS_17052_1391637270
+                    [6] chrome_BITS_17052_1807079911
+                    [6] chrome_BITS_26508_114664428
+                    [6] chrome_BITS_26508_132191614
+                    [6] chrome_BITS_26508_743515498
+                    [6] chrome_BITS_26508_76303223
+                    [6] chrome_drag10952_225665842
+                    [6] chrome_drag13892_622945558
+                    [6] chrome_drag13892_997705606
+                    [6] chrome_drag20812_787643622
+                    [6] chrome_drag27304_1880782758
+                    [6] chrome_drag30200_1689254662
+                    [6] chrome_drag34712_860417089
+                    [6] chrome_drag36520_1858097114
+                    [6] chrome_drag36520_38279382
+                    [6] claude
+                    [6] cpk
+                    [6] d29182a6-1187-4265-b09f-118efcdd2044_unzip
+                    [6] data
+                    [6] Deployment
+                    [6] devicecenter
+                    [6] Diagnostics
+                    [6] doubao_ext
+                    [6] dsh-3cD7cF
+                    [6] dsh-acl-locks
+                    [6] dsh-BHVqcm
+                    [6] dsh-C7TsMD
+                    [6] dsh-dh6Ltr
+                    [6] dsh-E22NJe
+                    [6] dsh-eqpgwB
+                    [6] dsh-FVijK4
+                    [6] dsh-iQmk0a
+                    [6] dsh-iU3qQB
+                    [6] dsh-jxNZ4Z
+                    [6] dsh-LoGYCC
+                    [6] dsh-LWaDP4
+                    [6] dsh-mXbHwI
+                    [6] dsh-nKEpz0
+                    [6] dsh-qntQZq
+                    [6] dsh-spill-0jo2x3
+                    [6] dsh-spill-0MPEAf
+                    [6] dsh-spill-0PpfIX
+                    [6] dsh-spill-1Q1uE2
+                    [6] dsh-spill-3Su0sb
+                    [6] dsh-spill-5gRDzS
+                    [6] dsh-spill-5LDVN9
+                    [6] dsh-spill-6tA3B7
+                    [6] dsh-spill-6X9h1s
+                    [6] dsh-spill-8nDSSQ
+                    [6] dsh-spill-8X7p40
+                    [6] dsh-spill-a4UNMe
+                    [6] dsh-spill-A7s6Tq
+                    [6] dsh-spill-AIUvuH
+                    [6] dsh-spill-asmsbt
+                    [6] dsh-spill-AXycOJ
+                    [6] dsh-spill-b6yCkK
+                    [6] dsh-spill-BDlY4t
+                    [6] dsh-spill-boYMPu
+                    [6] dsh-spill-C1Wkyq
+                    [6] dsh-spill-CFU2cu
+                    [6] dsh-spill-D1lKOS
+                    [6] dsh-spill-DSvf0d
+                    [6] dsh-spill-DYHHD3
+                    [6] dsh-spill-e8z0nd
+                    [6] dsh-spill-Ea2Zgb
+                    [6] dsh-spill-ELaLWJ
+                    [6] dsh-spill-eUxRrf
+                    [6] dsh-spill-ffYyCf
+                    [6] dsh-spill-FNG1qn
+                    [6] dsh-spill-FOQ1uc
+                    [6] dsh-spill-gEAW1O
+                    [6] dsh-spill-HBcxcr
+                    [6] dsh-spill-hm05AO
+                    [6] dsh-spill-IWdTGC
+                    [6] dsh-spill-JBvfXd
+                    [6] dsh-spill-Je0jcC
+                    [6] dsh-spill-K2vU9o
+                    [6] dsh-spill-mDpzPA
+                    [6] dsh-spill-Mfqaa9
+                    [6] dsh-spill-mjHvKD
+                    [6] dsh-spill-Nk1XlK
+                    [6] dsh-spill-NtumWx
+                    [6] dsh-spill-O8SKFB
+                    [6] dsh-spill-OBJWPD
+                    [6] dsh-spill-qXKtpy
+                    [6] dsh-spill-rJzCjK
+                    [6] dsh-spill-rR6MfF
+                    [6] dsh-spill-Rzupap
+                    [6] dsh-spill-SHZpLX
+                    [6] dsh-spill-W2yEKx
+                    [6] dsh-spill-wiEn5b
+                    [6] dsh-spill-WqBfm9
+                    [6] dsh-spill-WxGvPu
+                    [6] dsh-spill-XgOdVY
+                    [6] dsh-spill-XTxWts
+                    [6] dsh-spill-xvlwhg
+                    [6] dsh-spill-yJIIZ0
+                    [6] dsh-spill-YlegVa
+                    [6] dsh-spill-ymMy4o
+                    [6] dsh-spill-Z5c1w2
+                    [6] dsh-subprocess-22CEax
+                    [6] dsh-subprocess-4GPm7P
+                    [6] dsh-subprocess-4OsA2p
+                    [6] dsh-subprocess-4ZvOdt
+                    [6] dsh-subprocess-5Ltzxc
+                    [6] dsh-subprocess-8YlLlx
+                    [6] dsh-subprocess-9Tpfim
+                    [6] dsh-subprocess-CGtSLY
+                    [6] dsh-subprocess-CTNJwd
+                    [6] dsh-subprocess-FkVWE0
+                    [6] dsh-subprocess-FZu2Lp
+                    [6] dsh-subprocess-gdONkG
+                    [6] dsh-subprocess-HCV4ot
+                    [6] dsh-subprocess-iczxIO
+                    [6] dsh-subprocess-J3h5tO
+                    [6] dsh-subprocess-JLgWUP
+                    [6] dsh-subprocess-k7fVEe
+                    [6] dsh-subprocess-mMJyeJ
+                    [6] dsh-subprocess-nMIAx8
+                    [6] dsh-subprocess-o3yP5L
+                    [6] dsh-subprocess-OhB4fe
+                    [6] dsh-subprocess-pBF9G3
+                    [6] dsh-subprocess-PcDQOk
+                    [6] dsh-subprocess-RWarKO
+                    [6] dsh-subprocess-Tjkwep
+                    [6] dsh-subprocess-TwivGg
+                    [6] dsh-subprocess-u5kw7a
+                    [6] dsh-subprocess-vbmBjv
+                    [6] dsh-subprocess-wWI1Da
+                    [6] dsh-subprocess-XeAw5O
+                    [6] dsh-subprocess-xIWfTB
+                    [6] dsh-subprocess-xyU80H
+                    [6] dsh-subprocess-Y29e3I
+                    [6] dsh-subprocess-yoUyo0
+                    [6] dsh-X0SJR3
+                    [6] dsh-YqtxAn
+                    [6] dsh-Z10wvw
+                    [6] dsh-Zh7hzd
+                    [6] gbus_cgsdk
+                    [6] ghidra
+                    [6] hsperfdata_lenovo
+                    [6] ida
+                    [6] iqrye5xo.o1c
+                    [6] is-D8KN4.tmp
+                    [6] is-EDQMB.tmp
+                    [6] is-PPVPM.tmp
+                    [6] jadx-instance-11405395175995699350
+                    [6] jadx-instance-14753923244860473508
+                    [6] jadx-instance-2977968159749498562
+                    [6] jadx-instance-3622654896237024405
+                    [6] jadx-instance-5647172047705083270
+                    [6] jadx-instance-6412595714141070957
+                    [6] jadx-instance-7441744298874206848
+                    [6] jadx-instance-950538514983488225
+                    [6] jna--1106355917
+                    [6] jUV7ip
+                    [6] kdiskmgr_sogou
+                    [6] kfastpic_sogou
+                    [6] kwallpaper_sogou
+                    [6] kzip_sogou
+                    [6] LeAppStore_LocalStorage_Migrate
+                    [6] Lenovo
+                    [6] LibScanGame
+                    [6] LISF_64013.tmp
+                    [6] ListSync
+                    [6] Luksyd
+                    [6] mAN2SB
+                    [6] mRem92
+                    [6] MSBuildTemplenovo
+                    [6] msohtmlclip
+                    [6] msohtmlclip1
+                    [6] nativelib-loader_17353347911631430271
+                    [6] node-compile-cache
+                    [6] nqjpxi1e.zdr
+                    [6] NT3uzq
+                    [6] NuGetScratch
+                    [6] playwright-artifacts-NHScJj
+                    [6] pnpm-shim
+                    [6] PSES-122416
+                    [6] PSES-127440
+                    [6] PSES-18892
+                    [6] PSES-25200
+                    [6] PSES-30776
+                    [6] PSES-35724
+                    [6] PSES-4028
+                    [6] PSES-46160
+                    [6] PSES-7264
+                    [6] PSES-84708
+                    [6] PSES-89284
+                    [6] pyright-103444-VWHmlLheglvc
+                    [6] pyright-136528-bDf8b0olCiVJ
+                    [6] pyright-139500-qm0XHaPRBbMl
+                    [6] pyright-14060-7tJtfh0YdXXP
+                    [6] pyright-142736-sGIzQ14jXbDe
+                    [6] pyright-158168-1wVugZ5xyNHy
+                    [6] pyright-19544-10UiUs6Z1BI3
+                    [6] pyright-2020-5if8NM7ymoSV
+                    [6] pyright-21512-z8YmXzfUwTzH
+                    [6] pyright-22624-idomtZz8rBqh
+                    [6] pyright-22640-NOzIYm1y9EKM
+                    [6] pyright-22732-E4uNCNuVaO2f
+                    [6] pyright-23584-qpTC2yrsmt4b
+                    [6] pyright-23812-OFmL0a4aPZrM
+                    [6] pyright-27336-W9wKGJy0fMkP
+                    [6] pyright-35380-M8x2LklnyQ33
+                    [6] pyright-36288-H90eA6H27ePn
+                    [6] pyright-37168-jPDFGTGo3Q5r
+                    [6] pyright-40088-3KpVXo7Dgkp4
+                    [6] pyright-4136-cQfEYnprQ47h
+                    [6] pyright-56992-4rMhwfbPOtWX
+                    [6] pyright-7736-oHDiPr5QoEID
+                    [6] pyright-99360-MzfXpvGmMSC9
+                    [6] python-languageserver-cancellation
+                    [6] QuarkUpdaterDL
+                    [6] rootfs
+                    [6] scoped_dir11216_629407805
+                    [6] scoped_dir15680_1734990156
+                    [6] SDME370.tmp.dir
+                    [6] shefHz
+                    [6] SLB_181B1.tmp
+                    [6] system-commandline-sentinel-files
+                    [6] tBmal3
+                    [6] TCD7797.tmp
+                    [6] TCD7798.tmp
+                    [6] TCD7799.tmp
+                    [6] TCD779A.tmp
+                    [6] TCD779B.tmp
+                    [6] TCD779C.tmp
+                    [6] TCD77A3.tmp
+                    [6] TCD77B4.tmp
+                    [6] TCD77B5.tmp
+                    [6] TCD77C6.tmp
+                    [6] TCD77C7.tmp
+                    [6] TCD77C8.tmp
+                    [6] TCD77C9.tmp
+                    [6] temp_profile_21196_5051
+                    [6] temp_profile_5108_5479
+                    [6] Tencent
+                    [6] tomcat.9999.15994312114285302968
+                    [6] tomcat-docbase.9999.9790621303381849127
+                    [6] VBCSCompiler
+                    [6] VBE
+                    [6] VS
+                    [6] vscode-stable-user-x64
+                    [6] vscode-typescript
+                    [6] WebCookies
+                    [6] WebFavicons
+                    [6] WebHistory
+                    [6] WebLoginData
+                    [6] wedecode-mcp
+                    [6] WinGet
+                    [6] wmpf_files
+                    [6] wmpf_images
+                    [6] XOmWfm
+                [5] Tencent
+                    [6] Wemeet
+                [5] ToastNotificationManagerCompat
+                    [6] Apps
+                [5] UC
+                    [6] User Data
+                [5] VEDetector
+                    [6] User Data
+                [5] VirtualStore
+                    [6] Program Files (x86)
+                    [6] ProgramData
+                [5] VMware
+                    [6] vmware-custData-5368
+                    [6] vmware-custData-9D2C
+                    [6] vmware-download-5368
+                    [6] vmware-download-9D2C
+                [5] WhaleClean-3471F6E3-6E5D-41E1-9622-0BA0E78A9A3B
+                    [6] bg
+                    [6] btn
+                [5] winbackups
+                    [6] winmaster
+                [5] Wooduan
+                    [6] Microclient_64
+                    [6] Preload
+                [5] wxworkweb
+                    [6] User Data
+                [5] ynote-desktop-updater
+                    [6] pending
+                [5] Yodao
+                    [6] DeskDict
+                [5] youdao
+                    [6] dict
+                [5] zig
+                    [6] b
+                    [6] h
+                    [6] o
+                    [6] tmp
+                    [6] z
+            [4] LocalLow
+                [5] Intel
+                    [6] ShaderCache
+                [5] IObit
+                [5] iTop Screen Recorder
+                    [6] Audios
+                    [6] Projects
+                    [6] Screenshot
+                    [6] Videos
+                [5] Microsoft
+                    [6] CryptnetUrlCache
+                    [6] Crypto
+                    [6] Internet Explorer
+                [5] NVIDIA
+                    [6] PerDriverVersion
+                [5] SogouPY
+                    [6] AllSkin
+                    [6] Backup
+                    [6] Components
+                    [6] env_backup
+                    [6] Indv
+                    [6] LOG
+                    [6] logs
+                    [6] mmkv
+                    [6] models
+                    [6] Popup
+                    [6] RichInput
+                    [6] scd
+                    [6] scdicon
+                    [6] SGKaomoji
+                    [6] SkinPreview
+                    [6] Temp
+                    [6] ThirdPassportIcon
+                [5] SogouPY.users
+                [5] Wooduan
+                    [6] 生死狙击微端战斗
+            [4] Roaming
+                [5] 360GameAssistant
+                [5] AccountCenter
+                [5] AccountSDKMG
+                [5] adbk_pp
+                [5] Adobe
+                    [6] Flash Player
+                [5] adspower_global
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] cwd_global
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] WebStorage
+                [5] AirAloneChat1
+                    [6] #airversion
+                [5] AirLobbyPreloader
+                    [6] Local Store
+                [5] AVS4YOU
+                    [6] AVSVideoEditor
+                [5] baidu
+                    [6] BaiduNetdisk
+                    [6] BaiduYunKernel
+                [5] baidunetdisk
+                    [6] baiduyunguanjia
+                    [6] blob_storage
+                    [6] Cache
+                    [6] chrome_drag123600_418129369
+                    [6] chrome_drag26944_1404112254
+                    [6] chrome_drag26944_1940639989
+                    [6] chrome_drag26944_255893445
+                    [6] chrome_drag26944_268291544
+                    [6] chrome_drag26944_667204463
+                    [6] chrome_drag28696_1883239002
+                    [6] chrome_drag28696_932586613
+                    [6] chrome_drag32568_171977793
+                    [6] chrome_drag41300_624799702
+                    [6] Code Cache
+                    [6] databases
+                    [6] DawnCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] Network
+                    [6] pwa
+                    [6] Session Storage
+                    [6] shared_proto_db
+                    [6] Storage
+                    [6] VideoDecodeStats
+                    [6] VideoPlayer
+                    [6] WebStorage
+                [5] BaiduYunGuanjia
+                    [6] AppData
+                    [6] BaiduYunKernel
+                    [6] logs
+                [5] BaiduYunKernel
+                    [6] Config
+                    [6] Data
+                [5] bdtpi
+                [5] BinDiff
+                [5] BRD
+                    [6] wwqy
+                [5] BtLog
+                [5] BytertcLog
+                    [6] Config
+                    [6] lock
+                    [6] prepare
+                [5] CadViewerDataVE
+                    [6] Dump
+                    [6] log
+                    [6] UserData
+                [5] cdheheyoudun
+                [5] cfpixeleditor
+                    [6] bg_template
+                [5] changzhi2
+                [5] Charles
+                    [6] data
+                [5] chat_pp
+                [5] Clash Plus
+                    [6] Clash Plus
+                [5] Claude
+                    [6] blob_storage
+                    [6] Cache
+                    [6] claude-code-sessions
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] local-agent-mode-sessions
+                    [6] logs
+                    [6] Network
+                    [6] Partitions
+                    [6] sentry
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] WebStorage
+                [5] cleanball
+                [5] Code
+                    [6] agent-host
+                    [6] agentSessionData
+                    [6] Backups
+                    [6] blob_storage
+                    [6] Cache
+                    [6] CachedConfigurations
+                    [6] CachedData
+                    [6] CachedExtensionVSIXs
+                    [6] CachedProfilesData
+                    [6] clp
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] Partitions
+                    [6] Service Worker
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] User
+                    [6] VideoDecodeStats
+                    [6] WebStorage
+                    [6] Workspaces
+                [5] com.ccswitch.desktop
+                [5] common_pp
+                [5] Coze
+                    [6] aha
+                    [6] ahanet
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] logs
+                    [6] monitor
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] VideoDecodeStats
+                    [6] WebStorage
+                [5] Cursor
+                    [6] Backups
+                    [6] blob_storage
+                    [6] Cache
+                    [6] CachedData
+                    [6] CachedProfilesData
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] process-monitor
+                    [6] sentry
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] User
+                [5] cxstudy
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] cxfiles
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] files
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] VideoDecodeStats
+                    [6] WebStorage
+                [5] Deep Uninstaller
+                [5] Deepseek-Harness-Desktop
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] dsh-home
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] Network
+                    [6] runtime
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                [5] Doubao
+                [5] downloader
+                [5] dsh-desktop
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                [5] DXRepairData
+                    [6] dx_repair_web_cache
+                [5] dzip_pp
+                [5] electron-store-nodejs
+                    [6] Config
+                [5] errmon
+                [5] ESTV
+                    [6] wwqy
+                [5] Everything
+                [5] fastpic_web
+                [5] GameHL
+                [5] ghidra
+                    [6] ghidra_12.1.2_PUBLIC
+                [5] Google
+                    [6] AndroidStudio2022.2
+                    [6] AndroidStudio2023.1
+                    [6] consentOptions
+                [5] GPU Optimization
+                    [6] cef_cache
+                    [6] ConfigCenter
+                [5] hardware_common
+                [5] Hex-Rays
+                    [6] IDA Pro
+                [5] hungmon
+                [5] ichat
+                    [6] CefLocalStorage
+                    [6] prefs
+                    [6] store
+                [5] IObit
+                    [6] IObit Uninstaller
+                [5] isgpet
+                    [6] prefs
+                [5] iTop Data Recovery
+                    [6] Data
+                    [6] Logs
+                [5] iTop Screen Recorder
+                    [6] Data
+                    [6] Logs
+                [5] java
+                    [6] webview
+                [5] jdesk_pp
+                [5] JetBrains
+                    [6] consentOptions
+                    [6] IdeaIC2025.2
+                    [6] IntelliJIdea2026.1
+                    [6] PyCharm2020.1
+                [5] JsBasic
+                    [6] log
+                [5] KuGou8
+                    [6] AppStore
+                    [6] AudioEffectsV1
+                    [6] CefCache89
+                    [6] DynamicDesktop
+                    [6] frame_lryic_data
+                    [6] ImagesCache
+                    [6] log
+                    [6] network_log
+                    [6] OfflinePackage
+                    [6] ScreenSaverImage
+                    [6] Skin10
+                    [6] UserRes
+                [5] LarkShell
+                    [6] ActorSafetyLists
+                    [6] aha
+                    [6] AmountExtractionHeuristicRegexes
+                    [6] AutofillStates
+                    [6] CertificateRevocation
+                    [6] CodeCache
+                    [6] component_crx_cache
+                    [6] CookieReadinessList
+                    [6] Crowd Deny
+                    [6] Default
+                    [6] Doctor
+                    [6] dynamic_resource
+                    [6] FileTypePolicies
+                    [6] FirstPartySetsPreloaded
+                    [6] Global
+                    [6] GraphiteDawnCache
+                    [6] GrShaderCache
+                    [6] hyphen-data
+                    [6] IronDefault
+                    [6] meego
+                    [6] MEIPreload
+                    [6] net_config
+                    [6] OnDeviceHeadSuggestModel
+                    [6] OpenCookieDatabase
+                    [6] OptimizationHints
+                    [6] OriginTrials
+                    [6] passport_storage
+                    [6] PC_Card
+                    [6] PC_Gadget
+                    [6] PKIMetadata
+                    [6] PrivacySandboxAttestationsPreloaded
+                    [6] ProbabilisticRevealTokenRegistry
+                    [6] SafetyTips
+                    [6] sdk_storage
+                    [6] segmentation_platform
+                    [6] ShaderCache
+                    [6] SSLErrorAssistant
+                    [6] Subresource Filter
+                    [6] text_picker
+                    [6] TpcdMetadata
+                    [6] TrustTokenKeyCommitments
+                    [6] update
+                    [6] WasmTtsEngine
+                    [6] ZxcvbnData
+                [5] LarkShellSingleton
+                [5] launcher_server
+                [5] lddownloader
+                [5] lds
+                [5] LdsAccount
+                    [6] Log
+                [5] LdsDllRepair
+                    [6] cef_cache
+                    [6] ConfigCenter
+                    [6] dll_repair
+                    [6] log
+                [5] LdsMultiWechatA
+                    [6] icon
+                [5] LdsSysClean
+                    [6] cef_cache
+                    [6] ConfigCenter
+                    [6] log
+                    [6] sys_clean
+                [5] ldtmp
+                [5] leidian9
+                    [6] log
+                [5] Lenovo
+                    [6] lsf_lenovoid_win
+                    [6] Ludp
+                [5] LhpMaxProtectCache
+                    [6] 2D69F4685C6DAE2CEAAB51B28C53C528  (...)
+                    [6] ConfigCenter
+                    [6] duplicate_file_clean
+                    [6] EBWebView
+                    [6] falcons
+                    [6] FB75A485C85B6C89D7F1C6D695CF7D4D  (...)
+                    [6] log
+                    [6] Plugin
+                    [6] ppw
+                    [6] public
+                    [6] run_extention
+                [5] LocalAIAssistant
+                [5] lockhomepage
+                [5] Ludashi
+                    [6] icon
+                    [6] index_service
+                    [6] log
+                    [6] pc_optimizer
+                    [6] softmgr
+                [5] lxwp
+                    [6] data
+                    [6] log
+                [5] Macromedia
+                    [6] Flash Player
+                [5] mark_pp
+                [5] max_protect
+                    [6] icon
+                    [6] sys_boost
+                [5] Microsoft
+                    [6] AddIns
+                    [6] Bibliography
+                    [6] Credentials
+                    [6] Crypto
+                    [6] Document Building Blocks
+                    [6] Excel
+                    [6] HTML Help
+                    [6] InputMethod
+                    [6] Installer
+                    [6] Internet Explorer
+                    [6] MMC
+                    [6] Network
+                    [6] Office
+                    [6] PowerPoint
+                    [6] Proof
+                    [6] Protect
+                    [6] QuickStyles
+                    [6] RIA
+                    [6] Speech
+                    [6] Spelling
+                    [6] SystemCertificates
+                    [6] Templates
+                    [6] UProof
+                    [6] Vault
+                    [6] VisualStudio
+                    [6] Windows
+                    [6] Word
+                [5] misc
+                    [6] software_pm
+                    [6] sys_clean
+                [5] mongodb
+                    [6] mongosh
+                [5] mssdk
+                    [6] ml
+                [5] mtab
+                    [6] image
+                [5] mtab_pp
+                [5] MultiTabExplorer
+                    [6] cef_cache
+                    [6] ConfigCenter
+                    [6] DumpUper
+                    [6] falcons
+                    [6] image
+                    [6] ppw
+                    [6] public
+                    [6] run_extention
+                [5] npm
+                    [6] node_modules
+                [5] NuGet
+                    [6] config
+                [5] NVIDIA
+                    [6] ComputeCache
+                [5] OBSRecorder
+                    [6] basic
+                    [6] crashes
+                    [6] logs
+                    [6] plugin_config
+                    [6] profiler_data
+                [5] obs-studio
+                    [6] .sentinel
+                    [6] basic
+                    [6] crashes
+                    [6] logs
+                    [6] plugin_config
+                    [6] plugin_manager
+                    [6] profiler_data
+                    [6] updates
+                [5] Oray
+                    [6] SunloginClient
+                [5] pc
+                    [6] apollo
+                [5] PicSnapX
+                    [6] cef_cache
+                    [6] ConfigCenter
+                    [6] falcons
+                    [6] ppw
+                    [6] run_extention
+                [5] pip
+                [5] PLogs
+                [5] PluginCfg
+                [5] press_pp
+                [5] PrivacyGuard+
+                    [6] cef_cache
+                    [6] DumpUper
+                [5] Python
+                    [6] Python314
+                    [6] Python39
+                    [6] share
+                [5] pywebview
+                    [6] EBWebView
+                [5] QQ
+                    [6] arks
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] Dictionaries
+                    [6] dynamic_module
+                    [6] dynamic_package
+                    [6] Local Storage
+                    [6] log
+                    [6] Network
+                    [6] Partitions
+                    [6] qqex
+                    [6] Shared Dictionary
+                [5] QQEX
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] contentTracing
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] ex-resource
+                    [6] Features
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] logs
+                    [6] mega-converter
+                    [6] mega-db
+                    [6] Network
+                    [6] Partitions
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] users
+                    [6] v8-compile-cache
+                    [6] wasm
+                    [6] weblog
+                    [6] WebStorage
+                [5] Quark
+                    [6] Cache
+                [5] realx
+                    [6] file_system
+                [5] RedPandaIDE
+                [5] Reqable
+                    [6] backup
+                    [6] box
+                    [6] capture
+                    [6] certificate
+                    [6] config
+                    [6] icons
+                    [6] log
+                    [6] Reqable
+                    [6] scripts
+                    [6] tmp
+                    [6] user
+                [5] reqable-mcp
+                [5] shredder_pp
+                [5] skylot
+                    [6] jadx
+                [5] smart-meeting
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] detection
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                [5] sogou_voice_assistant_pc
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] Dictionaries
+                    [6] GPUCache
+                    [6] Local Storage
+                    [6] logs
+                    [6] Network
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] VideoDecodeStats
+                [5] tabx_pp
+                [5] TabXSearch
+                [5] tdcoresk
+                    [6] config
+                [5] Tencent
+                    [6] Androws
+                    [6] beacon
+                    [6] BeaconConfig
+                    [6] Config
+                    [6] DtConfig
+                    [6] File
+                    [6] libsdk
+                    [6] Logs
+                    [6] qimei
+                    [6] QPGAME
+                    [6] QQ
+                    [6] QQDownload
+                    [6] QQLive
+                    [6] QQNT
+                    [6] QQNTOpenSDK
+                    [6] QQTempSys
+                    [6] SogouIme
+                    [6] TenioDL
+                    [6] Wedoc
+                    [6] WeMail
+                    [6] WeMeet
+                    [6] WXDrive
+                    [6] WXWork
+                    [6] xwechat
+                [5] TenioDL
+                    [6] vodcache
+                [5] The Quark Authors
+                    [6] media_container
+                    [6] Quark
+                [5] tjch
+                [5] Ultra Shredder
+                    [6] imageCache
+                [5] ultra_pp
+                [5] Ultralytics
+                [5] utForpc
+                    [6] 34385585  (...)
+                    [6] 34901011  (...)
+                    [6] storage
+                [5] utForpc_tmp
+                    [6] MzQzODU1ODU=
+                [5] VideoOutput
+                [5] Visual Studio Setup
+                [5] VMware
+                [5] VoiceAccess
+                    [6] CustomCommands
+                    [6] EditHistory
+                    [6] UserPhrases
+                [5] VoipNNModel
+                [5] wboot_pp
+                [5] WeMeetApp
+                    [6] .nx_caches
+                [5] WinAuthority
+                    [6] imageCache
+                    [6] log
+                [5] windows.netpower.unzip
+                [5] wmcleaner
+                    [6] icons
+                [5] Wooduan
+                    [6] SSJJ-4399
+                [5] write_pp
+                [5] WXDrive
+                    [6] crashDumps
+                    [6] logs
+                    [6] sqlite3
+                    [6] wedrive_pref
+                [5] ynote-desktop
+                    [6] adblock
+                    [6] blob_storage
+                    [6] Cache
+                    [6] Code Cache
+                    [6] Crashpad
+                    [6] databases
+                    [6] DawnCache
+                    [6] Dictionaries
+                    [6] extensions
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] logs
+                    [6] myLogs
+                    [6] Network
+                    [6] Partitions
+                    [6] qq1F35F3E61A6722A72844F758A189EE15
+                    [6] sentry
+                    [6] Session Storage
+                    [6] shared_proto_db
+                    [6] storage
+                    [6] VideoDecodeStats
+                    [6] WebStorage
+                [5] ZxVxTidy
+        [3] caches
+            [4] 8.0
+                [5] executionHistory
+                [5] file-changes
+                [5] fileContent
+                [5] fileHashes
+                [5] generated-gradle-jars
+                [5] javaCompile
+                [5] md-rule
+                [5] md-supplier
+                [5] scripts
+                    [6] 20tkmk80oyyyi6l9wmvmbkz6m
+                    [6] 2xcgv8sx4t08wycnwj82lf2yz
+                    [6] 3e5162e4pzub54pgmwguen9mg
+                    [6] 3vyh16jgt2m5c20nmqa5xs6za
+                    [6] 55xg0pokxwcazmeuswn4nqze
+                    [6] 8p640ezcce9holeznwhnwhfxq
+                    [6] 9axovopsad5uk0giem5gsgxmo
+                    [6] 9ca2t53743a1cw8mpuf0r4x2y
+                    [6] 9cmpspvxfpz8s8rjbccpo10gg
+                    [6] as0nnlultbqvi5p2taxeaxq02
+                    [6] as6q08apl24loym0zryzypp42
+                    [6] b9tn3ea2s0xpxwjkjvqyy4s90
+                    [6] d38g75mk1luoqxk9c330y20uk
+                    [6] e074g65e9a6tx44303kwrluex
+            [4] jars-9
+                [5] 01bd0caef559fe1ead659b771134ea52  (...)
+                [5] 040c718806452a50edc7ff1fa87b3d64  (...)
+                [5] 05241a8f69a8dd812138573d6a849cac  (...)
+                [5] 06f6584eec8f2a4251e180ab5a11f86e  (...)
+                [5] 0b99796cd828d5b55853771414a67ef8  (...)
+                [5] 0c7b40f973f4f0e09c24dfd7ee0b6b9d  (...)
+                [5] 0d5dc05b7d5deefe95cab7d016e37237  (...)
+                [5] 0e5fa50af9711bc9188e0df5ad084cbd  (...)
+                [5] 0fe41392723a0026409f2fbc13f96f0a  (...)
+                [5] 117bc3411b09cdba9f95dd3d7303a334  (...)
+                [5] 11b8a42260e9f24257c8a648dc3ca701  (...)
+                [5] 134a1f089f435f016519f51da6b26102  (...)
+                [5] 1380acafaa0d63811b380c067dd71f6e  (...)
+                [5] 15b8b62753df27e2b6c9853ab81f150c  (...)
+                [5] 17d8720d5ccbfcca542fba9d146996ec  (...)
+                [5] 187243a08a56da5c85de218a011ee617  (...)
+                [5] 18d135e631408635b015d460320c4ea9  (...)
+                [5] 1976f906e7c6d75f4407af233f13c89b  (...)
+                [5] 1cf19def8a3075c6a78c6b9cef9b2e0a  (...)
+                [5] 1d188669d8b1a348e5877992194a3c97  (...)
+                [5] 1e03c3ad9fb2c881b04e7f2c7176a1e4  (...)
+                [5] 1f76bcf10ea46724eae62950b70c568a  (...)
+                [5] 228ec1c93610868ab58fc20d9c96405c  (...)
+                [5] 24c9c1dea35edef52f54ca5da1502ac3  (...)
+                [5] 257331b13dce779f3c45792a8a939376  (...)
+                [5] 2598d2abb0ba5a6f13d65c20615197a7  (...)
+                [5] 2661c951b70aeb503c3d1de51165b214  (...)
+                [5] 298566cd1c33d4f0e711a9873cebd25c  (...)
+                [5] 29a0b73ad6d19ca5c3c3d622e0416cfb  (...)
+                [5] 2b4a98a7faefc5eb9292cfe675a4dea6  (...)
+                [5] 2d10c46f0b39da63d09327a1e8406c5f  (...)
+                [5] 2f8b3a12414bb24479ef41cbf5a07478  (...)
+                [5] 313d79820180b831bc262dd4f2d38cce  (...)
+                [5] 3371ce6c770fc48e23f4ad40671e0269  (...)
+                [5] 34ce61303b7e88750a72707be45a63e6  (...)
+                [5] 34d5ed7ac44939578b184adf1facd488  (...)
+                [5] 386485a061b4eb4deaab83fc4a65196d  (...)
+                [5] 38716650af387421e4d5e53f930ea785  (...)
+                [5] 3b6c7c3150f29ebf24691e29e6054598  (...)
+                [5] 3bfb4d73bca2862972e6d84a20a19c05  (...)
+                [5] 453782cb324dfa0b1bad54ec09f077f5  (...)
+                [5] 4577f68295f996c24c58afbc864de34e  (...)
+                [5] 4651f3d414e2432d23b63f1da17de65e  (...)
+                [5] 48d99601a0cce16b30a96216d63c2752  (...)
+                [5] 4b5816df7544d59906b3f4e7dfa13050  (...)
+                [5] 4cd69813f63ec96ba075e00c9e8c8551  (...)
+                [5] 4d989381d758f621630222304ef6b055  (...)
+                [5] 4dc1281b3e99d8105c8337cf3550f342  (...)
+                [5] 4e103fc14f3fa21678c90229cfdcc3ab  (...)
+                [5] 4e2c98c5258ec1eba682f31007f5d866  (...)
+                [5] 4f0a8afae3ac388813460878f4d88d69  (...)
+                [5] 51756f6964a14a4080815130a392acd1  (...)
+                [5] 5456fc043674fe13afc1ac979ec04098  (...)
+                [5] 54ad51a4018ccf1c0463ff1525283220  (...)
+                [5] 5aa30915e3ccf84a7d4458a2eceb51d0  (...)
+                [5] 5c6f43d6a9f9cf2beddcdbac802893ac  (...)
+                [5] 5caee0d9d8296be96c67e92daf7213da  (...)
+                [5] 5f734897829c7339d1f9b3352e3ec16a  (...)
+                [5] 5f8e11708b4f2434a7af5f7dcc320fd6  (...)
+                [5] 601d13c630ac0291f3842d2f2124e53d  (...)
+                [5] 61a69498c044554b5adaff7f3e76afe3  (...)
+                [5] 6218974f5c24d05eb8ccc9762f26d8b2  (...)
+                [5] 63c79d53ec1dc8ed96b4a217b7cbd80a  (...)
+                [5] 6419b9fcab2c5f5687ce7f810339e0fb  (...)
+                [5] 6438c8aed3b0928cbba163b8004e3456  (...)
+                [5] 648432c038c094c6c5d2bd4b86a97f05  (...)
+                [5] 674bbccf88a6ad54476be288d47477fd  (...)
+                [5] 6954c322dced0cc7829ef3ca77a16ab2  (...)
+                [5] 6a2174b873f209fb298f3fbf4a3f5ffb  (...)
+                [5] 6b12b5d56b4b6a07eb374738a0c82223  (...)
+                [5] 6cb6af479e61c52c20d7b4901804a9f1  (...)
+                [5] 6ffee56ba6e69210b6e4950873a4d5b8  (...)
+                [5] 706e2e9b0eba0c3f49373d2e4dc9e9e4  (...)
+                [5] 72f95ea5e7a43dc54cfc181af5f82196  (...)
+                [5] 754674ef24651f94551af318a6898c61  (...)
+                [5] 756e0a21bcf3e4621e432b628e532830  (...)
+                [5] 78184d17b52b374e4c13c1e0bb1b2ecd  (...)
+                [5] 7a14afa1a3eb47f922c31aa151654b86  (...)
+                [5] 7cde94f1bb10802cede1095240a4e3c0  (...)
+                [5] 7ef0d39569f821e816244021747c2445  (...)
+                [5] 8200c06095732b537befc3483888ac03  (...)
+                [5] 827b55942ed881158ffbfaf710c78dc1  (...)
+                [5] 83e685ae4aa6f27246df50d9983ab568  (...)
+                [5] 8422fe3ccdeffd65eaee97b7c8038685  (...)
+                [5] 85a6f49a9bc679cc08083274acbac078  (...)
+                [5] 868a116e3b799db37f011fd1b10fbdfb  (...)
+                [5] 885cab9f2184bf15b8d431c8154a7a3c  (...)
+                [5] 88c603d76a5be0fb694ce1ab7798383b  (...)
+                [5] 894cbf77ea5d76cf3b9bb9899ed38469  (...)
+                [5] 8c9f18817876a2d940ed64e54e57371f  (...)
+                [5] 8e20d051db3825a92ae9dc45bd2295ba  (...)
+                [5] 91c8620d686e5c02a20746309f540004  (...)
+                [5] 927f47682684f7c3fec707575e25b1f2  (...)
+                [5] 92a67c32af7dd7ee893c78725bf9baad  (...)
+                [5] 94caa647ccf807fd026929782ca81661  (...)
+                [5] 95d72eea6c2ea6adfa206a2f177a234e  (...)
+                [5] 961ded6cf249749a02e810d61d78800e  (...)
+                [5] 96e9b1a53728dfebe891eb6705de60f4  (...)
+                [5] 9798c45aa2371c032139ce0fc2424bac  (...)
+                [5] 9936b676c31a54d06b6335e239a06212  (...)
+                [5] 9cc65fec27544bab5aa800746e13fa33  (...)
+                [5] 9ce083f9a89e4100b69e1ad792b21fa1  (...)
+                [5] a15b65279b8544324a3e86f5278ef55d  (...)
+                [5] a2e677712edc34f45ec1028d644dd018  (...)
+                [5] a48408821d2d2de489467184e8953643  (...)
+                [5] a66da2538bbdc00ee1092204a13786d7  (...)
+                [5] a6b14a795bc29a158d29d3ad3d8ccbae  (...)
+                [5] a6f2bc56dceee5a88026d602dca5e1dc  (...)
+                [5] a7030b5b3bd0ee52c35d77a1a73ee708  (...)
+                [5] aa689853a4454f5e3fc2d0e6746475d0  (...)
+                [5] ac8935c870dff098b8d1725f1275215e  (...)
+                [5] ac9eb61c749616fd8a4ddbb70cfcebff  (...)
+                [5] acf00903929636649dfcd67074d863ea  (...)
+                [5] ae1f7029fea79ca5533835b3e8dda0c3  (...)
+                [5] afcbecff312fa97a1b539a3cded7a0ab  (...)
+                [5] b0250fd072b9412812e0573ae10bae4a  (...)
+                [5] b08284065fa5a9398a94458d07763926  (...)
+                [5] b22d929d26085f7ff6003f60d2d4cf57  (...)
+                [5] bffef4b424c1d5d2e92d75a549287661  (...)
+                [5] c0f62e798aa22ca97afcfb3a2a0ef4d0  (...)
+                [5] c36215b892479a859c24c345ecfdd920  (...)
+                [5] c6341f223af7cefbe9aaea4e41b3fe7a  (...)
+                [5] c9032d8d70e6074c6c7c4db4655d2722  (...)
+                [5] cea1c1560eb61d8e011ca7601c423754  (...)
+                [5] d01ee867fc808dc1df6ac1b0c30fbd37  (...)
+                [5] d14ae0460c3e8beeba9ad1280d0a3585  (...)
+                [5] d16e332c2a3aeb8745833c212649afe0  (...)
+                [5] d3774dcace1f236a7a9ff9ee177c0b02  (...)
+                [5] d443f1281e28a8e1795f9b8adc8d0a5f  (...)
+                [5] d546ceb76d8989dcc520d9512ed6bce2  (...)
+                [5] d98463a3ca4696e7ddf53cfe537cf721  (...)
+                [5] da155ac5e6001fc421cad8699bb29524  (...)
+                [5] daa7c7dfb62a3af5d88a99a33f8da779  (...)
+                [5] dc8714ad53a8b63c6ebfd9483ea43132  (...)
+                [5] dd193d4917bb49d976a36fab67197632  (...)
+                [5] e562c31e6d316a1e3c7d19eb35a0a20c  (...)
+                [5] e76f60e42b4e5f3dc3efe2ebe8b7fa8f  (...)
+                [5] e7cbba9ebbee71e9648cb65c73316a0c  (...)
+                [5] e888e4dbb8b38d6e7b1995d4bea69921  (...)
+                [5] e9947e5d4771b4a232aac1457f6b9041  (...)
+                [5] ec131cbe57fd33aee5df4f72630467ed  (...)
+                [5] f041a2017f2a76b415e56e90609ba18b  (...)
+                [5] f0d8c78c6498611bba7dfac2786892ff  (...)
+                [5] f1585e4804b2a7d78ce64fe29ce536e1  (...)
+                [5] f688b032d64aa21e50f8c18348f7dc18  (...)
+                [5] f8f785e3d078e6f2e4c479ca9ac12fe8  (...)
+                [5] fa3ce8f4eca213c1190b17514c7f6786  (...)
+                [5] fed86beea3022befd4cf837839e2e5b5  (...)
+                [5] o_08ce97745699e3e8d395bbd58737f305
+                [5] o_1224a7f0c1af6c5e989b55410b9f4f5a
+                [5] o_215c6604890e74b3cb5f269d7384f667
+                [5] o_2988ffbb2029651aeab18574de011191
+                [5] o_34835aed4abda1c9a68ed5857b330282
+                [5] o_38be20e681ede185b289d8c4319e869c
+                [5] o_414f804ab2e57db7ba61889681866a7c
+                [5] o_4848c1aab45c95d64f8213b5db3d956d
+                [5] o_497c99dc43ce8fece95d0e589f2459bd
+                [5] o_4be1e431f55d9cec042cbf2c518c6eb2
+                [5] o_4c1e0b9a36198dba32a3bc32d4fa19b4
+                [5] o_75f72a9d053957e7412430584d9606b1
+                [5] o_8a549fac1050f0cd7e8a153337216964
+                [5] o_8a87f35be72b839a5a5c62dafeeb5d06
+                [5] o_8fb7f079610044c1365d93b90651e5ad
+                [5] o_91573078d41b3ac01571c813d5758796
+                [5] o_956e67c9efa17aa1a1b512b2229be2dc
+                [5] o_b3ccb3bf5e8ede00f372e786b64581bd
+                [5] o_bed40a7026e2ddf2fd098d6365c706e9
+                [5] o_c884f388ca1dfbe664c2af158b2daa4f
+                [5] o_d153d99d82610ad884202bbf69a54e08
+                [5] o_da30290c1e2fa7f9df74a58e8b0d4fe9
+            [4] journal-1
+            [4] modules-2
+                [5] files-2.1
+                    [6] androidx.activity
+                    [6] androidx.annotation
+                    [6] androidx.appcompat
+                    [6] androidx.arch.core
+                    [6] androidx.cardview
+                    [6] androidx.collection
+                    [6] androidx.concurrent
+                    [6] androidx.constraintlayout
+                    [6] androidx.coordinatorlayout
+                    [6] androidx.core
+                    [6] androidx.cursoradapter
+                    [6] androidx.customview
+                    [6] androidx.databinding
+                    [6] androidx.documentfile
+                    [6] androidx.drawerlayout
+                    [6] androidx.dynamicanimation
+                    [6] androidx.emoji2
+                    [6] androidx.fragment
+                    [6] androidx.interpolator
+                    [6] androidx.legacy
+                    [6] androidx.lifecycle
+                    [6] androidx.loader
+                    [6] androidx.localbroadcastmanager
+                    [6] androidx.print
+                    [6] androidx.recyclerview
+                    [6] androidx.resourceinspection
+                    [6] androidx.savedstate
+                    [6] androidx.startup
+                    [6] androidx.tracing
+                    [6] androidx.transition
+                    [6] androidx.vectordrawable
+                    [6] androidx.versionedparcelable
+                    [6] androidx.viewpager
+                    [6] androidx.viewpager2
+                    [6] com.android
+                    [6] com.android.application
+                    [6] com.android.databinding
+                    [6] com.android.library
+                    [6] com.android.tools
+                    [6] com.android.tools.analytics-library
+                    [6] com.android.tools.build
+                    [6] com.android.tools.build.jetifier
+                    [6] com.android.tools.ddms
+                    [6] com.android.tools.layoutlib
+                    [6] com.android.tools.lint
+                    [6] com.android.tools.utp
+                    [6] com.google.android
+                    [6] com.google.android.material
+                    [6] com.google.api.grpc
+                    [6] com.google.auto
+                    [6] com.google.auto.value
+                    [6] com.google.code.findbugs
+                    [6] com.google.code.gson
+                    [6] com.google.crypto.tink
+                    [6] com.google.dagger
+                    [6] com.google.errorprone
+                    [6] com.google.flatbuffers
+                    [6] com.google.guava
+                    [6] com.google.j2objc
+                    [6] com.google.jimfs
+                    [6] com.google.protobuf
+                    [6] com.google.testing.platform
+                    [6] com.googlecode.juniversalchardet
+                    [6] com.squareup
+                    [6] com.sun.activation
+                    [6] com.sun.istack
+                    [6] com.sun.xml.bind
+                    [6] com.sun.xml.bind.mvn
+                    [6] com.sun.xml.fastinfoset
+                    [6] commons-codec
+                    [6] commons-io
+                    [6] commons-logging
+                    [6] io.grpc
+                    [6] io.netty
+                    [6] io.perfmark
+                    [6] jakarta.activation
+                    [6] jakarta.xml.bind
+                    [6] javax.annotation
+                    [6] javax.inject
+                    [6] net.java
+                    [6] net.java.dev.jna
+                    [6] net.sf.jopt-simple
+                    [6] net.sf.kxml
+                    [6] org.apache
+                    [6] org.apache.commons
+                    [6] org.apache.httpcomponents
+                    [6] org.bitbucket.b_c
+                    [6] org.bouncycastle
+                    [6] org.checkerframework
+                    [6] org.codehaus.mojo
+                    [6] org.eclipse.ee4j
+                    [6] org.glassfish.jaxb
+                    [6] org.jdom
+                    [6] org.jetbrains
+                    [6] org.jetbrains.intellij.deps
+                    [6] org.jetbrains.kotlin
+                    [6] org.jvnet.staxex
+                    [6] org.ow2
+                    [6] org.ow2.asm
+                    [6] org.slf4j
+                    [6] org.sonatype.oss
+                    [6] org.tensorflow
+                    [6] xerces
+                    [6] xml-apis
+                [5] metadata-2.100
+                    [6] descriptors
+            [4] transforms-3
+        [3] Contacts
+        [3] daemon
+            [4] 8.0
+        [3] Desktop
+            [4] baokao
+                [5] my_package
+                    [6] __pycache__
+            [4] 此电脑
+                [5] 报告
+                    [6] bc678(i19罗嘉靖)
+                    [6] 画图‘
+                    [6] 新建文件夹 (2)
+                [5] 豆包相关
+                [5] 日z
+                    [6] duihua
+                    [6] 算法
+                [5] 新建文件夹 (2)
+                [5] 杂值
+        [3] Documents
+            [4] BaiduNetdiskTmp
+                [5] Baidu
+                    [6] AutoUpdate
+                [5] baiduyunguanjia
+                    [6] Baidu
+                    [6] baiduyunguanjia
+                    [6] onlinedit
+                    [6] shellmark
+                    [6] Vad
+                [5] chrome_drag26220_2045166092
+                [5] chrome_drag27592_1510656231
+                [5] chrome_drag29048_2054577174
+                [5] chrome_drag29668_1667533857
+                [5] chrome_drag31672_1396689175
+                [5] chrome_drag42024_1972085970
+                [5] chrome_drag9028_1544355768
+                [5] chrome_drag9028_1544423038
+                [5] chrome_drag9028_712703305
+            [4] Codex
+                [5] 2026-05-16
+                    [6] new-chat
+            [4] Deepseek-Harness-Desktop
+            [4] leidian14
+                [5] Applications
+                    [6] appicon
+                [5] Misc
+                [5] Pictures
+                    [6] .thumbnails
+                    [6] data
+            [4] leidian9
+                [5] Applications
+                    [6] appicon
+                [5] Misc
+                [5] Pictures
+                    [6] cache
+                    [6] data
+            [4] My Cheat Tables
+            [4] Navicat
+                [5] MongoDB
+                    [6] Servers
+                [5] MySQL
+                    [6] Servers
+                [5] Premium
+                    [6] logs
+                    [6] profiles
+            [4] NetPowerZIPData
+                [5] QnyConfig
+                    [6] 熊猫
+            [4] Sunlogin Files
+            [4] Visual Studio 18
+                [5] Code Snippets
+                    [6] JavaScript
+                    [6] TypeScript
+                    [6] Visual Basic
+                    [6] Visual C#
+                    [6] Visual C++
+                    [6] Visual Web Developer
+                    [6] XML
+                [5] Templates
+                    [6] ItemTemplates
+                    [6] ProjectTemplates
+            [4] Visual Studio 2022
+                [5] Code Snippets
+                    [6] JavaScript
+                    [6] TypeScript
+                    [6] Visual Basic
+                    [6] Visual C#
+                    [6] Visual C++
+                    [6] Visual Web Developer
+                    [6] XML
+                [5] Templates
+                    [6] ItemTemplates
+                    [6] ProjectTemplates
+            [4] Visual Studio 2022 Preview
+                [5] Code Snippets
+                    [6] JavaScript
+                    [6] TypeScript
+                    [6] Visual Basic
+                    [6] Visual C#
+                    [6] Visual C++
+                    [6] Visual Web Developer
+                    [6] XML
+                [5] Templates
+                    [6] ItemTemplates
+                    [6] ProjectTemplates
+            [4] WindowsPowerShell
+            [4] WXWork
+                [5] 1688854699871423  (...)
+                [5] 1688856931772738  (...)
+                [5] 2251802176021651  (...)
+                [5] Default
+                    [6] AutofillStrikeDatabase
+                    [6] blob_storage
+                    [6] Cache
+                    [6] ClientCertificates
+                    [6] Code Cache
+                    [6] commerce_subscription_db
+                    [6] discounts_db
+                    [6] Download Service
+                    [6] Extension Rules
+                    [6] Extension Scripts
+                    [6] Extension State
+                    [6] GCM Store
+                    [6] Local Storage
+                    [6] Network
+                    [6] optimization_guide_hint_cache_store
+                    [6] parcel_tracking_db
+                    [6] PersistentOriginTrials
+                    [6] Safe Browsing Network
+                    [6] Segmentation Platform
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] Site Characteristics Database
+                    [6] Sync Data
+                [5] Dictionaries
+                [5] Global
+                    [6] CDN
+                    [6] CDNcdn
+                    [6] CefCache
+                    [6] Statistic
+                [5] GraphiteDawnCache
+                [5] GrShaderCache
+                [5] Profiles
+                    [6] ADA26AFEC7C55FB3FE06DBC85F0AED65  (...)
+                [5] qtCef
+                    [6] AutofillStrikeDatabase
+                    [6] blob_storage
+                    [6] BudgetDatabase
+                    [6] Cache
+                    [6] ClientCertificates
+                    [6] Code Cache
+                    [6] commerce_subscription_db
+                    [6] DawnCache
+                    [6] DawnGraphiteCache
+                    [6] DawnWebGPUCache
+                    [6] discounts_db
+                    [6] Download Service
+                    [6] Extension Rules
+                    [6] Extension Scripts
+                    [6] Extension State
+                    [6] GCM Store
+                    [6] GPUCache
+                    [6] IndexedDB
+                    [6] Local Storage
+                    [6] Network
+                    [6] optimization_guide_hint_cache_store
+                    [6] parcel_tracking_db
+                    [6] PersistentOriginTrials
+                    [6] Safe Browsing Network
+                    [6] Segmentation Platform
+                    [6] Service Worker
+                    [6] Session Storage
+                    [6] Shared Dictionary
+                    [6] shared_proto_db
+                    [6] Site Characteristics Database
+                    [6] Sync Data
+                    [6] WebStorage
+                [5] Safe Browsing
+                [5] segmentation_platform
+                [5] ShaderCache
+            [4] 新建文件夹
+            [4] 自定义 Office 模板
+        [3] Doubao
+            [4] chats
+                [5] 2026-08-12
+                    [6] new-chat
+                    [6] new-chat-1
+                    [6] new-chat-2
+                [5] 2026-08-15
+                    [6] new-chat
+                [5] 2026-08-16
+                    [6] new-chat
+                [5] 2026-08-29
+                    [6] new-chat
+                [5] 2026-08-30
+                    [6] new-chat
+                [5] 2026-09-02
+                    [6] new-chat
+            [4] skills
+        [3] Downloads
+        [3] Favorites
+            [4] Links
+        [3] IdeaSnapshots
+        [3] Links
+        [3] miniconda3
+            [4] condabin
+            [4] conda-meta
+            [4] condarc.d
+            [4] DLLs
+            [4] envs
+                [5] f38
+                    [6] conda-meta
+                    [6] DLLs
+                    [6] etc
+                    [6] include
+                    [6] Lib
+                    [6] Library
+                    [6] libs
+                    [6] Scripts
+                    [6] share
+                    [6] Tools
+                [5] frida_app
+                    [6] conda-meta
+                    [6] DLLs
+                    [6] etc
+                    [6] include
+                    [6] Lib
+                    [6] Library
+                    [6] libs
+                    [6] Scripts
+                    [6] share
+                    [6] Tools
+                [5] ios16
+                    [6] conda-meta
+                    [6] DLLs
+                    [6] etc
+                    [6] include
+                    [6] Lib
+                    [6] Library
+                    [6] libs
+                    [6] Scripts
+                    [6] share
+                    [6] Tools
+            [4] etc
+                [5] conda
+                    [6] activate.d
+                    [6] deactivate.d
+                    [6] test-files
+                [5] fish
+                    [6] conf.d
+                [5] profile.d
+            [4] include
+                [5] cpython
+                [5] internal
+                    [6] mimalloc
+            [4] Lib
+                [5] __phello__
+                    [6] __pycache__
+                    [6] ham
+                [5] __pycache__
+                [5] _pyrepl
+                    [6] __pycache__
+                [5] asyncio
+                    [6] __pycache__
+                [5] collections
+                    [6] __pycache__
+                [5] compression
+                    [6] __pycache__
+                    [6] _common
+                    [6] zstd
+                [5] concurrent
+                    [6] __pycache__
+                    [6] futures
+                    [6] interpreters
+                [5] ctypes
+                    [6] __pycache__
+                    [6] macholib
+                [5] curses
+                    [6] __pycache__
+                [5] dbm
+                    [6] __pycache__
+                [5] email
+                    [6] __pycache__
+                    [6] mime
+                [5] encodings
+                    [6] __pycache__
+                [5] ensurepip
+                    [6] __pycache__
+                    [6] _bundled
+                [5] html
+                    [6] __pycache__
+                [5] http
+                    [6] __pycache__
+                [5] idlelib
+                    [6] __pycache__
+                    [6] Icons
+                    [6] idle_test
+                [5] importlib
+                    [6] __pycache__
+                    [6] metadata
+                    [6] resources
+                [5] json
+                    [6] __pycache__
+                [5] logging
+                    [6] __pycache__
+                [5] multiprocessing
+                    [6] __pycache__
+                    [6] dummy
+                [5] pathlib
+                    [6] __pycache__
+                [5] pydoc_data
+                    [6] __pycache__
+                [5] re
+                    [6] __pycache__
+                [5] site-packages
+                    [6] __pycache__
+                    [6] _argon2_cffi_bindings
+                    [6] _distutils_hack
+                    [6] aioquic
+                    [6] aioquic-1.2.0.dist-info
+                    [6] anaconda_anon_usage
+                    [6] anaconda_anon_usage-0.8.1.dist-info
+                    [6] anaconda_auth
+                    [6] anaconda_auth-0.15.1.dist-info
+                    [6] anaconda_channel_guide
+                    [6] anaconda_channel_guide-0.1.1.dist-info
+                    [6] anaconda_cli_base
+                    [6] anaconda_cli_base-0.9.1.dist-info
+                    [6] anaconda_cloud_auth
+                    [6] annotated_doc
+                    [6] annotated_doc-0.0.4.dist-info
+                    [6] annotated_types
+                    [6] annotated_types-0.6.0.dist-info
+                    [6] anyio
+                    [6] anyio-4.12.1.dist-info
+                    [6] archspec
+                    [6] archspec-0.2.6.dist-info
+                    [6] argon2
+                    [6] argon2_cffi_bindings-26.1.0.dist-info
+                    [6] argon2_cffi-25.1.0.dist-info
+                    [6] asgiref
+                    [6] asgiref-3.11.1.dist-info
+                    [6] attr
+                    [6] attrs
+                    [6] attrs-26.1.0.dist-info
+                    [6] bcrypt
+                    [6] bcrypt-5.0.0.dist-info
+                    [6] blinker
+                    [6] blinker-1.9.0.dist-info
+                    [6] boltons
+                    [6] boltons-25.0.0.dist-info
+                    [6] brotli-1.2.0.dist-info
+                    [6] brotlicffi
+                    [6] brotlicffi-1.2.0.0.dist-info
+                    [6] build
+                    [6] build-1.3.0.dist-info
+                    [6] certifi
+                    [6] certifi-2026.7.22.dist-info
+                    [6] cffi
+                    [6] cffi-2.0.0.dist-info
+                    [6] charset_normalizer
+                    [6] charset_normalizer-3.4.7.dist-info
+                    [6] click
+                    [6] click-8.4.1.dist-info
+                    [6] colorama
+                    [6] colorama-0.4.6.dist-info
+                    [6] conda
+                    [6] conda_anaconda_telemetry
+                    [6] conda_anaconda_telemetry-0.3.0.dist-info
+                    [6] conda_anaconda_tos
+                    [6] conda_anaconda_tos-0.2.2.dist-info
+                    [6] conda_content_trust
+                    [6] conda_content_trust-0.3.2.dist-info
+                    [6] conda_index
+                    [6] conda_index-0.12.1.dist-info
+                    [6] conda_libmamba_solver
+                    [6] conda_libmamba_solver-26.6.0.dist-info
+                    [6] conda_lockfiles
+                    [6] conda_lockfiles-0.2.0.dist-info
+                    [6] conda_package_handling
+                    [6] conda_package_handling-2.5.0.dist-info
+                    [6] conda_package_streaming
+                    [6] conda_package_streaming-0.13.0.dist-info
+                    [6] conda_pypi
+                    [6] conda_pypi-0.11.0.dist-info
+                    [6] conda_rattler_solver
+                    [6] conda_rattler_solver-0.1.1.dist-info
+                    [6] conda_self
+                    [6] conda_self-0.2.0.dist-info
+                    [6] conda-26.7.0.dist-info
+                    [6] contourpy
+                    [6] contourpy-1.3.3.dist-info
+                    [6] cryptography
+                    [6] cryptography-48.0.1.dist-info
+                    [6] cycler
+                    [6] cycler-0.12.1.dist-info
+                    [6] dateutil
+                    [6] distro
+                    [6] distro-1.9.0.dist-info
+                    [6] dotenv
+                    [6] filelock
+                    [6] filelock-3.29.4.dist-info
+                    [6] flask
+                    [6] flask-3.1.3.dist-info
+                    [6] fontTools
+                    [6] fonttools-4.63.0.dist-info
+                    [6] frida
+                    [6] frida_tools
+                    [6] frida_tools-13.7.1.dist-info
+                    [6] frida-16.5.7.dist-info
+                    [6] frozendict
+                    [6] frozendict-2.4.7.dist-info
+                    [6] h11
+                    [6] h11-0.16.0.dist-info
+                    [6] h2
+                    [6] h2-4.3.0.dist-info
+                    [6] hpack
+                    [6] hpack-4.2.0.dist-info
+                    [6] httpcore
+                    [6] httpcore-1.0.9.dist-info
+                    [6] httpx
+                    [6] httpx-0.28.1.dist-info
+                    [6] hyperframe
+                    [6] hyperframe-6.1.0.dist-info
+                    [6] ida_pro_mcp
+                    [6] ida_pro_mcp-2.0.0.dist-info
+                    [6] idapro
+                    [6] idapro-0.0.10.dist-info
+                    [6] idna
+                    [6] idna-3.18.dist-info
+                    [6] installer
+                    [6] installer-1.0.0.dist-info
+                    [6] itsdangerous
+                    [6] itsdangerous-2.2.0.dist-info
+                    [6] jaraco
+                    [6] jaraco_classes-3.4.0.dist-info
+                    [6] jaraco_context-6.1.0.dist-info
+                    [6] jaraco_functools-4.4.0.dist-info
+                    [6] jinja2
+                    [6] jinja2-3.1.6.dist-info
+                    [6] jiter
+                    [6] jiter-0.16.0.dist-info
+                    [6] jsonpatch-1.33.dist-info
+                    [6] jsonpointer-3.1.1.dist-info
+                    [6] jwt
+                    [6] kaitaistruct-0.11.dist-info
+                    [6] keyring
+                    [6] keyring-25.6.0.dist-info
+                    [6] kiwisolver
+                    [6] kiwisolver-1.5.0.dist-info
+                    [6] ldap3
+                    [6] ldap3-2.9.1.dist-info
+                    [6] libmambapy
+                    [6] libmambapy-2.3.2.dist-info
+                    [6] markdown_it
+                    [6] markdown_it_py-4.0.0.dist-info
+                    [6] markupsafe
+                    [6] markupsafe-3.0.3.dist-info
+                    [6] matplotlib
+                    [6] matplotlib-3.11.1.dist-info
+                    [6] mdurl
+                    [6] mdurl-0.1.2.dist-info
+                    [6] menuinst
+                    [6] menuinst-2.5.1.dist-info
+                    [6] mitmproxy
+                    [6] mitmproxy_rs
+                    [6] mitmproxy_rs-0.12.11.dist-info
+                    [6] mitmproxy_windows
+                    [6] mitmproxy_windows-0.12.11.dist-info
+                    [6] mitmproxy-12.2.3.dist-info
+                    [6] more_itertools
+                    [6] more_itertools-11.0.2.dist-info
+                    [6] mpl_toolkits
+                    [6] msgpack
+                    [6] msgpack-1.1.2.dist-info
+                    [6] openai
+                    [6] openai-2.49.0.dist-info
+                    [6] OpenSSL
+                    [6] packaging
+                    [6] packaging-26.0.dist-info
+                    [6] pip
+                    [6] pip-26.1.2.dist-info
+                    [6] pkce
+                    [6] pkce-1.0.3.dist-info
+                    [6] platformdirs
+                    [6] platformdirs-4.9.4.dist-info
+                    [6] pluggy
+                    [6] pluggy-1.6.0.dist-info
+                    [6] prompt_toolkit
+                    [6] prompt_toolkit-3.0.52.dist-info
+                    [6] publicsuffix2
+                    [6] publicsuffix2-2.20191221.dist-info
+                    [6] py_rattler-0.25.0.dist-info
+                    [6] pyasn1
+                    [6] pyasn1-0.6.4.dist-info
+                    [6] pycosat-0.6.6.dist-info
+                    [6] pycparser
+                    [6] pycparser-3.0.dist-info
+                    [6] pydantic
+                    [6] pydantic_core
+                    [6] pydantic_core-2.46.4.dist-info
+                    [6] pydantic_settings
+                    [6] pydantic_settings-2.14.2.dist-info
+                    [6] pydantic-2.13.4.dist-info
+                    [6] pydivert
+                    [6] pydivert-2.1.0.dist-info
+                    [6] pygments
+                    [6] pygments-2.20.0.dist-info
+                    [6] pyjwt-2.13.0.dist-info
+                    [6] pylsqpack
+                    [6] pylsqpack-0.3.24.dist-info
+                    [6] pyopenssl-26.2.0.dist-info
+                    [6] pyparsing
+                    [6] pyparsing-3.3.2.dist-info
+                    [6] pyperclip
+                    [6] pyperclip-1.11.0.dist-info
+                    [6] pyproject_hooks
+                    [6] pyproject_hooks-1.2.0.dist-info
+                    [6] pysocks-1.7.1.dist-info
+                    [6] pytesseract
+                    [6] pytesseract-0.3.13.dist-info
+                    [6] python_dateutil-2.9.0.post0.dist-info
+                    [6] python_dotenv-1.2.1.dist-info
+                    [6] pywin32_ctypes-0.2.3.dist-info
+                    [6] rattler
+                    [6] readchar
+                    [6] readchar-4.2.2.dist-info
+                    [6] requests
+                    [6] requests-2.34.2.dist-info
+                    [6] rich
+                    [6] rich-15.0.0.dist-info
+                    [6] ruamel
+                    [6] ruamel_yaml_clib-0.2.14.dist-info
+                    [6] ruamel_yaml-0.18.16.dist-info
+                    [6] semver
+                    [6] semver-3.0.4.dist-info
+                    [6] service_identity
+                    [6] service_identity-26.1.0.dist-info
+                    [6] setuptools
+                    [6] setuptools-82.0.1-py3.14.egg-info
+                    [6] shellingham
+                    [6] shellingham-1.5.4.dist-info
+                    [6] sniffio
+                    [6] sniffio-1.3.1.dist-info
+                    [6] sortedcontainers
+                    [6] sortedcontainers-2.4.0.dist-info
+                    [6] tomli
+                    [6] tomli_w
+                    [6] tomli_w-1.2.0.dist-info
+                    [6] tomli-2.4.0.dist-info
+                    [6] tomlkit
+                    [6] tomlkit-0.13.3.dist-info
+                    [6] tornado
+                    [6] tornado-6.5.5.dist-info
+                    [6] tqdm
+                    [6] tqdm-4.68.2.dist-info
+                    [6] truststore
+                    [6] truststore-0.10.4.dist-info
+                    [6] typer
+                    [6] typer-0.25.1.dist-info
+                    [6] typing_extensions-4.15.0.dist-info
+                    [6] typing_inspection
+                    [6] typing_inspection-0.4.2.dist-info
+                    [6] unearth
+                    [6] unearth-0.18.2.dist-info
+                    [6] urllib3
+                    [6] urllib3-2.7.0.dist-info
+                    [6] urwid
+                    [6] urwid-3.0.5.dist-info
+                    [6] wcwidth
+                    [6] wcwidth-0.8.2.dist-info
+                    [6] websockets
+                    [6] websockets-13.1.dist-info
+                    [6] werkzeug
+                    [6] werkzeug-3.1.8.dist-info
+                    [6] wheel
+                    [6] wheel-0.47.0.dist-info
+                    [6] win_inet_pton-1.1.0.dist-info
+                    [6] win32ctypes
+                    [6] wsproto
+                    [6] wsproto-1.3.2.dist-info
+                    [6] xontrib
+                    [6] zstandard
+                    [6] zstandard-0.25.0.dist-info
+                [5] sqlite3
+                    [6] __pycache__
+                [5] string
+                    [6] __pycache__
+                [5] sysconfig
+                    [6] __pycache__
+                [5] test
+                    [6] __pycache__
+                    [6] support
+                [5] tkinter
+                    [6] __pycache__
+                [5] tomllib
+                    [6] __pycache__
+                [5] turtledemo
+                    [6] __pycache__
+                [5] unittest
+                    [6] __pycache__
+                [5] urllib
+                    [6] __pycache__
+                [5] venv
+                    [6] __pycache__
+                    [6] scripts
+                [5] wsgiref
+                    [6] __pycache__
+                [5] xml
+                    [6] __pycache__
+                    [6] dom
+                    [6] etree
+                    [6] parsers
+                    [6] sax
+                [5] xmlrpc
+                    [6] __pycache__
+                [5] zipfile
+                    [6] __pycache__
+                    [6] _path
+                [5] zoneinfo
+                    [6] __pycache__
+            [4] Library
+                [5] bin
+                    [6] plugins
+                [5] include
+                    [6] curl
+                    [6] fmt
+                    [6] gssapi
+                    [6] krb5
+                    [6] leptonica
+                    [6] libpng16
+                    [6] libxml2
+                    [6] lzma
+                    [6] mamba
+                    [6] nlohmann
+                    [6] openjpeg-2.5
+                    [6] openssl
+                    [6] reproc
+                    [6] reproc++
+                    [6] solv
+                    [6] tesseract
+                    [6] tl
+                    [6] webp
+                    [6] X11
+                    [6] yaml-cpp
+                [5] lib
+                    [6] cmake
+                    [6] dde1.4
+                    [6] itcl4.3.0
+                    [6] libpng
+                    [6] nmake
+                    [6] pkgconfig
+                    [6] reg1.3
+                    [6] sqlite3.45.3
+                    [6] tcl8
+                    [6] tcl8.6
+                    [6] tk8.6
+                [5] share
+                    [6] cmake
+                    [6] doc
+                    [6] libffi
+                    [6] man
+                    [6] pkgconfig
+                    [6] tessdata
+                [5] ssl
+                    [6] certs
+                [5] WebP
+                    [6] cmake
+            [4] libs
+            [4] Menu
+            [4] pkgs
+                [5] anaconda_powershell_prompt-1.1.1-haa95532_0
+                    [6] info
+                    [6] Menu
+                    [6] Scripts
+                [5] anaconda_prompt-1.1.1-haa95532_0
+                    [6] info
+                    [6] Menu
+                    [6] Scripts
+                [5] anaconda-anon-usage-0.8.1-pyhb46e38b_100
+                    [6] info
+                    [6] site-packages
+                [5] anaconda-auth-0.15.1-py314haa95532_0
+                    [6] condarc.d
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] anaconda-channel-guide-0.1.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] anaconda-cli-base-0.9.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] annotated-doc-0.0.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] annotated-types-0.6.0-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                [5] anyio-4.12.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] archspec-0.2.6-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] boltons-25.0.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] brotlicffi-1.2.0.0-py314h885b0b7_0
+                    [6] info
+                    [6] Lib
+                [5] bzip2-1.0.8-h2bbff1b_6
+                    [6] info
+                    [6] Library
+                [5] ca-certificates-2026.5.14-haa95532_0
+                    [6] info
+                    [6] Library
+                [5] ca-certificates-2026.7.16-haa95532_0
+                    [6] info
+                    [6] Library
+                [5] ca-certificates-2026.7.22-h4c7d964_0
+                    [6] info
+                    [6] Library
+                [5] cache
+                [5] certifi-2026.6.17-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] certifi-2026.7.22-pyhd8ed1ab_0
+                    [6] info
+                    [6] site-packages
+                [5] cffi-2.0.0-py314h02ab6af_1
+                    [6] info
+                    [6] Lib
+                [5] charset-normalizer-3.4.7-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] click-8.4.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] colorama-0.4.6-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-26.5.3-py314haa95532_0
+                    [6] condabin
+                    [6] etc
+                    [6] info
+                    [6] Lib
+                    [6] Library
+                    [6] Scripts
+                    [6] shell
+                [5] conda-26.7.0-py314hb821551_0
+                    [6] condabin
+                    [6] etc
+                    [6] info
+                    [6] Lib
+                    [6] Library
+                    [6] Scripts
+                    [6] shell
+                [5] conda-anaconda-telemetry-0.3.0-pyhd3eb1b0_1
+                    [6] info
+                    [6] site-packages
+                [5] conda-anaconda-tos-0.2.2-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] conda-content-trust-0.3.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] conda-index-0.12.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-libmamba-solver-26.6.0-pyh3785b3c_0
+                    [6] info
+                    [6] site-packages
+                [5] conda-lockfiles-0.2.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-package-handling-2.5.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] conda-package-streaming-0.13.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-pypi-0.11.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-rattler-solver-0.1.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] conda-self-0.2.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] cpp-expected-1.1.0-h214f63a_0
+                    [6] info
+                    [6] Library
+                [5] cryptography-49.0.0-py314h153bf51_0
+                    [6] info
+                    [6] Lib
+                [5] distro-1.9.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] filelock-3.29.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] fmt-12.1.0-ha349831_0
+                    [6] info
+                    [6] Library
+                [5] frozendict-2.4.7-py314h1c6eee0_0
+                    [6] info
+                    [6] Lib
+                [5] giflib-5.2.2-hb0bd012_1
+                    [6] info
+                    [6] Library
+                [5] h11-0.16.0-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                [5] httpcore-1.0.9-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] httpx-0.28.1-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] idna-3.18-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] jaraco.classes-3.4.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] jaraco.context-6.1.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] jaraco.functools-4.4.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] jinja2-3.1.6-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] jsonpatch-1.33-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] jsonpointer-3.1.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] keyring-25.6.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] leptonica-1.87.0-hb83fb89_1
+                    [6] etc
+                    [6] info
+                    [6] Library
+                [5] lerc-4.2.0-hd936e49_0
+                    [6] info
+                    [6] Library
+                [5] libarchive-3.8.7-h8d653b7_0
+                    [6] info
+                    [6] Library
+                [5] libbrotlicommon-1.2.0-h907acca_0
+                    [6] info
+                    [6] Library
+                [5] libbrotlidec-1.2.0-h02c67a5_0
+                    [6] info
+                    [6] Library
+                [5] libbrotlienc-1.2.0-h483e6b9_0
+                    [6] info
+                    [6] Library
+                [5] libcurl-8.20.0-h9440e04_1
+                    [6] info
+                    [6] Library
+                [5] libdeflate-1.25-h1a1d4e4_1
+                    [6] info
+                    [6] Library
+                [5] libexpat-2.8.2-hd7fb8db_1
+                    [6] info
+                    [6] Library
+                [5] libffi-3.4.8-h42d73b9_3
+                    [6] info
+                    [6] Library
+                [5] libiconv-1.18-hc89ec93_0
+                    [6] info
+                    [6] Library
+                [5] libjpeg-turbo-3.2.0-hfd05255_1
+                    [6] info
+                    [6] Library
+                [5] libkrb5-1.22.2-h3d06f0e_0
+                    [6] info
+                    [6] Library
+                [5] liblzma-5.8.2-hfd05255_0
+                    [6] info
+                    [6] Library
+                [5] libmamba-2.3.2-hf4f7140_3
+                    [6] info
+                    [6] Library
+                [5] libmambapy-2.3.2-py314h0016b16_3
+                    [6] info
+                    [6] Lib
+                [5] libmpdec-4.0.1-h1c6eee0_0
+                    [6] info
+                    [6] Library
+                [5] libpng-1.6.58-hdc8cecf_1
+                    [6] info
+                    [6] Library
+                [5] libsolv-0.7.39-h5d596b6_0
+                    [6] info
+                    [6] Library
+                [5] libssh2-1.11.1-h2addb87_0
+                    [6] info
+                    [6] Library
+                [5] libtiff-4.7.1-h8f73337_1
+                    [6] info
+                    [6] Library
+                [5] libwebp-base-1.6.0-h4d5522a_1
+                    [6] info
+                    [6] Library
+                [5] libxml2-2.14.6-h42c6e62_1
+                    [6] info
+                    [6] Library
+                [5] libzlib-1.3.2-h1c6eee0_0
+                    [6] info
+                    [6] Library
+                [5] lz4-c-1.9.4-h1c6eee0_5
+                    [6] info
+                    [6] Library
+                [5] markdown-it-py-4.0.0-py314haa95532_2
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] markupsafe-3.0.3-py314h1c6eee0_0
+                    [6] info
+                    [6] Lib
+                [5] mdurl-0.1.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] menuinst-2.5.1-py314hd7fb8db_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] more-itertools-11.0.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] msgpack-python-1.2.1-py314hd7fb8db_0
+                    [6] info
+                    [6] Lib
+                [5] nlohmann_json-3.11.2-h6c2663c_0
+                    [6] info
+                    [6] Library
+                [5] openjpeg-2.5.4-h0e57b4f_0
+                    [6] info
+                    [6] Library
+                [5] openssl-3.5.7-hbb43b14_0
+                    [6] etc
+                    [6] info
+                    [6] Library
+                [5] openssl-3.6.3-hf411b9b_1
+                    [6] etc
+                    [6] info
+                    [6] Library
+                [5] packaging-26.0-py310haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] packaging-26.0-py311haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] packaging-26.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pcre2-10.46-h5740b90_0
+                    [6] info
+                    [6] Library
+                [5] pip-26.1.2-pyh0d26453_0
+                    [6] info
+                    [6] site-packages
+                [5] pip-26.1.2-pyhc872135_0
+                    [6] info
+                    [6] site-packages
+                [5] pkce-1.0.3-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] platformdirs-4.9.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pluggy-1.6.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pybind11-abi-5-hd3eb1b0_0
+                    [6] info
+                [5] pycosat-0.6.6-py314h827c3e9_2
+                    [6] info
+                    [6] Lib
+                [5] pycparser-3.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pydantic-2.13.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pydantic-core-2.46.4-py314h51239a8_0
+                    [6] info
+                    [6] Lib
+                [5] pydantic-settings-2.14.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pygments-2.20.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] pyjwt-2.13.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] pyproject_hooks-1.2.0-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                [5] py-rattler-0.25.0-py314hd20cfba_0
+                    [6] info
+                    [6] Lib
+                [5] pysocks-1.7.1-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                [5] python_abi-3.14-4_cp314
+                    [6] info
+                [5] python-3.10.20-hb00fc5c_1
+                    [6] DLLs
+                    [6] include
+                    [6] info
+                    [6] Lib
+                    [6] libs
+                    [6] Scripts
+                    [6] Tools
+                [5] python-3.11.15-hb00fc5c_1
+                    [6] DLLs
+                    [6] include
+                    [6] info
+                    [6] Lib
+                    [6] libs
+                    [6] Scripts
+                    [6] Tools
+                [5] python-3.14.6-hb107ab2_100_cp314
+                    [6] DLLs
+                    [6] include
+                    [6] info
+                    [6] Lib
+                    [6] libs
+                    [6] Scripts
+                    [6] Tools
+                [5] python-build-1.3.0-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] python-dotenv-1.2.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] python-installer-1.0.0-pyhd3eb1b0_0
+                    [6] info
+                    [6] site-packages
+                [5] pywin32-ctypes-0.2.3-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] readchar-4.2.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] reproc-14.2.7-h557c29b_0
+                    [6] info
+                    [6] Library
+                [5] reproc-cpp-14.2.7-h557c29b_0
+                    [6] info
+                    [6] Library
+                [5] requests-2.34.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] rich-15.0.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] ruamel.yaml.clib-0.2.14-py314hb9a58be_0
+                    [6] info
+                    [6] Lib
+                [5] ruamel.yaml-0.18.16-py314hb9a58be_0
+                    [6] info
+                    [6] Lib
+                [5] semver-3.0.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] setuptools-82.0.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] setuptools-83.0.0-py310haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] setuptools-83.0.0-py311haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] shellingham-1.5.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] simdjson-3.10.1-h214f63a_0
+                    [6] info
+                    [6] Library
+                [5] sqlite-3.53.2-hee5a0db_0
+                    [6] info
+                    [6] Library
+                [5] tesseract-5.5.2-hfa586c3_0
+                    [6] etc
+                    [6] info
+                    [6] Library
+                    [6] share
+                [5] tk-8.6.15-hf199647_0
+                    [6] info
+                    [6] Library
+                [5] tomli-2.4.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] tomli-w-1.2.0-pyhd3eb1b0_0
+                    [6] info
+                    [6] site-packages
+                [5] tomlkit-0.13.3-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] tqdm-4.68.2-py314h56ec5ee_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] truststore-0.10.4-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] typer-0.25.1-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] typing_extensions-4.15.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] typing-extensions-4.15.0-py314haa95532_0
+                    [6] info
+                [5] typing-inspection-0.4.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] tzdata-2026b-he532380_0
+                    [6] info
+                    [6] share
+                [5] tzdata-2026c-he532380_0
+                    [6] info
+                    [6] share
+                [5] ucrt-10.0.22621.0-haa95532_0
+                    [6] info
+                    [6] Library
+                [5] unearth-0.18.2-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] urllib3-2.7.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                [5] vc-14.3-h2df5915_12
+                    [6] info
+                [5] vc14_runtime-14.44.35208-h4927774_12
+                    [6] info
+                    [6] Library
+                [5] vs2015_runtime-14.44.35208-ha6b5a95_12
+                    [6] info
+                [5] wheel-0.47.0-py310haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] wheel-0.47.0-py311haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] wheel-0.47.0-py314haa95532_0
+                    [6] info
+                    [6] Lib
+                    [6] Scripts
+                [5] win_inet_pton-1.1.0-py314haa95532_1
+                    [6] info
+                    [6] Lib
+                [5] xz-5.8.2-h53af0af_0
+                    [6] info
+                    [6] Library
+                [5] yaml-cpp-0.9.0-h9081779_1
+                    [6] info
+                    [6] Library
+                [5] zlib-1.3.2-h1c6eee0_0
+                    [6] info
+                    [6] Library
+                [5] zstandard-0.25.0-py314hb03e5ee_0
+                    [6] info
+                    [6] Lib
+                [5] zstd-1.5.7-h56299aa_0
+                    [6] info
+                    [6] Library
+            [4] Scripts
+                [5] __pycache__
+            [4] share
+                [5] man
+                    [6] man1
+                [5] tessdata
+                [5] zoneinfo
+                    [6] Africa
+                    [6] America
+                    [6] Antarctica
+                    [6] Arctic
+                    [6] Asia
+                    [6] Atlantic
+                    [6] Australia
+                    [6] Brazil
+                    [6] build
+                    [6] Canada
+                    [6] Chile
+                    [6] Etc
+                    [6] Europe
+                    [6] Indian
+                    [6] Mexico
+                    [6] Pacific
+                    [6] US
+            [4] shell
+                [5] condabin
+            [4] Tools
+                [5] i18n
+                    [6] __pycache__
+                [5] scripts
+                    [6] __pycache__
+        [3] Music
+            [4] 联想安卓音乐
+        [3] native
+            [4] 68d5fa5c4cc2d200863cafc0d521ce42e7d3e7ee720ec0a83991735586a16f82
+                [5] windows-amd64
+            [4] e376f236ea51e6404a007f0833ffe2c6e607c4080706a723a18a27aeea778392
+                [5] windows-amd64
+            [4] jansi
+                [5] 1.18
+                    [6] windows64
+        [3] OneDrive
+        [3] Pictures
+            [4] Camera Roll
+            [4] Feedback
+                [5] {549613C3-AE64-4C88-8B0C-8844EAB91F4B}
+            [4] Screenshots
+            [4] Smart Game Booster
+            [4] 联想安卓照片
+            [4] 联想截图
+        [3] PycharmProjects
+            [4] untitled
+                [5] .idea
+                    [6] inspectionProfiles
+                [5] venv
+                    [6] Include
+                    [6] Lib
+                    [6] Scripts
+        [3] Saved Games
+        [3] Searches
+        [3] source
+            [4] repos
+                [5] .vs
+                    [6] repos.slnx
+        [3] Videos
+            [4] Captures
+            [4] Smart Game Booster
+            [4] 联想安卓视频
+        [3] wrapper
+            [4] dists
+                [5] gradle-8.0-bin
+                    [6] 2sw8rvy8plv1s10kmnopky6oc
+    [2] Public
+        [3] .jetbrains
+        [3] AccountPictures
+            [4] S-1-5-21-870978616-950004701-3882727556-1001
+        [3] Desktop
+        [3] Documents
+            [4] Alibaba
+                [5] SafeStore
+            [4] Lenovo
+                [5] LeginZoneMain
+                    [6] Commons
+            [4] Tencent
+                [5] QQ
+        [3] Downloads
+        [3] Libraries
+        [3] Music
+        [3] Pictures
+        [3] Thunder Network
+            [4] Mini_downloadlib
+                [5] ODAwMDAwNjA=
+                    [6] Version_3_1_2_2
+        [3] Videos
+[1] Windows
+    [2] appcompat
+    [2] apppatch
+    [2] AppReadiness
+    [2] assembly
+    [2] bcastdvr
+    [2] Boot
+    [2] Branding
+    [2] BrowserCore
+    [2] CbsTemp
+    [2] Cursors
+    [2] debug
+    [2] diagnostics
+    [2] DiagTrack
+    [2] DigitalLocker
+    [2] Downloaded Program Files
+    [2] ELAMBKUP
+    [2] en-US
+    [2] favlinks
+    [2] Fonts
+    [2] GameBarPresenceWriter
+    [2] Globalization
+    [2] Help
+    [2] IdentityCRL
+    [2] IME
+    [2] ImmersiveControlPanel
+    [2] InboxApps
+    [2] INF
+    [2] InputMethod
+    [2] Installer
+    [2] L2Schemas
+    [2] LanguageOverlayCache
+    [2] Lenovo
+    [2] LiveKernelReports
+    [2] Logs
+    [2] Media
+    [2] Microsoft
+    [2] Microsoft.NET
+    [2] Migration
+    [2] Minidump
+    [2] ModemLogs
+    [2] OCR
+    [2] Offline Web Pages
+    [2] Panther
+    [2] Performance
+    [2] PLA
+    [2] PolicyDefinitions
+    [2] prefetch
+    [2] Provisioning
+    [2] Registration
+    [2] rescache
+    [2] Resources
+    [2] SchCache
+    [2] schemas
+    [2] SecureBoot
+    [2] security
+    [2] ServiceProfiles
+    [2] ServiceState
+    [2] servicing
+    [2] Setup
+    [2] ShellComponents
+    [2] ShellExperiences
+    [2] SKB
+    [2] SoftwareDistribution
+    [2] Speech
+    [2] Speech_OneCore
+    [2] System
+    [2] System32
+    [2] SystemApps
+    [2] SystemResources
+    [2] SystemTemp
+    [2] SysWOW64
+    [2] TAPI
+    [2] Tasks
+    [2] Temp
+    [2] TempInst
+    [2] tracing
+    [2] twain_32
+    [2] UUS
+    [2] Vss
+    [2] WaaS
+    [2] Web
+    [2] WinSxS
+    [2] WUModels
+    [2] zh-CN
+[1] 软件下载
+[1] 腾讯应用宝文件管理
+    [2] 电影
+        [3] .thumbnails
+        [3] 上传文件
+    [2] 截图与录屏
+        [3] 上传文件
+    [2] 图库
+        [3] .thumbnails
+        [3] QQMail
+        [3] 上传文件
+    [2] 图片
+        [3] QQMail
+        [3] 上传文件
+    [2] 文档
+        [3] 上传文件
+    [2] 下载
+        [3] 上传文件
+    [2] 音乐
+        [3] .thumbnails
+        [3] 上传文件
+[1] 智迅微信文件备份
+[椤跺眰鏂囦欢]
+    appverifUI.dll  (109.9 KB)
+    DumpStack.log  (12 KB)
+    DumpStack.log.tmp  (12 KB)
+    hiberfil.sys  (9747.1 MB)
+    logUploaderSettings.ini  (108 B)
+    logUploaderSettings_temp.ini  (108 B)
+    pagefile.sys  (12800 MB)
+    swapfile.sys  (16 MB)
+    vfcompat.dll  (66.6 KB)

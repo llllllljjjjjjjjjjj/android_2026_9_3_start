@@ -1,0 +1,41 @@
+{
+  "skill_name": "risk-control-adversary",
+  "iteration": 1,
+  "note": "评测新增的工作流 D（单接口全链路风控分析，含前置埋点链路强制步骤）是否真的改变了智能体的分析行为。baseline 用 git HEAD（无工作流 D / E-27 / 无 §2.5）",
+  "evals": [
+    {
+      "eval_id": 0,
+      "eval_name": "search-chain-fullflow",
+      "prompt": "帮我分析抖音搜索接口的整体流程，注意风控点、前置埋点上报等相关链路，并记录",
+      "files": [
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\body_full.txt",
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\response_full.txt",
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\signature_headers.json"
+      ],
+      "expected_output": "一份链路分析文档",
+      "assertions": []
+    },
+    {
+      "eval_id": 1,
+      "eval_name": "comment-chain-fullflow",
+      "prompt": "抖音的评论接口是怎么走的？我要知道风控点和前置埋点链路，写成文档",
+      "files": [
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\comment_request_capture.json",
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\diag_cmt_caller.txt"
+      ],
+      "expected_output": "评论链路的风控分析（含前置/回执配对）",
+      "assertions": []
+    },
+    {
+      "eval_id": 2,
+      "eval_name": "risk-points-scan",
+      "prompt": "把这个 dy 项目的风控点整理一下，包括前置埋点上报链路，沉淀到知识库",
+      "files": [
+        "D:\\reserve_agent\\android\\projects\\dy\\README.md",
+        "D:\\reserve_agent\\android\\projects\\dy\\capture\\"
+      ],
+      "expected_output": "风控点清单 + 知识库沉淀",
+      "assertions": []
+    }
+  ]
+}

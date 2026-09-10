@@ -1,0 +1,6 @@
+{
+ "total_tokens": null,
+ "duration_ms": null,
+ "total_duration_seconds": null,
+ "note": "本环境 subagent 工具不可用（全部 spawn 失败），由主代理在同一会话代跑，无子代理级 token/timing 数据"
+}

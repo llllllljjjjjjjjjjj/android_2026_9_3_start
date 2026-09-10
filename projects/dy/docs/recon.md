@@ -1,0 +1,50 @@
+# dy 侦察记录 (android-recon Phase 1)
+
+日期: 2026-09-XX | 目标: 抖音 com.ss.android.ugc.aweme
+
+## 工程护栏（operator 指令，强制执行，授权放宽不取消）
+1. **写前备份**: 覆盖/修改已有文件前先备份 .bak（防 PID 复用误写）
+2. **超时隔离**: 长任务带超时上限 + 可独立 kill；不做无限等待
+3. **无效请求止损**: 已证明无效的操作立即停手换道，不重复
+4. **真实判官**: 结论须内容级证据（命中文件+行/实测）支撑，否则标"待证"
+
+## 目标定义（docs 六项）
+- 目标: 抖音主端 dy.apk（downloads 版本）
+- 判官/形态/可证伪/止损/样本: 待用户明确逆向侧重（静态 API 提取 / 抓包 / 签名 / 全部走读）
+
+## APK 事实
+- 文件: `apk/dy.apk`（源自 downloads\dy.apk，345,543,863 B）
+- SHA256: `A1BE844DC4F60DCBF2C2DB205E3189D308CC804C93ED0A15B522FB9F31EF6365`
+- 包名: com.ss.android.ugc.aweme（字节跳动抖音主端）
+- dex: 58 个，2.7~10.5MB，总计 ~492MB —— **全部真实代码，无整包 DEX 加固壳**
+- 架构: 仅 arm64-v8a（266 个 .so）
+
+## 壳 / 保护判断
+- ❌ 无传统整包加固（无 360/梆梆/爱加密/腾讯壳 so，classes.dex 非空壳）
+- ⚠️ `libdexvmp.so` 存在 → 字节 **DEX VMP**：部分敏感类被 dex2c/VMP 化，
+  静态反编译会出现空方法体 / native stub → 定位到关键类时可能需要
+  android-dynamic 运行期 hook 或专项处理
+- ⚠️ `libfileprotect.so` → 资源/文件保护
+
+## 网络栈初判（§2.2）
+- `libttboringssl.so` + `libsscronet.so` + `libsscronet-wrapper.so` → **TTNet / Cronet 系**
+  → **代理即断网**，系统代理与系统证书旁路 → 抓包方案 = eCapture 零注入（§3.1）
+- 抖音 API 签名体系预期: x-argus / x-ladon / x-gorgon 家族 + 设备令牌，属 protocol-signature-reverser 范围
+
+## 设备对照（动态阶段用）
+- Pixel 4 (9C181EC3BF7E0D) 已连接
+- 设备已装: com.ss.android.ugc.aweme **38.0.0 (380001)**；待逆 APK manifest 亦含 **38.0.0**
+  → 静态=动态同版本概率高（versionCode 待最终确认），动态验证可直打设备
+
+## 反编译战果（2026-09-06）
+- jadx 1.5.3 `--show-bad-code --no-res` 按 dex 拆分 3 组**串行**（每组 `-Xmx14g -XX:MaxMetaspaceSize=2g -j 10`）
+- 结果: 三组均 **100% 完成**（group0 133,475 / group1 78,947 / group2 139,513 类单元；错误类 643+721+936 ≈ 0.65%，dexvmp/坏代码正常损耗）
+- 产物: `decompiled/` 合并后 **504,699 个 .java**（sources/ + resources/）
+- **内存经验**（本项目踩坑）: jadx 堆随进度单调增长且写盘在最后；抖音级 APK 全量需 ~20g+，
+  7g×3 并行全 OOM（68-90% 崩），10g×3 并行 2 崩，**14g 串行单组稳定**；dex 分组（按字节均衡）可并行但要给足单进程堆
+- 索引: reverse_index 构建中 → `artifacts/reverse_index.sqlite`
+
+## 分诊（待用户确认侧重后更新）
+1. 静态全貌: jadx 反编译 ✅ → reverse_index 索引 → API/签名入口
+2. 抓包: eCapture 路线（先确认 QUIC/TCP，必要时 uid 阻 443 逼降级）
+3. 签名还原: x-argus/x-ladon → protocol-signature-reverser

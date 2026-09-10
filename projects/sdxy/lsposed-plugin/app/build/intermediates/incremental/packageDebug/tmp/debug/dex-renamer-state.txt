@@ -1,0 +1,7 @@
+#Mon Sep 07 20:16:30 CST 2026
+base.0=D\:\\reserve_agent\\android\\projects\\sdxy\\lsposed-plugin\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.1=D\:\\reserve_agent\\android\\projects\\sdxy\\lsposed-plugin\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
+path.0=0/classes.dex
+path.1=14/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex

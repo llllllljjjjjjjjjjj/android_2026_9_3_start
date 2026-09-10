@@ -24,7 +24,7 @@ projects/<target>/
 
 | 项目 | 说明 | 关键产物 |
 |------|------|----------|
-| `dy/` | 抖音（Douyin）逆向：dex 57 个、decompiled 源码、so_analysis（libttcrypto/libsscronet/libmetasec_ml/vcn 三件套）、hook_req（kitsunebi 配置） | `artifacts/dex/`、`so_analysis/` |
+| `dy/` | 抖音（Douyin）逆向：dex 57 个、decompiled 源码、so_analysis（libttcrypto/libsscronet/libmetasec_ml/vcn 三件套）、hook_req（kitsundebi 配置） | `artifacts/dex/`、`so_analysis/` |
 | `dcgc/` | 另一目标：apk/capture/hooks/scripts/so_analysis | — |
 | `apk/` | APK 样本仓库 | — |
 

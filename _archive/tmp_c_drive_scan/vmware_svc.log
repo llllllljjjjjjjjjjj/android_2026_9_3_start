@@ -1,0 +1,12 @@
+﻿VMnetDHCP exit=1072
+[SC] DeleteService 失败 1072:
+
+指定的服务已标记为删除。
+
+
+NAT exit=1072
+[SC] DeleteService 失败 1072:
+
+指定的服务已标记为删除。
+
+

@@ -1,0 +1,32 @@
+{
+ "eval_id": 1,
+ "eval_name": "comment-chain-fullflow",
+ "prompt": "抖音的评论接口是怎么走的？我要知道风控点和前置埋点链路，写成文档",
+ "configuration": "with_skill",
+ "assertions": [
+  {
+   "text": "B1 七层链路结构",
+   "passed": true
+  },
+  {
+   "text": "B2 前置依赖识别",
+   "passed": true
+  },
+  {
+   "text": "B3 三列联动配对表",
+   "passed": true
+  },
+  {
+   "text": "B4 因果分级(已实证/推测)",
+   "passed": true
+  },
+  {
+   "text": "B5 降级分级判据",
+   "passed": true
+  },
+  {
+   "text": "B6 不确定结论标注",
+   "passed": true
+  }
+ ]
+}

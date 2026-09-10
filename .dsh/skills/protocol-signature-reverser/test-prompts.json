@@ -1,17 +1,26 @@
 [
   {
     "id": 1,
+    "scenario": "典型场景：自定义签名起步",
     "prompt": "我要逆向 XHS 的 x-mini-sig 签名算法，应该从哪开始？",
-    "expected": "skill 应命中 F-002 失败模式：不要假设是已知加密变种。引导走 Phase 1 六路并行→Phase 2 假设验证→Phase 3 策略选择器（SO包含签名→搜加密常量→GF(2^8)→策略F: op list提取）。不应建议先试 HMAC 变种。"
+    "expected": "先过开工门（目标能力/判官/交付形态/可证伪标准/止损线/真实 input→output），再按六路证据源选能区分当前假设的路径，不先假设已知加密变种（SF-001）。标准常量缺失且动态/静态证据指向 GF(2^8) 展开时才提取 op list（策略 F）；HMAC/hash 候选累计 10 个无进展就停（SF-008）。"
   },
   {
     "id": 2,
-    "prompt": "逆向一个商业加固 APP 的 API 签名，SO 里的函数全被 OLLVM 混淆了，D-810 也无效",
-    "expected": "skill 应引导走策略 C (frozen blob 提取) 或策略 D (Frida 会话提取)，先检查是否有反模拟检测(RDTSC)，有则用 Frida RPC。不应建议继续花时间做静态反混淆。"
+    "scenario": "复杂场景：重混淆与反模拟",
+    "prompt": "逆向一个商业加固 APP 的 API 签名，SO 里的函数全被 OLLVM 混淆了，D-810 也无效。",
+    "expected": "先区分 BCF/FLA/MBA/间接 BR/BLR 与 VM/时序反模拟（SF-005 先查 RDTSC），确认 D-810 失败证据与静态边界，再按缺口选择局部传播、trace+snapshot、执行正确性已验证的 Unicorn/unidbg（SF-014）或 Frida RPC（策略 E）。跨版本映射以 export/字符串/常量/调用关系为候选并必须复核。oracle/session 依赖进入三级交付边界（止损型不得称纯算）。"
   },
   {
     "id": 3,
-    "prompt": "这个 APP 的签名看起来像是 HMAC-SHA256，32字节 hex 输出，但试了各种 key 都不对",
-    "expected": "skill 应命中 F-002 和 Phase 2.2 三重验证。建议先验证"同一输入→输出一致"确认无状态，再搜标准加密常量。搜不到常量→可能不是 HMAC，切换到反汇编+算子提取路径。"
+    "scenario": "失败场景：HMAC 假设无进展",
+    "prompt": "这个 APP 的签名看起来像是 HMAC-SHA256，32字节 hex 输出，但试了各种 key 都不对。",
+    "expected": "命中 SF-001/SF-008：不要继续爆破，先确认同一输入→输出一致（无状态），再搜标准加密常量。搜不到常量→可能是自定义变换，切反汇编+算子提取；有常数→按策略 A 对 KEY/IV/padding 对拍（≥3 组非样例字节级，成熟后 100+）。"
+  },
+  {
+    "id": 4,
+    "scenario": "失败场景：把 TCP 分段和高熵误判为加密帧",
+    "prompt": "抓到一个 Android 私有 TCP 协议，每个 PSH 段都很高熵，我能直接把 PSH 当帧边界并判断整段已加密吗？",
+    "expected": "不能。先按方向、连接和时序重组字节流，用多样本验证 magic/length/端序/TLV/sequence/checksum 与状态机；TCP segment、PSH 和单次 recv 都不是消息边界。高熵也不能排除压缩、编码、分块或混合结构（SF-020 传输墙先排：先确认请求是否到网关再谈加密），framing 正确仍只是中间证据。"
   }
 ]

@@ -1,6 +1,7 @@
 ---
 name: reverse-skill-evolver
 description: 逆向技能自进化系统。基于达尔文.skill的棘轮机制，每次完成逆向任务后自动评估→改进→测试→保留或回滚。9维逆向领域评分体系（工具有效性/策略覆盖/失败编码/决策树/黑名单/SO策略/抓包/Frida矩阵/实测）。触发词：进化逆向技能、更新策略矩阵、记录失败模式、评估逆向 skill、优化技能、技能进化。
+whenToUse: 用户要求评估/优化/进化逆向 skills、记录失败模式、更新策略矩阵时
 ---
 
 # Reverse Skill Evolver — 逆向技能自进化系统
@@ -32,7 +33,7 @@ description: 逆向技能自进化系统。基于达尔文.skill的棘轮机制�
    │ 分涨了? │
    └───┬───┘
    是 / \ 否
-  保留   回滚
+ 保留   回滚
 ```
 
 ---
@@ -56,89 +57,22 @@ description: 逆向技能自进化系统。基于达尔文.skill的棘轮机制�
 
 ## 9 维逆向领域评估体系（100分制）
 
-### 结构维度（60分）
+> 每维度的详细评分标准见 **[references/evolution-playbook.md](references/evolution-playbook.md)**。
 
-| # | 维度 | 满分 | 评估标准 |
-|---|------|------|----------|
-| 1 | **工具路径有效性** | 10 | 所有工具路径存在且可执行，ADB/Frida/jadx路径正确 |
-| 2 | **APP策略矩阵覆盖度** | 15 | 矩阵中每个APP的加固/网络栈/JavaHook/NativeHook/SSL/主体方案6列完整 |
-| 3 | **失败模式编码完整性** | 15 | 签名 SF 现 19 条；每条都有：错误描述+案例+规则+成本（时间浪费） |
-| 4 | **决策树可执行性** | 10 | 决策树每个分支有明确的进入条件和执行步骤 |
-| 5 | **工具黑名单时效性** | 10 | 每个APP的工具黑名单包含失败原因，最新版本信息准确 |
-
-### 效果维度（40分）
-
-| # | 维度 | 满分 | 评估标准 |
-|---|------|------|----------|
-| 6 | **SO分析策略准确度** | 10 | CFF/frozen blob/GF transform/Unicorn选择器与实际SO匹配 |
-| 7 | **抓包方案成功率** | 10 | 按APP SSL pinning强度推荐的抓包方案可实际使用 |
-| 8 | **Frida版本兼容矩阵** | 10 | 每个设备/APP的Frida版本组合准确，无过时信息 |
-| 9 | **实测验证通过率** | 10 | 随机抽取一个已完成的逆向项目，按skill重新执行能否成功 |
+- **结构维度（60 分）**：① 工具路径有效性 /10 ② APP策略矩阵覆盖度 /15 ③ 失败模式编码完整性 /15 ④ 决策树可执行性 /10 ⑤ 工具黑名单时效性 /10
+- **效果维度（40 分）**：⑥ SO分析策略准确度 /10 ⑦ 抓包方案成功率 /10 ⑧ Frida版本兼容矩阵 /10 ⑨ 实测验证通过率 /10
 
 ---
 
-## 进化循环：5 个 Phase
+## 进化循环：5 个 Phase（主干）
 
-### Phase 1：基线评估
+> 每个 Phase 的完整执行伪代码、评估报告模板见 **[references/evolution-playbook.md](references/evolution-playbook.md)**。
 
-```
-触发条件:
-- "评估逆向 skills"
-- 完成一个 APP 逆向项目后
-- 发现 skill 指导错误导致浪费时间后
-- 新增工具/版本升级后
-
-执行:
-1. 启动独立子 agent 对目标 skill 做 9 维评分
-2. 输出评分报告: 每维度得分 + 总分 + 最低维度
-3. 🔴 CHECKPOINT: 暂停，向用户展示报告，确认要改进什么
-```
-
-### Phase 2：单维度优化
-
-```
-规则:
-- 一轮只改一个维度（反例黑名单第5条）
-- 优先改进得分最低的维度
-- 单轮涨幅 < 1 分 → 自动早停
-
-执行:
-1. 针对最低维度生成 1 个具体改进方案
-2. 编辑 SKILL.md，git commit
-3. 启动 2 个独立子 agent 重新评分
-4. 新分 > 旧分 → 保留 commit
-5. 新分 ≤ 旧分 → git revert
-6. 干跑比例 > 30% → 自动告警
-7. 🔴 CHECKPOINT: 展示 diff + 分数变化，等用户确认
-```
-
-### Phase 3：回归测试
-
-```
-1. 随机抽取 2 个已完成项目的关键步骤
-2. 用改进后的 skill 重新执行
-3. 检查是否发生回归（skill 修改导致旧策略不可用）
-4. 🛑 如回归 → 强制回滚
-```
-
-### Phase 4：跨 Skill 联动检查
-
-```
-1. 检查 4 个逆向 skill（recon/unpack/dynamic/signature）之间的一致性（ADB 路径 / Frida 版本 / 真机基线统一，cross-ref 有效）
-2. 检查 android-dynamic 的失败模式是否在 protocol-signature-reverser 有对应的止损/策略
-3. 检查 android-unpack 的壳/网络栈是否有对应的 signature 案例与 android-dynamic 注入策略
-```
-
-### Phase 5：知识蒸馏归档
-
-```
-1. 将新发现的失败模式编码到项目记忆
-2. 将新 APP 加入 android-dynamic 安全等级矩阵
-3. 将新签名案例加入 protocol-signature-reverser 案例速查
-4. 更新 MEMORY.md 索引
-5. 记录到 `.dsh/skills/reverse-skill-evolver/EVOLUTION_LOG.md`（前分/后分/决策）
-6. 输出本次进化摘要
-```
+- **Phase 1 基线评估**：独立子 agent 做 9 维评分 → 输出每维度得分+总分+最低维度。🔴 CHECKPOINT：展示报告，暂停等用户确认改进方向。
+- **Phase 2 单维度优化**：一轮只改最低一个维度（单轮涨幅 <1 分自动早停）→ 编辑 SKILL.md + commit → **2 个独立子 agent** 复评 → 新分>旧分保留，否则 `git revert`。🔴 CHECKPOINT：展示 diff+分数变化等确认。
+- **Phase 3 回归测试**：随机抽 2 个已完成项目关键步骤用新 skill 重跑，🛑 回归即强制回滚。
+- **Phase 4 跨 Skill 联动检查**：4 个逆向 skill 的 ADB/Frida/真机基线统一、cross-ref 有效；失败模式/壳/网络栈/签名案例互相对齐。
+- **Phase 5 知识蒸馏归档**：失败模式编码入项目记忆、新 APP 入安全等级矩阵、新签名案例入案例速查、更新 MEMORY.md、记 EVOLUTION_LOG.md、输出进化摘要。
 
 ---
 
@@ -146,77 +80,21 @@ description: 逆向技能自进化系统。基于达尔文.skill的棘轮机制�
 
 ```
 用户请求
-    │
-    ├─ "评估逆向 skills"
-    │       → Phase 1 → 9维评分 → 暂停确认
-    │
-    ├─ "优化 <android-recon|android-unpack|android-dynamic|protocol-signature-reverser>"
-    │       → Phase 1 (基线) → Phase 2 (优化) → Phase 3 (回归)
-    │
-    ├─ "更新策略矩阵" / "添加新APP到矩阵"
-    │       → Phase 2 直接编辑 → skip 基线评估
-    │
-    ├─ "记录失败模式" / "我又踩了一个坑"
-    │       → Phase 5 追加失败模式编码 + 更新项目记忆
-    │
-    ├─ "全量进化" / "优化所有逆向 skills"
-    │       → 循环: recon → unpack → dynamic → signature → 联动检查 → 归档（从最弱分先修）
-    │
-    └─ "回滚上次进化"
-            → git log --oneline -5 → 确认回滚目标 → git revert
+    ├─ "评估逆向 skills"            → Phase 1 → 9维评分 → 暂停确认
+    ├─ "优化 <recon|unpack|dynamic|signature>" → Phase 1 → Phase 2 → Phase 3
+    ├─ "更新策略矩阵"/"添加新APP"   → Phase 2 直接编辑（skip 基线）
+    ├─ "记录失败模式"/"又踩一个坑"  → Phase 5 追加失败模式编码 + 更新项目记忆
+    ├─ "全量进化"/"优化所有逆向 skills" → recon→unpack→dynamic→signature→联动→归档（最弱先修）
+    └─ "回滚上次进化"              → git log --oneline -5 → 确认目标 → git revert
 ```
 
----
-
-## 反例黑名单 8 条
-
-> 达尔文 v2.0 标准。这些反模式在逆向 skill 优化中同样适用。
-
-1. **同一个 AI 又改又评** — 修改和评分必须用独立子 agent
-2. **用 `git reset --hard` 当回滚手段** — 必须用 `git revert`
-3. **为凑分而堆冗余** — 单轮涨幅 < 1 分自动早停
-4. **跳过回归测试直接评分** — 结构评分不能替代实测
-5. **一轮内改多个维度** — 每次编辑只针对一个维度
-6. **干跑比例 > 30%** — 大量改动无实际效果 = 方向错了
-7. **静默跳过异常** — 子 agent 评分有任何异常必须报告
-8. **忽视维度相关簇** — 改进"SO 分析策略"时需同步检查"决策树可执行性"
-
----
-
-## 评估报告模板
-
-```markdown
-## Skill: <skill-name> — 第 N 轮进化评估
-
-### 基线评分 (上一轮: XX 分)
-
-| # | 维度 | 得分 | 评价 |
-|---|------|------|------|
-| 1 | 工具路径有效性 | X/10 | ... |
-| 2 | APP策略矩阵覆盖度 | X/15 | ... |
-| 3 | 失败模式编码完整性 | X/15 | ... |
-| 4 | 决策树可执行性 | X/10 | ... |
-| 5 | 工具黑名单时效性 | X/10 | ... |
-| 6 | SO分析策略准确度 | X/10 | ... |
-| 7 | 抓包方案成功率 | X/10 | ... |
-| 8 | Frida版本兼容矩阵 | X/10 | ... |
-| 9 | 实测验证通过率 | X/10 | ... |
-| **总分** | | **XX/100** | |
-
-### 最低维度: <维度名> (X/10)
-
-### 改进方案: <具体改动描述>
-
-### 改进后评分: XX/100 (+X.X)
-
-### 棘轮决策: [保留 / 回滚]
-```
+> 反例黑名单 8 条（又改又评/reset --hard 回滚/凑分堆冗余/跳过回归/一轮改多维/干跑>30%/静默异常/忽视相关簇）详见 evolution-playbook.md，**每轮 Phase 2 改动前对照一次，命中即重写方案**。
 
 ---
 
 ## 进化历史追踪
 
-进化记录在 `.dsh/skills/EVOLUTION_LOG.md`（已建）。**Round 1（2026-06-17 全量进化 + 全 memory 蒸馏）**：
+进化记录在 `.dsh/skills/reverse-skill-evolver/EVOLUTION_LOG.md`（已建）。**Round 1（2026-06-17 全量进化 + 全 memory 蒸馏）**：
 
 | skill | 前 | 后 | 决策 |
 |---|:--:|:--:|:--:|
@@ -245,47 +123,9 @@ description: 逆向技能自进化系统。基于达尔文.skill的棘轮机制�
 
 ---
 
-## 与女娲/达尔文的继承关系
+# 参考资料（references/，按需加载）
 
-```
-女娲.skill (alchaincyf)          达尔文.skill v2.0 (alchaincyf)
-    │                                    │
-    │ 知识蒸馏方法论                       │ 棘轮机制 + 9维评分
-    │ - 6路并行采集                      │ - 只保留改进
-    │ - 三重验证                         │ - 独立评分
-    │ - 诚实边界                         │ - 人在回路
-    │ - 质量验证                         │ - 反例黑名单
-    │                                    │
-    └────────────┬───────────────────────┘
-                 │
-                 ▼
-    Reverse Skill Evolver (本技能)
-    - 9维逆向领域评估
-    - 失败模式编码 = 知识蒸馏的逆向特化
-    - 策略矩阵 = APP级别的"思维模型蒸馏"
-    - 棘轮 = 确保技能只进化不退步
-```
-
----
-
-## 快速命令
-
-```powershell
-# 评估当前所有逆向 skills
-评估逆向 skills
-
-# 优化单个 skill
-优化 android-recon | android-unpack | android-dynamic | protocol-signature-reverser
-
-# 记录新失败模式（快速入口）
-记录失败模式: <错误描述> → 生成 SF-XXX / F-XXX 编码 → 追加到对应 skill（动态/签名）
-
-# 添加新 APP 到策略矩阵
-更新策略矩阵: <APP名> <包名> <加固> <网络栈> ... → android-dynamic 安全等级矩阵
-
-# 查看进化历史
-查看 .dsh/skills/EVOLUTION_LOG.md
-
-# 全量进化（耗时，需人在回路确认）
-全量进化逆向 skills
-```
+| 文件 | 内容 | 何时读 |
+|------|------|--------|
+| [references/evolution-playbook.md](references/evolution-playbook.md) | 9 维评分标准细则、5 Phase 完整伪代码、触发路由、反例黑名单 8 条、评估报告模板、与女娲/达尔文继承关系、快速命令 | 正式跑评估/优化、写报告、对照反例时 |
+| EVOLUTION_LOG.md（skill 根目录） | 各轮进化的前分/后分/决策流水 | 查看/追加进化历史 |

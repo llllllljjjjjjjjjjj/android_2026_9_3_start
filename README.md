@@ -50,7 +50,7 @@ android/
 | reverse-skill-evolver | 进化逆向 skill（元） |
 | risk-control-adversary | 风控/请求策略 |
 | darwin-skill | 通用 skill 优化框架 |
-| reverse-kit-index | 技能总索引 |
+
 
 ## MCP 服务器
 

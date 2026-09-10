@@ -1,0 +1,160 @@
+{
+ "iteration": 1,
+ "skill_name": "risk-control-adversary",
+ "results": [
+  {
+   "eval_name": "comment-chain-fullflow",
+   "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "total": 6
+   },
+   "old_skill": {
+    "pass_rate": 0.5,
+    "passed": 3,
+    "total": 6
+   },
+   "delta": 0.5,
+   "expectations_diff": [
+    {
+     "text": "B1 七层链路结构",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "B2 前置依赖识别",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "B3 三列联动配对表",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "B4 因果分级(已实证/推测)",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "B5 降级分级判据",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "B6 不确定结论标注",
+     "with_skill": true,
+     "old_skill": true
+    }
+   ]
+  },
+  {
+   "eval_name": "risk-points-scan",
+   "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 6,
+    "total": 6
+   },
+   "old_skill": {
+    "pass_rate": 0.833,
+    "passed": 5,
+    "total": 6
+   },
+   "delta": 0.167,
+   "expectations_diff": [
+    {
+     "text": "C1 正确选工作流 D",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "C2 前置埋点专章",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "C3 知识库沉淀清单",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "C4 埋点实证发现",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "C5 配对关系表",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "C6 因果/待验证清单",
+     "with_skill": true,
+     "old_skill": true
+    }
+   ]
+  },
+  {
+   "eval_name": "search-chain-fullflow",
+   "with_skill": {
+    "pass_rate": 1.0,
+    "passed": 8,
+    "total": 8
+   },
+   "old_skill": {
+    "pass_rate": 0.5,
+    "passed": 4,
+    "total": 8
+   },
+   "delta": 0.5,
+   "expectations_diff": [
+    {
+     "text": "A1 七层链路结构",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "A2 前置接口表",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "A3 紧邻特征上报表",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "A4 配对强度标注",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "A5 因果验证表",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "A6 降级分级判据",
+     "with_skill": true,
+     "old_skill": false
+    },
+    {
+     "text": "A7 缺证据标注",
+     "with_skill": true,
+     "old_skill": true
+    },
+    {
+     "text": "A8 时序≠因果纪律",
+     "with_skill": true,
+     "old_skill": false
+    }
+   ]
+  }
+ ],
+ "aggregate": {
+  "with_skill_mean": 1.0,
+  "old_skill_mean": 0.611,
+  "mean_delta": 0.389,
+  "note": "无子代理级 token/timing 数据（subagent 不可用）"
+ }
+}

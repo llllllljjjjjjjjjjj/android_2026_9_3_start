@@ -80,7 +80,7 @@
   plaintext ──AES-256-CBC(key=c23.a, IV="01234ABCDEF56789", PKCS7Padding)──> Base64 ──> ciphertext
 
 签名（ParamsInterceptor.getSign）:
-  JSON(params) ──SHA-256──> hex ──字符串旋转(末8位+中间+前8位)──> AES-256-CBC(key=c23.b) ──> Base64 ──> sign
+  JSON(params) ──SHA-256──> hex ──字符串旋转(末8位+中间+前8位)──> AES-256-CBC(key=c23.d()) ──> Base64 ──> sign
 
 响应解密:
   Base64_decode ──AES-256-CBC(key=c23.a)──> plaintext
@@ -103,17 +103,38 @@
 
 ## 4. 密钥结论（已确定）
 
-- **字段加密 key `c23.a` = `F44B0282BEA83557`**（`r01.e`，env 9/11；其他 env 为 `r01.f`=`huachenjie`）。
-- **sign key `c23.b` = `F44B0282BEA83557`**（与字段 key 相同）。
+- **字段加密 key `c23.b()` = `F44B0282BEA83557`**（`r01.e`，env 9/11；其他 env 为 `r01.f`=`huachenjie`）。`c23.b()` 返回字段 `a`，由 `c23.e(str=..., ...)` 的第一个参数 `str` 写入。
+- **sign key `c23.d()` = `F44B0282BEA83557`**（与字段 key **值相同，但 getter 不同**）。`c23.d()` 返回字段 `b`，由 `c23.e` 的第二个参数 `str2` 写入。
+
+### 关键澄清（getter 与字段的对应，勿混淆）
+
+`c23` 三个 getter 与字段是错位映射：
+
+| getter | 返回值（字段） | 写入源（`c23.e(str,str2,str3,...)`） | 用途 |
+|--------|---------------|--------------------------------------|------|
+| `c23.b()` | 字段 `a` | `str` = `r01.e` | **字段加密 key**（EncryptInterceptor） |
+| `c23.d()` | 字段 `b` | `str2` = `k14.a.c(bg_contact_list)` | **sign key**（ParamsInterceptor.getSign） |
+| `c23.a()` | 字段 `c` | `str3` = `""` | 未用 |
+
+签名与字段加密**分别**调用 `c23.d()` 与 `c23.b()`；两者值碰巧相同，是因为下方 fallback 机制（非"同一个 key"）。
 
 ### sign key 推导链
 1. 初始化入口 `c80.e` → `k14.d(context, 2131231070, ...)`（`c80.java:90`）。
 2. `pwdResId = 2131231070 = 0x7f08011e = R.drawable.bg_contact_list`。
-3. `bg_contact_list` 是 XML shape（非位图）。
-4. `BitmapFactory.decodeResource` 对 XML 返回 null → `k14.c` 走 fallback 返回 `r01.e`。
-5. 故 `c23.b = r01.e`，与 `c23.a` 相同。
+3. `bg_contact_list` 是 XML shape（`res/drawable/bg_contact_list.xml`，484 字节，含 `<shape>/<corners>/<solid>`，非位图）。
+4. `BitmapFactory.decodeResource` 对 XML 返回 null → `k14.a.c` 走 fallback 返回 `r01.e`（`k14.java:95-96`）。
+5. 故 `c23.d() = 字段 b = r01.e = F44B0282BEA83557`，与字段加密 key 值相同。
 
-> 运行时 `com.zj.widget.c23` 为懒加载（首次业务请求才解密），且 App 业务网络被易盾 native 化，Java 层 `c23.e` 实际为死代码路径；上述结论基于静态常量与 Android 框架行为的确定性推导，模拟客户端已按此实现。设备联网后可用 `frida_read_keys.py` 读 `c23.b` 交叉验证。
+> 运行时 `com.zj.widget.c23` 为懒加载（首次业务请求才解密），且 App 业务网络被易盾 native 化，Java 层 `c23.e` 实际为死代码路径；上述结论基于静态常量与 Android 框架行为的确定性推导，模拟客户端已按此实现。设备联网后可用 `frida_read_keys.py` 读 `c23.d` / `c23.b` 交叉验证。
+
+### runImgRecord 图片值（sign key 之外的第二个图片派生值）
+
+`mp8.f`（finishSunRun_v2）追加 `runImgRecord = MD5(runRecordCode + "260826158.6.8" + k14.a.c(R.drawable.hcj_bg_run_index) + timestamp)`。
+
+- `hcj_bg_run_index` 是 **PNG**（`res/drawable-xxxhdpi-v4/hcj_bg_run_index.png`，70099 字节），`decodeResource` 返回非 null → 不走 fallback。
+- 走 `K.b2s(像素字节数组, mode=1)`（env 9/11）。
+- **`K.b2s` 是 native**（`com.huachenjie.c.K`，`public static native String b2s(byte[], int)`，dex 中 flags=0x109 / code_off=0，另含 `native void patch`）。实现在 `libNetHTProtect.so`（易盾函数级 VMP，类名/方法名加密，`JNI_OnLoad` 内运行时解密后 RegisterNatives）。
+- **结论：runImgRecord 的图片派生值当前无法离线精确还原**（见 SUNSHINE_RUN_DATA_FORMAT.md §六）。
 
 ## 5. 产物清单
 
